@@ -1,0 +1,124 @@
+[
+{
+  "model": "webapp.issue",
+  "pk": 1,
+  "fields": {
+    "summary": "\u0421reate a task for the menu \"Loans\"",
+    "description": "\u0421reate a task for the menu \"Loans\". Add a field for calculating limits on new loans.",
+    "status": 1,
+    "type": 1,
+    "create": "2019-09-24T15:24:25.913Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 2,
+  "fields": {
+    "summary": "Correct an error in menu \"Retail\"",
+    "description": "Correct an error in menu \"Retail. Correct the calculation of the commission for translation services.",
+    "status": 2,
+    "type": 2,
+    "create": "2019-09-24T15:28:09.940Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 3,
+  "fields": {
+    "summary": "Menu \"Deposits\"",
+    "description": "Change effective interest rate on term deposits.",
+    "status": 3,
+    "type": 1,
+    "create": "2019-09-24T15:30:37.471Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 4,
+  "fields": {
+    "summary": "Safe Box Operations",
+    "description": "Create models of agreements for the use of safe boxes in connection with the implementation of this service.",
+    "status": 1,
+    "type": 4,
+    "create": "2019-09-24T15:33:23.841Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 5,
+  "fields": {
+    "summary": "Internet banking",
+    "description": "Improve Internet banking for payments on loan repayments, crediting funds on the same business day.",
+    "status": 2,
+    "type": 3,
+    "create": "2019-09-24T15:35:31.393Z"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "status": "New"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "status": "In process"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "status": "Done"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "type": "Task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "type": "Bug"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "type": "Enhancement"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 4,
+  "fields": {
+    "type": "Research"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$EvCMtW1lQD01$RZMVLWl3DyejlKgYKjno8/rbO/gRDRv/OqZ5Dv268IU=",
+    "last_login": "2019-09-24T15:16:50.722Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-24T11:17:19.070Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
