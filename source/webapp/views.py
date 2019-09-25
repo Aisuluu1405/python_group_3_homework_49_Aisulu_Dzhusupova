@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView
 from django.views import View
 
-from webapp.forms import IssueForm, StatusForm
+from webapp.forms import IssueForm, StatusForm, TypeForm
 from webapp.models import Issue, Status, Type
 
 
@@ -139,3 +139,19 @@ class TypeIndexView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['types'] = Type.objects.all()
         return context
+
+
+class TypeCreateView(View):
+    def get(self, request, *args, **kwargs):
+        form = TypeForm()
+        return render(request, 'type_add.html', context={'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = TypeForm(data=request.POST)
+        if form.is_valid():
+            type = Type.objects.create(
+                type=form.cleaned_data['type']
+            )
+            return redirect('type_index')
+        else:
+            return render(request, 'type_add.html', context={'form': form})
