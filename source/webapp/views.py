@@ -66,7 +66,16 @@ def issue_edit_view(request, pk):
             issue.status = data['status']
             issue.type = data['type']
             issue.save()
-            return redirect('detail', pk=issue.pk)
+            return redirect('index')
         else:
             return render(request, 'issue_edit.html', context={'form': form, 'issue': issue})
+
+
+def issue_delete_view(request, pk):
+    issue = get_object_or_404(Issue, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'issue_delete.html', context={'issue': issue})
+    elif request.method == 'POST':
+        issue.delete()
+    return redirect('index')
 

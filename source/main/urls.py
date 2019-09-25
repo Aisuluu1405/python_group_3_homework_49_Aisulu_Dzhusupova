@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from webapp.views import IndexView, IssueView, IssueCreateView, issue_edit_view
+from webapp.views import IndexView, IssueView, IssueCreateView, issue_edit_view, issue_delete_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('issue/<int:pk>/', IssueView.as_view(), name='detail'),
     path('issue/add/', IssueCreateView.as_view(), name='issue_add'),
     path('issue/<int:pk>/edit/', issue_edit_view, name='issue_edit'),
+    path('issue/delete/<int:pk>/', issue_delete_view, name='issue_delete'),
 ]
