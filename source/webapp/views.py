@@ -174,3 +174,11 @@ def type_edit_view(request, pk):
     else:
         return render(request, 'type_edit.html', context={'form': form, 'type': type})
 
+
+def type_delete_view(request, pk):
+    type = get_object_or_404(Type, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'type_delete.html', context={'type': type})
+    elif request.method == 'POST':
+        type.delete()
+    return redirect('type_index')
