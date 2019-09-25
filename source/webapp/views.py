@@ -43,3 +43,30 @@ class IssueCreateView(View):
             return redirect('detail', pk=issue.pk)
         else:
             return render(request, 'issue_add.html', context={'form': form})
+
+
+def issue_edit_view(request, pk):
+    issue = get_object_or_404(Issue, pk=pk)
+    if request.method == 'GET':
+        form = IssueForm(data={
+            'summary': issue.summary,
+            'description': issue.description,
+            'create': issue.create,
+            'status': issue.status,
+            'type': issue.type
+        })
+        return render(request, 'issue_edit.html', context={'form': form, 'issue': issue})
+    elif request.method == 'POST':
+        form = IssueForm(data=request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            issue.summary = data['summary']
+            issue.description = data['description']
+            issue.create = data['create']
+            issue.status = data['status']
+            issue.type = data['type']
+            issue.save()
+            return redirect('detail', pk=issue.pk)
+        else:
+            return render(request, 'issue_edit.html', context={'form': form, 'issue': issue})
+
