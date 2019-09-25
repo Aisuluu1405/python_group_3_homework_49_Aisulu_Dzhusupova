@@ -121,3 +121,12 @@ def status_edit_view(request, pk):
         return redirect('status_index')
     else:
         return render(request, 'status_edit.html', context={'form': form, 'status': status})
+
+
+def status_delete_view(request, pk):
+    status = get_object_or_404(Status, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'status_delete.html', context={'status': status})
+    elif request.method == 'POST':
+        status.delete()
+    return redirect('status_index')
