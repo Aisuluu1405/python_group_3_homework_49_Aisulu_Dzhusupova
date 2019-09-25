@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.views import View
 
 from webapp.forms import IssueForm, StatusForm
-from webapp.models import Issue, Status
+from webapp.models import Issue, Status, Type
 
 
 class IndexView(TemplateView):
@@ -130,3 +130,12 @@ def status_delete_view(request, pk):
     elif request.method == 'POST':
         status.delete()
     return redirect('status_index')
+
+
+class TypeIndexView(TemplateView):
+    template_name = 'type_index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['types'] = Type.objects.all()
+        return context

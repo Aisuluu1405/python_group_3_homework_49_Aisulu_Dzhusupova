@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Type{% endblock %}
+
+{% block content %}
+{#    <a href="{% url 'type_add' %}" class="btn btn-outline-primary  mr-5 ml-5">Add Type</a>#}
+
+    <div class="status">
+        <h1>Types</h1>
+    </div>
+
+<div class="container_index pt-5">
+            <div class="row ml-5">
+                <div class="col-8">
+                    <table class="table">
+                        <thead>
+                        <tr class="table-dark text-dark">
+                            <th scope="col">id</th>
+                            <th scope="col">Type</th>
+
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        {% for type in types %}
+                            <tbody>
+                            <tr class="table-secondary">
+                                <td>{{ type.pk }}</td>
+                                <td>{{ type}}</td>
+
+{#                                <td><p><a href="{% url 'type_delete' type.pk %}"><i class="fas fa-trash-alt"></i></a>#}
+{#                                       <a href="{% url 'type_edit' type.pk %}"><i class="fas fa-edit"></i></a></p> </td>#}
+                            </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+{% endblock %}
