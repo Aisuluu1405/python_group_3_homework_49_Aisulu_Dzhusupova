@@ -14,7 +14,7 @@
     {% block styles %}{% endblock %}
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand font-weight-bold" href="{% url 'index' %}">Issue Tracker</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
         <a class="nav-link font-weight-bolder" href="{% url 'index' %}">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link font-weight-bolder" href="#">Status</a>
+        <a class="nav-link font-weight-bolder" href="{% url 'status_index'%}">Status</a>
       </li>
         <li class="nav-item">
         <a class="nav-link font-weight-bolder" href="#">Type</a>

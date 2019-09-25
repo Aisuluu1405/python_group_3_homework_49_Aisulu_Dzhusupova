@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Status{% endblock %}
+
+{% block content %}
+    <div class="status">
+        <h1>Statuses</h1>
+    </div>
+
+<div class="container_index pt-5">
+            <div class="row ml-5">
+                <div class="col-8">
+                    <table class="table">
+                        <thead>
+                        <tr class="table-dark text-dark">
+                            <th scope="col">id</th>
+                            <th scope="col">Status</th>
+
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        {% for status in statuses %}
+                            <tbody>
+                            <tr class="table-secondary">
+                                <td>{{ status.pk }}</td>
+                                <td>{{ status}}</td>
+
+                                <td><p><a href=""><i class="fas fa-trash-alt"></i></a>
+                                       <a href=""><i class="fas fa-edit"></i></a></p> </td>
+                            </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+{% endblock %}

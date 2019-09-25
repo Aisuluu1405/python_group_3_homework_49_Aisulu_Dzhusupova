@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.views import View
 
 from webapp.forms import IssueForm
-from webapp.models import Issue
+from webapp.models import Issue, Status
 
 
 class IndexView(TemplateView):
@@ -79,3 +79,11 @@ def issue_delete_view(request, pk):
         issue.delete()
     return redirect('index')
 
+
+class StatusIndexView(TemplateView):
+    template_name = 'status_index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['statuses'] = Status.objects.all()
+        return context
