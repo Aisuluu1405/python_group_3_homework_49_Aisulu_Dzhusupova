@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Edit Type{% endblock %}
+
+{% block content %}
+    <h1>Edit Type</h1>
+    <form method="POST" action="{% url "type_edit" type.pk %}">
+        {% include 'partial/issue_form.html' with button_text="Edit" %}
+    </form>
+{% endblock %}

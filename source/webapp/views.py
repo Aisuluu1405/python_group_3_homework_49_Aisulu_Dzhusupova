@@ -155,3 +155,22 @@ class TypeCreateView(View):
             return redirect('type_index')
         else:
             return render(request, 'type_add.html', context={'form': form})
+
+
+def type_edit_view(request, pk):
+    type = get_object_or_404(Type, pk=pk)
+    if request.method == 'GET':
+        form = TypeForm(data={
+            'type': type.type
+        })
+        return render(request, 'type_edit.html', context={'form': form, 'type': type})
+    elif request.method == 'POST':
+        form = TypeForm(data=request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            type.type = data['type']
+            type.save()
+        return redirect('type_index')
+    else:
+        return render(request, 'type_edit.html', context={'form': form, 'type': type})
+
