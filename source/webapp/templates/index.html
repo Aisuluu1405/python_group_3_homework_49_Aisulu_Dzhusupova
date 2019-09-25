@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-           <div class="container_index">
+    <a href="{% url 'issue_add' %}" class="btn btn-outline-primary  mt-5">Add Issue</a>
+           <div class="container_index pt-5">
             <div class="row">
                 <div class="col-12">
                     <table class="table">
@@ -11,6 +12,8 @@
                             <th scope="col">Summary</th>
                             <th scope="col">Description</th>
                             <th scope="col">Date of create</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Type</th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
@@ -21,6 +24,8 @@
                                 <td><a href="{% url 'detail' issue.pk %}">{{ issue.summary }}</td>
                                 <td>{{ issue.description }}</td>
                                 <td>{{ issue.create}}</td>
+                                <td>{{ issue.status}}</td>
+                                <td>{{ issue.type}}</td>
                                 <td><p><a href=""><i class="fas fa-trash-alt"></i></a>
                                        <a href=""><i class="fas fa-edit"></i></a></p> </td>
                             </tr>

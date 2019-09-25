@@ -15,18 +15,14 @@ body{
 .navbar-brand{
     font-size: 25px;
 }
-.container_index {
-  padding: 5rem 0em;
-}
-
-.table-image {
-  td, th {
-      vertical-align: middle;
- }
-}
-td.vcenter {
-    vertical-align: middle;
-}
+/*.table-image {*/
+  /*td, th {*/
+      /*vertical-align: middle;*/
+ /*}*/
+/*}*/
+/*td.vcenter {*/
+    /*vertical-align: middle;*/
+/*}*/
 .fas{
     font-size: 23px;
     padding: 8px;
@@ -45,6 +41,38 @@ pre{
     border-radius: 7px;
     width: 120px;
     font-weight: bold;
-    margin: 20px 20px 0 20px;
+    margin: 40px 20px 0 0;
     color: black;
+
 }
+.required{
+    font-weight: bold;
+    color: #bf1f6d;
+}
+.form-error {
+    color: red;
+    font-size: 18px;
+    margin: 5px 0 0 0
+}
+
+.field-error {
+    border: solid 1px red;
+    box-shadow: red 0 0 3px;
+}
+/*.form-control {*/
+    /*padding: 10px;*/
+    /*font-size: 18px;*/
+    /*border-radius: 5px;*/
+    /*display: block;*/
+    /*width: 100%;*/
+    /*border: solid 1px lightgray;*/
+    /*box-sizing: border-box;*/
+    /*background: white;*/
+/*}*/
+.fields{
+    font-size: 20px;
+}
+h1{
+    margin: 40px 0;
+}
+
