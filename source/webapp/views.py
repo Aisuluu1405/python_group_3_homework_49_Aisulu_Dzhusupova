@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView
 from django.views import View
 
-from webapp.forms import IssueForm
+from webapp.forms import IssueForm, StatusForm
 from webapp.models import Issue, Status
 
 
@@ -66,9 +66,9 @@ def issue_edit_view(request, pk):
             issue.status = data['status']
             issue.type = data['type']
             issue.save()
-            return redirect('index')
-        else:
-            return render(request, 'issue_edit.html', context={'form': form, 'issue': issue})
+        return redirect('index')
+    else:
+        return render(request, 'issue_edit.html', context={'form': form, 'issue': issue})
 
 
 def issue_delete_view(request, pk):
@@ -87,3 +87,19 @@ class StatusIndexView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['statuses'] = Status.objects.all()
         return context
+
+
+class StatusCreateView(View):
+    def get(self, request, *args, **kwargs):
+        form = StatusForm()
+        return render(request, 'status_add.html', context={'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = StatusForm(data=request.POST)
+        if form.is_valid():
+            status = Status.objects.create(
+                status=form.cleaned_data['status']
+            )
+            return redirect('status_index')
+        else:
+            return render(request, 'status_add.html', context={'form': form})

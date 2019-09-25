@@ -11,6 +11,5 @@ class IssueForm(forms.Form):
     type = forms.ModelChoiceField(queryset=Type.objects.all(), required=True, label='Type', empty_label="None")
 
 
-
-
-
+class StatusForm(forms.Form):
+    status = forms.CharField(max_length=25, required=True, label='Status')
