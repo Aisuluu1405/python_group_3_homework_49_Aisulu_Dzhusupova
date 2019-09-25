@@ -34,3 +34,17 @@ td.vcenter {
 .table-dark{
     font-size: 16px;
 }
+pre{
+    white-space: pre-wrap;
+}
+.date{
+    font-size: 20px;
+}
+.btn{
+    font-size: 15px;
+    border-radius: 7px;
+    width: 120px;
+    font-weight: bold;
+    margin: 20px 20px 0 20px;
+    color: black;
+}
