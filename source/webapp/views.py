@@ -103,3 +103,21 @@ class StatusCreateView(View):
             return redirect('status_index')
         else:
             return render(request, 'status_add.html', context={'form': form})
+
+
+def status_edit_view(request, pk):
+    status = get_object_or_404(Status, pk=pk)
+    if request.method == 'GET':
+        form = StatusForm(data={
+            'status': status.status
+        })
+        return render(request, 'status_edit.html', context={'form': form, 'status': status})
+    elif request.method == 'POST':
+        form = StatusForm(data=request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            status.status = data['status']
+            status.save()
+        return redirect('status_index')
+    else:
+        return render(request, 'status_edit.html', context={'form': form, 'status': status})
