@@ -50,7 +50,6 @@ class IssueEditView(TemplateView):
         form = IssueForm(data={
             'summary': issue.summary,
             'description': issue.description,
-            'create': issue.create,
             'status': issue.status_id,
             'type': issue.type_id
             })
@@ -64,7 +63,6 @@ class IssueEditView(TemplateView):
             data = form.cleaned_data
             issue.summary = data['summary']
             issue.description = data['description']
-            issue.create = data['create']
             issue.status = data['status']
             issue.type = data['type']
             issue.save()
