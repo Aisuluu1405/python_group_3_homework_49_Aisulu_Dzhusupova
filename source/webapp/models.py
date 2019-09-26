@@ -7,9 +7,9 @@ class Issue(models.Model):
 
     description = models.TextField(max_length=3000, null=True, blank=True, verbose_name='Description')
 
-    status = models.ForeignKey('webapp.Status', related_name='statuses', on_delete=models.PROTECT, verbose_name='Status')
+    status = models.ForeignKey('webapp.Status', related_name='issues', null=True, blank=True, on_delete=models.PROTECT, verbose_name='Status')
 
-    type = models.ForeignKey('webapp.Type', related_name='types', on_delete=models.PROTECT, verbose_name='Type')
+    type = models.ForeignKey('webapp.Type', related_name='issues', null=True, blank=True,  on_delete=models.PROTECT, verbose_name='Type')
 
     create = models.DateTimeField(auto_now_add=True, verbose_name='Date of create')
 

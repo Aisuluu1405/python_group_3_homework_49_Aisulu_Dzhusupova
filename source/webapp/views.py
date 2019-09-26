@@ -52,8 +52,8 @@ def issue_edit_view(request, pk):
             'summary': issue.summary,
             'description': issue.description,
             'create': issue.create,
-            'status': issue.status,
-            'type': issue.type
+            'status': issue.status_id,
+            'type': issue.type_id
         })
         return render(request, 'issue_edit.html', context={'form': form, 'issue': issue})
     elif request.method == 'POST':
