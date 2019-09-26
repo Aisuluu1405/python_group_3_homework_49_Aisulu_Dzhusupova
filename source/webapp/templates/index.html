@@ -23,7 +23,7 @@
                                 <td>{{ issue.pk }}</td>
                                 <td><a href="{% url 'detail' issue.pk %}">{{ issue.summary }}</td>
                                 <td>{{ issue.description }}</td>
-                                <td>{{ issue.create}}</td>
+                                <td>{{ issue.create|date:'d.m.Y H:i:s' }}</td>
                                 <td>{{ issue.status}}</td>
                                 <td>{{ issue.type}}</td>
                                 <td><p><a href="{% url 'issue_delete' issue.pk %}"><i class="fas fa-trash-alt"></i></a>

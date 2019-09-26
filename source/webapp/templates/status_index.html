@@ -27,8 +27,8 @@
                                 <td>{{ status.pk }}</td>
                                 <td>{{ status}}</td>
 
-                                <td><p><a href="{% url 'status_delete' status.pk %}"><i class="fas fa-trash-alt"></i></a>
-                                       <a href="{% url 'status_edit' status.pk %}"><i class="fas fa-edit"></i></a></p> </td>
+                                <td><p><a href="{% url 'status_delete' status.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
+                                       <a href="{% url 'status_edit' status.pk %}"><i class="fas fa-edit ml-2"></i></a></p> </td>
                             </tr>
                             </tbody>
                         {% endfor %}

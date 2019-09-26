@@ -16,23 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from webapp.views import IndexView, IssueView, IssueCreateView, issue_edit_view, issue_delete_view,\
-    StatusIndexView, StatusCreateView, status_edit_view, status_delete_view,\
-    TypeIndexView, TypeCreateView, type_edit_view, type_delete_view
+from webapp.views import IndexView, IssueView, IssueCreateView, IssueEditView, IssueDeleteView,\
+    StatusIndexView, StatusCreateView, StatusEditView, StatusDeleteView,\
+    TypeIndexView, TypeCreateView, TypeEditView, TypeDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('issue/<int:pk>/', IssueView.as_view(), name='detail'),
     path('issue/add/', IssueCreateView.as_view(), name='issue_add'),
-    path('issue/<int:pk>/edit/', issue_edit_view, name='issue_edit'),
-    path('issue/delete/<int:pk>/', issue_delete_view, name='issue_delete'),
+    path('issue/<int:pk>/edit/', IssueEditView.as_view(), name='issue_edit'),
+    path('issue/delete/<int:pk>/', IssueDeleteView.as_view(), name='issue_delete'),
     path('status/', StatusIndexView.as_view(), name='status_index'),
     path('status/add/', StatusCreateView.as_view(), name='status_add'),
-    path('status/<int:pk>/edit/', status_edit_view, name='status_edit'),
-    path('status/delete/<int:pk>/', status_delete_view, name='status_delete'),
+    path('status/<int:pk>/edit/', StatusEditView.as_view(), name='status_edit'),
+    path('status/delete/<int:pk>/', StatusDeleteView.as_view(), name='status_delete'),
     path('type/', TypeIndexView.as_view(), name='type_index'),
     path('type/add/', TypeCreateView.as_view(), name='type_add'),
-    path('type/<int:pk>/edit/', type_edit_view, name='type_edit'),
-    path('type/delete/<int:pk>/', type_delete_view, name='type_delete')
+    path('type/<int:pk>/edit/', TypeEditView.as_view(), name='type_edit'),
+    path('type/delete/<int:pk>/', TypeDeleteView.as_view(), name='type_delete')
 ]

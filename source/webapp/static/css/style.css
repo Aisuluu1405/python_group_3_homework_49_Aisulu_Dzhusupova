@@ -59,16 +59,16 @@ pre{
     border: solid 1px red;
     box-shadow: red 0 0 3px;
 }
-/*.form-control {*/
-    /*padding: 10px;*/
-    /*font-size: 18px;*/
-    /*border-radius: 5px;*/
-    /*display: block;*/
-    /*width: 100%;*/
-    /*border: solid 1px lightgray;*/
-    /*box-sizing: border-box;*/
-    /*background: white;*/
-/*}*/
+.form-control {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    display: block;
+    width: 90%;
+    border: solid 1px lightgray;
+    box-sizing: border-box;
+    background: white;
+}
 .fields{
     font-size: 20px;
 }
