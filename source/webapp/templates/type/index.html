@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}Status{% endblock %}
+{% block title %}Type{% endblock %}
 
 {% block content %}
-    <a href="{% url 'status_add' %}" class="btn btn-outline-primary  mr-5 ml-5">Add Status</a>
+    <a href="{% url 'type_add' %}" class="btn btn-outline-primary  m-5">Add Type</a>
 
-    <div class="status">
-        <h1>Statuses</h1>
+    <div class="type text-left">
+        <h1>Types</h1>
     </div>
 
 <div class="container_index pt-5">
@@ -16,19 +16,19 @@
                         <thead>
                         <tr class="table-dark text-dark">
                             <th scope="col">id</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Type</th>
 
                             <th scope="col"></th>
                         </tr>
                         </thead>
-                        {% for status in statuses %}
+                        {% for type in types %}
                             <tbody>
                             <tr class="table-secondary">
-                                <td>{{ status.pk }}</td>
-                                <td>{{ status}}</td>
+                                <td>{{ type.pk }}</td>
+                                <td>{{ type}}</td>
 
-                                <td><p><a href="{% url 'status_delete' status.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
-                                       <a href="{% url 'status_edit' status.pk %}"><i class="fas fa-edit ml-2"></i></a></p> </td>
+                                <td><p><a href="{% url 'type_delete' type.pk %}"><i class="fas fa-trash-alt"></i></a>
+                                       <a href="{% url 'type_edit' type.pk %}"><i class="fas fa-edit"></i></a></p> </td>
                             </tr>
                             </tbody>
                         {% endfor %}

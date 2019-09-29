@@ -15,14 +15,6 @@ body{
 .navbar-brand{
     font-size: 25px;
 }
-/*.table-image {*/
-  /*td, th {*/
-      /*vertical-align: middle;*/
- /*}*/
-/*}*/
-/*td.vcenter {*/
-    /*vertical-align: middle;*/
-/*}*/
 .fas{
     font-size: 23px;
     padding: 8px;
@@ -41,7 +33,7 @@ pre{
     border-radius: 7px;
     width: 120px;
     font-weight: bold;
-    margin: 40px 20px 0 0;
+    margin: 40px 70px 0 0;
     color: black;
 
 }
@@ -60,14 +52,16 @@ pre{
     box-shadow: red 0 0 3px;
 }
 .form-control {
+    justify-content: center;
     padding: 10px;
     font-size: 18px;
     border-radius: 5px;
     display: block;
-    width: 90%;
+    width: 80%;
     border: solid 1px lightgray;
     box-sizing: border-box;
     background: white;
+    margin-left: 70px;
 }
 .fields{
     font-size: 20px;
@@ -76,6 +70,9 @@ h1{
     margin: 40px 0;
 }
 .status h1{
+    margin:50px 0 0 60px;
+}
+.type h1{
     margin:50px 0  0 60px;
 }
 

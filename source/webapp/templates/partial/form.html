@@ -7,7 +7,7 @@
 
 {% for field in form %}
 
-    <p><label class="fields" for="{{ field.id_for_label }}">{{ field.label }}
+    <p><label class="fields ml-5" for="{{ field.id_for_label }}">{{ field.label }}
         {% if field.field.required %}
             <span class="required">*</span>
         {% endif %}
