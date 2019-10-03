@@ -22,9 +22,11 @@ body{
 .table-dark{
     font-size: 16px;
 }
-pre{
+.pre{
     white-space: pre-wrap;
+    font-size: 25px;
 }
+
 .date{
     font-size: 20px;
 }
@@ -74,5 +76,38 @@ h1{
 }
 .type h1{
     margin:50px 0  0 60px;
+}
+.pagination {
+    text-align: center;
+    margin-left: 28%;
+    padding-bottom: 18px;
+}
+.pagination a, .page-disabled, .page-active {
+    display: inline-block;
+    border: solid 1px #6a7ddd;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 5px;
+}
+.pagination a {
+    background: #6a7ddd;
+    color: white;
+    text-decoration: none;
+}
+.pagination a:hover {
+   background: #6a7dff;
+   text-decoration: underline;
+}
+.page-disabled {
+    background: #6a7dcc;
+    color: #dddddd
+}
+.page-input {
+    font-size: 14px;
+    width: 40px;
+    text-align: center;
+}
+.page-active {
+    background: #ff7e5f;
 }
 
