@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.generic import ListView
 from django.views import View
-from webapp.views.base_view import DetailView
+from webapp.views.base_view import DetailView, CreateView
 
 from webapp.forms import IssueForm
 from webapp.models import Issue
@@ -22,24 +22,34 @@ class IssueView(DetailView):
     context_key = 'issue'
 
 
-class IssueCreateView(View):
+class IssueCreateView(CreateView):
+    template_name = 'issue/add.html'
+    model = Issue
+    form_class = IssueForm
 
-    def get(self, request, *args, **kwargs):
-        form = IssueForm()
-        return render(request, 'issue/add.html', context={'form': form})
+    def get_redirect_url(self):
+        return reverse ('detail', kwargs={'pk': self.object.pk})
 
-    def post(self, request, *args, **kwargs):
-        form = IssueForm(data=request.POST)
-        if form.is_valid():
-            issue = Issue.objects.create(
-                summary=form.cleaned_data['summary'],
-                description=form.cleaned_data['description'],
-                status=form.cleaned_data['status'],
-                type=form.cleaned_data['type']
-            )
-            return redirect('detail', pk=issue.pk)
-        else:
-            return render(request, 'issue/add.html', context={'form': form})
+
+
+# class IssueCreateView(View):
+#
+#     def get(self, request, *args, **kwargs):
+#         form = IssueForm()
+#         return render(request, 'issue/add.html', context={'form': form})
+#
+#     def post(self, request, *args, **kwargs):
+#         form = IssueForm(data=request.POST)
+#         if form.is_valid():
+#             issue = Issue.objects.create(
+#                 summary=form.cleaned_data['summary'],
+#                 description=form.cleaned_data['description'],
+#                 status=form.cleaned_data['status'],
+#                 type=form.cleaned_data['type']
+#             )
+#             return redirect('detail', pk=issue.pk)
+#         else:
+#             return render(request, 'issue/add.html', context={'form': form})
 
 
 class IssueEditView(View):
