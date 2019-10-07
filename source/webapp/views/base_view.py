@@ -71,8 +71,8 @@ class EditView(View):
 
 
     def post(self, request, *args, **kwargs):
-        self.object = get_object_or_404(self.model, pk=kwargs.get('pk'))
-        form = self.form_class(instance=self.object, data=request.POST)
+        object = get_object_or_404(self.model, pk=kwargs.get('pk'))
+        form = self.form_class(instance=object, data=request.POST)
 
         if form.is_valid():
             return self.form_valid(form)
