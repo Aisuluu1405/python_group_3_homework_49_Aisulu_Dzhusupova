@@ -6,6 +6,8 @@ from webapp.forms import TypeForm
 from webapp.models import Type
 from django.db.models import ProtectedError
 
+from webapp.views.base_view import EditView, DeleteView
+
 
 class TypeIndexView(ListView):
     template_name = 'type/index.html'
@@ -22,41 +24,22 @@ class TypeCreateView(CreateView):
         return reverse('type_index')
 
 
-class TypeEditView(View):
+class TypeEditView(EditView):
+    template_name = 'type/edit.html'
+    model = Type
+    form_class = TypeForm
+    context_key = 'type'
 
-    def get(self, request, *args, **kwargs):
-        type_pk= kwargs.get('pk')
-        type = get_object_or_404(Type, pk=type_pk)
-        form = TypeForm(data={
-            'type': type.type,
-            })
-        return render(request, 'type/edit.html', context={'form': form, 'type':type})
-
-    def post(self, request, *args, **kwargs):
-        form = TypeForm(data=request.POST)
-        type_pk = kwargs.get('pk')
-        type = get_object_or_404(Type, pk=type_pk)
-        if form.is_valid():
-            data = form.cleaned_data
-            type.type = data['type']
-            type.save()
-            return redirect('type_index')
-        else:
-            return render(request, 'type/edit.html', context={'form': form, 'type': type})
+    def get_redirect_url(self):
+        return reverse('type_index')
 
 
-class TypeDeleteView(View):
+class TypeDeleteView(DeleteView):
+    model = Type
+    template_name = 'type/delete.html'
+    context_key = 'type'
+    template = 'protected_error.html'
 
-    def get(self, request, *args, **kwargs):
-        type_pk = kwargs.get('pk')
-        type = get_object_or_404(Type, pk=type_pk)
-        return render(request, 'type/delete.html', context={'type': type})
 
-    def post(self, request, *args, **kwargs):
-        type_pk = kwargs.get('pk')
-        type = get_object_or_404(Type, pk=type_pk)
-        try:
-            type.delete()
-            return redirect('type_index')
-        except ProtectedError:
-            return render(request, 'protected_error.html')
+    def get_redirect_url(self):
+        return reverse('type_index')

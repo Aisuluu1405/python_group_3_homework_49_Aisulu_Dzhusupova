@@ -4,6 +4,7 @@ from django.views import View
 from webapp.forms import StatusForm
 from webapp.models import Status
 from django.db.models import ProtectedError
+from webapp.views.base_view import EditView, DeleteView
 
 
 class StatusIndexView(ListView):
@@ -21,38 +22,22 @@ class StatusCreateView(CreateView):
         return reverse('status_index')
 
 
-class StatusEditView(View):
-    def get(self, request, *args, **kwargs):
-        status = get_object_or_404(Status, pk=kwargs.get('pk'))
-        form = StatusForm(data={
-            'status': status.status
-        })
-        return render(request, 'status/edit.html', context={'form': form, 'status': status})
+class StatusEditView(EditView):
+    template_name = 'status/edit.html'
+    model = Status
+    form_class = StatusForm
+    context_key = 'status'
 
-    def post(self, request, *args, **kwargs):
-        status = get_object_or_404(Status, pk=kwargs.get('pk'))
-        form = StatusForm(data=request.POST)
-        if form.is_valid():
-            data = form.cleaned_data
-            status.status = data['status']
-            status.save()
-            return redirect('status_index')
-        else:
-            return render(request, 'status/edit.html', context={'form': form, 'status': status})
+    def get_redirect_url(self):
+        return reverse('status_index')
 
 
-class StatusDeleteView(View):
-    def get(self, request, *args, **kwargs):
-        status_pk = kwargs.get('pk')
-        status = get_object_or_404(Status, pk=status_pk)
-        return render(request, 'status/delete.html', context={'status': status})
+class StatusDeleteView(DeleteView):
+    model = Status
+    template_name = 'status/delete.html'
+    context_key = 'status'
+    template = 'protected_error.html'
 
-    def post(self, request, *args, **kwargs):
-        status_pk = kwargs.get('pk')
-        status = get_object_or_404(Status, pk=status_pk)
-        try:
-            status.delete()
-            return redirect('status_index')
-        except ProtectedError:
-            return render(request, 'protected_error.html')
 
+    def get_redirect_url(self):
+        return reverse('status_index')

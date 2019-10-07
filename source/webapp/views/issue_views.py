@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.generic import ListView, CreateView
 from django.views import View
-from webapp.views.base_view import DetailView
+from webapp.views.base_view import DetailView, EditView, DeleteView
 
 from webapp.forms import IssueForm
 from webapp.models import Issue
@@ -31,44 +31,18 @@ class IssueCreateView(CreateView):
         return reverse('detail', kwargs={'pk': self.object.pk})
 
 
-class IssueEditView(View):
-
-    def get(self, request, *args, **kwargs):
-        issue = get_object_or_404(Issue, pk=kwargs.get('pk'))
-        form = IssueForm(data={
-            'summary': issue.summary,
-            'description': issue.description,
-            'status': issue.status_id,
-            'type': issue.type_id
-        })
-        return render(request, 'issue/edit.html', context={'form': form, 'issue': issue})
-
-    def post(self, request, *args, **kwargs):
-        issue = get_object_or_404(Issue, pk=kwargs.get('pk'))
-        form = IssueForm(data=request.POST)
-        if form.is_valid():
-            data = form.cleaned_data
-            issue.summary = data['summary']
-            issue.description = data['description']
-            issue.status = data['status']
-            issue.type = data['type']
-            issue.save()
-            return redirect('index')
-        else:
-            return render(request, 'issue/edit.html', context={'form': form, 'issue': issue})
+class IssueEditView(EditView):
+    template_name = 'issue/edit.html'
+    model = Issue
+    form_class = IssueForm
+    context_key = 'issue'
 
 
-class IssueDeleteView(View):
-
-    def get(self, request, *args, **kwargs):
-        issue_pk = kwargs.get('pk')
-        issue = get_object_or_404(Issue, pk=issue_pk)
-        return render(request, 'issue/delete.html', context={'issue': issue})
-
-    def post(self, request, *args, **kwargs):
-        issue_pk = kwargs.get('pk')
-        issue = get_object_or_404(Issue, pk=issue_pk)
-        issue.delete()
-        return redirect('index')
+class IssueDeleteView(DeleteView):
+    model = Issue
+    template_name = 'issue/delete.html'
+    context_key = 'issue'
 
 
+    def get_redirect_url(self):
+        return reverse('index')

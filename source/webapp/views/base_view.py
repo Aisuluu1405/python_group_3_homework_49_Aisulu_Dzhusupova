@@ -1,3 +1,4 @@
+from django.db.models import ProtectedError
 from django.shortcuts import get_object_or_404, render, redirect
 
 from django.views.generic import TemplateView, View
@@ -38,7 +39,7 @@ class CreateView(View):
         return render (request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(data = request.POST)
+        form = self.form_class(data=request.POST)
         if form.is_valid():
             return self.form_valid(form)
         else:
@@ -51,6 +52,64 @@ class CreateView(View):
     def form_invalid(self, form):
         context = {'form': form}
         return render(self.template_name, context)
+
+    def get_redirect_url(self):
+        return self.redirect_url
+
+
+class EditView(View):
+    model = None
+    template_name = None
+    form_class = None
+    redirect_url = '/'
+    context_key = 'object'
+
+    def get(self, request, *args, **kwargs):
+        object = get_object_or_404(self.model, pk=kwargs.get('pk'))
+        form = self.form_class(instance=object)
+        return render(request, self.template_name, context={'form': form, self.context_key: object})
+
+
+    def post(self, request, *args, **kwargs):
+        self.object = get_object_or_404(self.model, pk=kwargs.get('pk'))
+        form = self.form_class(instance=self.object, data=request.POST)
+
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        form.save()
+        return redirect(self.get_redirect_url())
+
+    def form_invalid(self, form):
+        context = {'form': form, self.context_key: self.object}
+        return render(self.template_name, context)
+
+    def get_redirect_url(self):
+        return self.redirect_url
+
+
+class DeleteView(View):
+    model = None
+    template_name = None
+    context_key = 'object'
+    redirect_url = '/'
+    template = None
+
+    def get(self, request, *args, **kwargs):
+        object = get_object_or_404(self.model, pk=kwargs.get('pk'))
+        return render(request, self.template_name, context={self.context_key: object})
+
+    def post(self, request, *args, **kwargs):
+        object = get_object_or_404(self.model, pk=kwargs.get('pk'))
+        try:
+            object.delete()
+            return redirect(self.get_redirect_url())
+        except ProtectedError:
+            return render(request, self.template)
+
 
     def get_redirect_url(self):
         return self.redirect_url
