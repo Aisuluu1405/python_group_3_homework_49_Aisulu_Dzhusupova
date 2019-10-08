@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block title %}{% endblock %}
+
+{%  block content %}
+    <div class="jumbotron mt-5 bg-info">
+        <h1 class="title_card display-5 font-weight-bold pb-4">{{ project.project }}.</h1>
+        <p class="pre">{{ project.specification }}</p>
+        <p class="lead">Create date: {{ project.date_create| date:'d.m.Y H:i:s'}}</p>
+        <hr class="my-4">
+
+        <h2><b>Issues for this project.</b></h2>
+        <div class="container_index pt-3 pb-5">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                        <tr class="table-borderless text-dark">
+                            <th scope="col">id</th>
+                            <th scope="col">Summary</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Create issue</th>
+                        </tr>
+                        </thead>
+                        {% for issue in issues %}
+                            <tbody>
+                                <tr class="table-borderless">
+                                    <td>{{ issue.pk }}</td>
+                                    <td>{{ issue.summary }}</td>
+                                    <td>{{ issue.description }}</td>
+                                    <td>{{ issue.create|date:'d.m.Y H:i:s' }}</td>
+                                </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+            <p><a href="" class="btn btn-outline-dark" >Edit</a>
+            <a href="" class="btn btn-outline-dark" >Delete</a></p>
+    </div>
+{% endblock %}
