@@ -36,10 +36,9 @@ class TypeEditView(EditView):
 
 class TypeDeleteView(DeleteView):
     model = Type
-    template_name = 'type/delete.html'
-    context_key = 'type'
     template = 'protected_error.html'
-
+    confirm_deletion = False
 
     def get_redirect_url(self):
         return reverse('type_index')
+

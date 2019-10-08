@@ -80,6 +80,7 @@ class EditView(View):
             return self.form_invalid(form)
 
     def form_valid(self, form):
+        self.object = get_object_or_404(self.model, pk=kwargs.get('pk'))
         form.save()
         return redirect(self.get_redirect_url())
 
@@ -97,10 +98,18 @@ class DeleteView(View):
     context_key = 'object'
     redirect_url = '/'
     template = None
+    confirm_deletion = True
 
     def get(self, request, *args, **kwargs):
         object = get_object_or_404(self.model, pk=kwargs.get('pk'))
-        return render(request, self.template_name, context={self.context_key: object})
+        if self.confirm_deletion:
+            return render(request, self.template_name, context={self.context_key: object})
+        else:
+            try:
+                object.delete()
+                return redirect(self.get_redirect_url())
+            except ProtectedError:
+                return render(request, self.template)
 
     def post(self, request, *args, **kwargs):
         object = get_object_or_404(self.model, pk=kwargs.get('pk'))

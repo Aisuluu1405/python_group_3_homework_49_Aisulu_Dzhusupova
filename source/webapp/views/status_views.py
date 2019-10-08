@@ -3,7 +3,6 @@ from django.views.generic import ListView, CreateView
 from django.views import View
 from webapp.forms import StatusForm
 from webapp.models import Status
-from django.db.models import ProtectedError
 from webapp.views.base_view import EditView, DeleteView
 
 
@@ -34,10 +33,8 @@ class StatusEditView(EditView):
 
 class StatusDeleteView(DeleteView):
     model = Status
-    template_name = 'status/delete.html'
-    context_key = 'status'
     template = 'protected_error.html'
-
+    confirm_deletion = False
 
     def get_redirect_url(self):
         return reverse('status_index')
