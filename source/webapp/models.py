@@ -11,8 +11,10 @@ class Issue(models.Model):
 
     type = models.ForeignKey('webapp.Type', related_name='issues', on_delete=models.PROTECT, verbose_name='Type')
 
-    create = models.DateTimeField(auto_now_add=True, verbose_name='Date of create')
+    project = models.ForeignKey('webapp.Project', related_name='issues', null=True, blank=False,
+                                on_delete=models.PROTECT, verbose_name='Project')
 
+    create = models.DateTimeField(auto_now_add=True, verbose_name='Date of create')
 
     def __str__(self):
         return self.summary
@@ -30,3 +32,16 @@ class Type(models.Model):
 
     def __str__(self):
         return self.type
+
+
+class Project(models.Model):
+    project = models.CharField(max_length=100, null=False, blank=False, verbose_name='Project')
+    specification = models.TextField(max_length=3500, null=True, blank=True, verbose_name='Specification')
+    date_create = models.DateTimeField(auto_now_add=True, verbose_name='Create project')
+    date_update = models.DateTimeField(auto_now=True, verbose_name='Update project')
+
+    def __str__(self):
+        return self.project
+
+
+

@@ -4,7 +4,9 @@
 
 {%  block content %}
     <div class="jumbotron mt-5 bg-info">
-        <h1 class="title_card display-5 font-weight-bold pb-4">{{ issue.summary }}.</h1>
+        <h1 class="title_card display-5 font-weight-bold pb-4">{{ issue.summary }}.
+            <br>(Project: {{ issue.project }})</br>
+        </h1>
         <p class="pre">{{ issue.description }}</p>
         <p class="lead">Status: {{ issue.status }}</p>
         <p class="lead">Type: {{ issue.type }}</p>

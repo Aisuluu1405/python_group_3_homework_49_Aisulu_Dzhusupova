@@ -17,6 +17,7 @@
                             <th scope="col">Date of create</th>
                             <th scope="col">Status</th>
                             <th scope="col">Type</th>
+                            <th scope="col">Project</th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
@@ -29,6 +30,7 @@
                                 <td>{{ issue.create|date:'d.m.Y H:i:s' }}</td>
                                 <td>{{ issue.status}}</td>
                                 <td>{{ issue.type}}</td>
+                                <td>{{ issue.project}}</td>
                                 <td><p><a href="{% url 'issue_delete' issue.pk %}"><i class="fas fa-trash-alt"></i></a>
                                        <a href="{% url 'issue_edit' issue.pk %}"><i class="fas fa-edit"></i></a></p> </td>
                             </tr>
