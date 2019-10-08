@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+    <a href="" class="btn btn-outline-primary  m-5">Add Type</a>
+
+    <div class="type text-left">
+        <h1>Projects</h1>
+    </div>
+
+<div class="container_index pt-5 ">
+            <div class="row ml-5">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                        <tr class="table-dark text-dark">
+                            <th scope="col">id</th>
+                            <th scope="col">Project</th>
+                            <th scope="col">Create project</th>
+                            <th scope="col">Update project</th>
+
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        {% for project in projects %}
+                            <tbody>
+                            <tr class="table-secondary">
+                                <td>{{ project.pk }}</td>
+                                <td>{{ project.project}}</td>
+                                <td>{{ project.date_create| date:'d.m.Y H:i:s'  }}</td>
+                                <td>{{ project.date_update| date:'d.m.Y H:i:s' }}</td>
+
+                                <td><p><a href=""><i class="fas fa-trash-alt"></i></a>
+                                       <a href=""><i class="fas fa-edit"></i></a></p> </td>
+                            </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+{% endblock %}
