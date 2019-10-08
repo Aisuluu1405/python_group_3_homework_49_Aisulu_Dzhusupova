@@ -33,12 +33,10 @@ class StatusEditView(UpdateView):
 
 class StatusDeleteView(DeleteView):
     model = Status
-    template_name = 'status/delete.html'
-    context_object_name = 'status'
     success_url = reverse_lazy('status_index')
-    template = 'protected_error.html'
+    template = 'status/protected_error.html'
 
-    def post(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         object = get_object_or_404(self.model, pk=kwargs.get('pk'))
         try:
             object.delete()

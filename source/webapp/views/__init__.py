@@ -4,5 +4,5 @@ from .status_views import StatusIndexView, StatusCreateView, StatusEditView, Sta
 
 from .type_views import TypeIndexView, TypeCreateView, TypeEditView, TypeDeleteView
 
-from .project_views import ProjectIndexView, ProjectView, ProjectCreateView, ProjectEditView
+from .project_views import ProjectIndexView, ProjectView, ProjectCreateView, ProjectEditView, ProjectDeleteView
 

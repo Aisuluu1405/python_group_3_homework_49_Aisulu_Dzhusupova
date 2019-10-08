@@ -33,12 +33,10 @@ class TypeEditView(UpdateView):
 
 class TypeDeleteView(DeleteView):
     model = Type
-    template_name = 'type/delete.html'
-    context_object_name = 'type'
     success_url = reverse_lazy('type_index')
-    template = 'protected_error.html'
+    template = 'type/protected_error.html'
 
-    def post(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         object = get_object_or_404(self.model, pk=kwargs.get('pk'))
         try:
             object.delete()

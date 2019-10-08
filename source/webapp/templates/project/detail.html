@@ -20,6 +20,6 @@
                 <p>This new project, no issues yet.</p>
             {%  endfor %}
             <p><a href="{% url 'project_edit' project.pk %}" class="btn btn-outline-dark" >Edit</a>
-            <a href="" class="btn btn-outline-dark" >Delete</a></p>
+            <a href="{% url 'project_delete' project.pk %}" class="btn btn-outline-dark" >Delete</a></p>
     </div>
 {% endblock %}

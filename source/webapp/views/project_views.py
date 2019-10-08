@@ -45,3 +45,16 @@ class ProjectEditView(UpdateView):
     def get_success_url(self):
         return reverse('project_detail', kwargs={'pk': self.object.pk})
 
+
+class ProjectDeleteView(DeleteView):
+    model = Project
+    success_url = reverse_lazy('project_index')
+    template = 'project/protected_error.html'
+
+    def get(self, request, *args, **kwargs):
+        object = get_object_or_404(self.model, pk=kwargs.get('pk'))
+        try:
+            object.delete()
+            return redirect(self.success_url)
+        except ProtectedError:
+            return render(request, self.template)
