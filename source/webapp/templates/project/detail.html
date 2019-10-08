@@ -10,34 +10,15 @@
         <hr class="my-4">
 
         <h2><b>Issues for this project.</b></h2>
-        <div class="container_index pt-3 pb-5">
-            <div class="row">
-                <div class="col-12">
-                    <table class="table">
-                        <thead>
-                        <tr class="table-borderless text-dark">
-                            <th scope="col">id</th>
-                            <th scope="col">Summary</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Create issue</th>
-                        </tr>
-                        </thead>
-                        {% for issue in issues %}
-                            <tbody>
-                                <tr class="table-borderless">
-                                    <td>{{ issue.pk }}</td>
-                                    <td>{{ issue.summary }}</td>
-                                    <td>{{ issue.description }}</td>
-                                    <td>{{ issue.create|date:'d.m.Y H:i:s' }}</td>
-                                </tr>
-                            </tbody>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-        </div>
 
-
+        <p class="container_index pt-3 pb-5">
+            {% for issue in issues %}
+                <p>{{ issue.id }}. <b>{{ issue.summary}}</b></p>
+                    {{ issue.description }}
+                <p><b>Issue create: </b>{{ issue.create|date:'d.m.Y H:i:s' }}</p>
+            {% empty %}
+                <p>This new project, no issues yet.</p>
+            {%  endfor %}
             <p><a href="" class="btn btn-outline-dark" >Edit</a>
             <a href="" class="btn btn-outline-dark" >Delete</a></p>
     </div>

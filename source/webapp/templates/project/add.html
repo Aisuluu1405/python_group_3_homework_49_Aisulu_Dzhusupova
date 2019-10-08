@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Project{% endblock %}
+
+{% block content %}
+    <h1>Add Project</h1>
+    <form method="POST" action="{% url "project_add" %}">
+        {% include 'partial/form.html' with button_text='Add' %}
+    </form>
+{% endblock %}
