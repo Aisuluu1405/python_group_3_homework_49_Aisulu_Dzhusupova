@@ -61,7 +61,7 @@ class EditView(View):
     model = None
     template_name = None
     form_class = None
-    redirect_url = '/'
+    redirect_url = ''
     context_key = 'object'
 
     def get(self, request, *args, **kwargs):

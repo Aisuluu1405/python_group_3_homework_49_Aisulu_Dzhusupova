@@ -1,12 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.views.generic import ListView, CreateView
-from django.views import View
-
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from webapp.forms import TypeForm
 from webapp.models import Type
 from django.db.models import ProtectedError
-
-from webapp.views.base_view import EditView, DeleteView
 
 
 class TypeIndexView(ListView):
@@ -24,21 +21,27 @@ class TypeCreateView(CreateView):
         return reverse('type_index')
 
 
-class TypeEditView(EditView):
+class TypeEditView(UpdateView):
     template_name = 'type/edit.html'
     model = Type
     form_class = TypeForm
-    context_key = 'type'
+    context_object_name = 'type'
 
-    def get_redirect_url(self):
+    def get_success_url(self):
         return reverse('type_index')
 
 
 class TypeDeleteView(DeleteView):
     model = Type
+    template_name = 'type/delete.html'
+    context_object_name = 'type'
+    success_url = reverse_lazy('type_index')
     template = 'protected_error.html'
-    confirm_deletion = False
 
-    def get_redirect_url(self):
-        return reverse('type_index')
-
+    def post(self, request, *args, **kwargs):
+        object = get_object_or_404(self.model, pk=kwargs.get('pk'))
+        try:
+            object.delete()
+            return redirect(self.success_url)
+        except ProtectedError:
+            return render(request, self.template)
