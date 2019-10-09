@@ -1,5 +1,11 @@
 from django.db import models
 
+STATUS_OTHER_CHOICE = 'active'
+STATUS_CHOICES = (
+    (STATUS_OTHER_CHOICE, 'Active'),
+    ('closed', 'Сlosed')
+)
+
 
 class Issue(models.Model):
 
@@ -16,9 +22,6 @@ class Issue(models.Model):
 
     create = models.DateTimeField(auto_now_add=True, verbose_name='Date of create')
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.projects = None
 
     def __str__(self):
         return self.summary
@@ -43,6 +46,9 @@ class Project(models.Model):
     specification = models.TextField(max_length=3500, null=True, blank=True, verbose_name='Specification')
     date_create = models.DateTimeField(auto_now_add=True, verbose_name='Create project')
     date_update = models.DateTimeField(auto_now=True, verbose_name='Update project')
+    status = models.CharField(max_length=20, verbose_name='Status',
+                                choices=STATUS_CHOICES, default=STATUS_OTHER_CHOICE)
+
 
     def __str__(self):
         return self.project
