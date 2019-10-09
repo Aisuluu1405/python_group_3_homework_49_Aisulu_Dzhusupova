@@ -16,13 +16,11 @@ class ProjectIndexView(ListView):
 class ProjectView(DetailView):
     model = Project
     template_name = 'project/detail.html'
-    pk_url_kwarg = 'pk'
     context_object_name = 'project'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        project = self.object
-        issues = project.issues.order_by('-create')
+        issues = context['project'].issues.order_by('-create')
         context['issues'] = issues
         return context
 
@@ -58,3 +56,6 @@ class ProjectDeleteView(DeleteView):
             return redirect(self.success_url)
         except ProtectedError:
             return render(request, self.template)
+
+#
+#

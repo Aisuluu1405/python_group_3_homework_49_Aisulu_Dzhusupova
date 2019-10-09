@@ -6,7 +6,7 @@ from webapp.models import Issue, Status, Type, Project
 class IssueForm(forms.ModelForm):
     class Meta:
         model = Issue
-        exclude = ['create']
+        exclude = ['create', 'project']
 
 
 class StatusForm(forms.ModelForm):

@@ -110,4 +110,7 @@ h1{
 .page-active {
     background: #ff7e5f;
 }
-
+.add{
+    margin-right: 80%;
+    margin-top: 5px;
+}

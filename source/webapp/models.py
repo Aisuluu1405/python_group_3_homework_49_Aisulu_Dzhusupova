@@ -16,6 +16,10 @@ class Issue(models.Model):
 
     create = models.DateTimeField(auto_now_add=True, verbose_name='Date of create')
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.projects = None
+
     def __str__(self):
         return self.summary
 

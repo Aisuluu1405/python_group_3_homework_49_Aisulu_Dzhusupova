@@ -1,8 +1,8 @@
-from django.shortcuts import reverse
+from django.shortcuts import reverse, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from webapp.forms import IssueForm
-from webapp.models import Issue
+from webapp.models import Issue, Project
 
 
 class IndexView(ListView):
@@ -30,6 +30,18 @@ class IssueCreateView(CreateView):
         return reverse('detail', kwargs={'pk': self.object.pk})
 
 
+class IssueProjectCreateView(CreateView):
+    template_name = 'issue/add.html'
+    model = Issue
+    form_class = IssueForm
+
+    def form_valid(self, form):
+        project_pk = self.kwargs.get('pk')
+        project = get_object_or_404(Project, pk=project_pk)
+        project.issues.create(**form.cleaned_data)
+        return redirect('project_detail',pk=project_pk)
+
+
 class IssueEditView(UpdateView):
     template_name = 'issue/edit.html'
     model = Issue
@@ -45,4 +57,5 @@ class IssueDeleteView(DeleteView):
     template_name = 'issue/delete.html'
     context_object_name = 'issue'
     success_url = reverse_lazy('index')
+
 

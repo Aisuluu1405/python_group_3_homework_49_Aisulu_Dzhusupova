@@ -1,4 +1,4 @@
-from .issue_views import IndexView, IssueView, IssueCreateView, IssueEditView, IssueDeleteView
+from .issue_views import IndexView, IssueView, IssueCreateView, IssueEditView, IssueDeleteView, IssueProjectCreateView
 
 from .status_views import StatusIndexView, StatusCreateView, StatusEditView, StatusDeleteView
 
