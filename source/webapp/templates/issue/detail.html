@@ -5,7 +5,7 @@
 {%  block content %}
     <div class="jumbotron mt-5 bg-info">
         <h1 class="title_card display-5 font-weight-bold pb-4">{{ issue.summary }}.
-            <br>(Project: {{ issue.project }})</br>
+            <b>(Project: {{ issue.project }})</b>
         </h1>
         <p class="pre">{{ issue.description }}</p>
         <p class="lead">Status: {{ issue.status }}</p>
@@ -13,6 +13,6 @@
         <hr class="my-4">
         <p class="date">Date of create:  {{ issue.create|date:'d.m.Y H:i:s'}}</p>
         <p><a href="{% url 'issue_edit' issue.pk %}" class="btn btn-outline-dark" >Edit</a>
-            <a href="{% url 'issue_delete' issue.pk %}" class="btn btn-outline-dark" >Delete</a></p>
+           <a href="{% url 'issue_delete' issue.pk %}" class="btn btn-outline-dark" >Delete</a></p>
     </div>
 {% endblock %}

@@ -39,7 +39,7 @@ class IssueProjectCreateView(CreateView):
         project_pk = self.kwargs.get('pk')
         project = get_object_or_404(Project, pk=project_pk)
         project.issues.create(**form.cleaned_data)
-        return redirect('project_detail',pk=project_pk)
+        return redirect('project_detail', pk=project_pk)
 
 
 class IssueEditView(UpdateView):

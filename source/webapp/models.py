@@ -1,9 +1,10 @@
 from django.db import models
 
 STATUS_OTHER_CHOICE = 'active'
+PROJECT_CLOSED = 'closed'
 STATUS_CHOICES = (
     (STATUS_OTHER_CHOICE, 'Active'),
-    ('closed', 'Сlosed')
+    (PROJECT_CLOSED, 'Сlosed')
 )
 
 

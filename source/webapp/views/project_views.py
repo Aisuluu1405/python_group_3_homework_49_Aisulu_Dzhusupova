@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from webapp.forms import ProjectForm
-from webapp.models import Project
+from webapp.models import Project, STATUS_OTHER_CHOICE, PROJECT_CLOSED
 
 
 class ProjectIndexView(ListView):
@@ -18,6 +18,12 @@ class ProjectIndexNewView(ListView):
     context_object_name = 'projects'
     model = Project
     ordering = ('date_create')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['project_closed'] = Project.objects.all().filter(status=PROJECT_CLOSED)
+        context['project_active'] = Project.objects.all().filter(status=STATUS_OTHER_CHOICE)
+        return context
 
 
 class ProjectView(DetailView):
