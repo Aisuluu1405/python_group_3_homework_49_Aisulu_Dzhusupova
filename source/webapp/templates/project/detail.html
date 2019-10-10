@@ -5,6 +5,7 @@
 {%  block content %}
     <div class="jumbotron mt-5 bg-info">
         <h1 class="title_card display-5 font-weight-bold">{{ project.project }}.</h1>
+        <p class="lead">Status: {{ project.status }}</p>
         <p class="pre">{{ project.specification }}</p>
         <p class="lead">Create date: {{ project.date_create| date:'d.m.Y H:i:s'}}</p>
         <p><a href="{% url 'project_edit' project.pk %}" class="btn btn-outline-dark" >Edit</a>
@@ -25,3 +26,4 @@
         </form>
     </div>
 {% endblock %}
+

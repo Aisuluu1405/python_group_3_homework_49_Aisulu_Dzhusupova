@@ -19,6 +19,7 @@
                             <th scope="col">Project</th>
                             <th scope="col">Create project</th>
                             <th scope="col">Update project</th>
+                            <th scope="col">Project status</th>
 
                             <th scope="col"></th>
                         </tr>
@@ -30,6 +31,7 @@
                                 <td><a href="{% url 'project_detail' project.pk %}">{{ project.project}}</td>
                                 <td>{{ project.date_create| date:'d.m.Y H:i:s'  }}</td>
                                 <td>{{ project.date_update| date:'d.m.Y H:i:s' }}</td>
+                                <td>{{ project.status}}</td>
 
                                 <td><p><a href="{% url 'project_delete' project.pk %}"><i class="fas fa-trash-alt"></i></a>
                                        <a href="{% url 'project_edit' project.pk %}"><i class="fas fa-edit"></i></a></p> </td>

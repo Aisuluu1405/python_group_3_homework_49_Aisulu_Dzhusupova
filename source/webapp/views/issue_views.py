@@ -57,5 +57,3 @@ class IssueDeleteView(DeleteView):
     template_name = 'issue/delete.html'
     context_object_name = 'issue'
     success_url = reverse_lazy('index')
-
-

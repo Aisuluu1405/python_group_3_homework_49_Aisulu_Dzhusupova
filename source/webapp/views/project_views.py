@@ -13,9 +13,28 @@ class ProjectIndexView(ListView):
     ordering = ('date_create')
 
 
+class ProjectIndexNewView(ListView):
+    template_name = 'project/index_project_new.html'
+    context_object_name = 'projects'
+    model = Project
+    ordering = ('date_create')
+
+
 class ProjectView(DetailView):
     model = Project
     template_name = 'project/detail.html'
+    context_object_name = 'project'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        issues = context['project'].issues.order_by('-create')
+        context['issues'] = issues
+        return context
+
+
+class ProjectNewView(DetailView):
+    model = Project
+    template_name = 'project/detail_new.html'
     context_object_name = 'project'
 
     def get_context_data(self, **kwargs):
@@ -57,5 +76,13 @@ class ProjectDeleteView(DeleteView):
         except ProtectedError:
             return render(request, self.template)
 
-#
-#
+
+class ProjectNewDeleteView(UpdateView):
+    model = Project
+    success_url = reverse_lazy('project_new_index')
+
+    def get(self, request, *args, **kwargs):
+        object = self.model.objects.filter(pk=kwargs.get('pk'))
+        object.update(status='closed')
+        return redirect(self.success_url)
+

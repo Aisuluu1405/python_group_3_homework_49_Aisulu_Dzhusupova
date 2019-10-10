@@ -24,6 +24,6 @@ class TypeForm(forms.ModelForm):
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['project', 'specification']
+        exclude = ['date_create', 'date_update']
 
 
