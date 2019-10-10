@@ -96,6 +96,66 @@
   }
 },
 {
+  "model": "webapp.issue",
+  "pk": 43,
+  "fields": {
+    "summary": "\u0434\u043e\u043c\u0430\u0448\u043a\u0430 53",
+    "description": "\u0421\u0434\u0435\u043b\u0430\u043b\u0430 \u0438 \u0431\u043e\u043d\u0443\u0441 \u0442\u043e\u0436\u0435.",
+    "status": 3,
+    "type": 1,
+    "project": 12,
+    "create": "2019-10-09T13:51:37.505Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 44,
+  "fields": {
+    "summary": "New loans products.",
+    "description": "New loans.",
+    "status": 2,
+    "type": 1,
+    "project": 1,
+    "create": "2019-10-09T14:24:46.511Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 50,
+  "fields": {
+    "summary": "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c \u0437\u0430 \u0434\u0435\u043a\u0430\u0431\u0440\u044c",
+    "description": "",
+    "status": 1,
+    "type": 1,
+    "project": 26,
+    "create": "2019-10-10T09:47:38.984Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 51,
+  "fields": {
+    "summary": "deleteview",
+    "description": "",
+    "status": 2,
+    "type": 4,
+    "project": 27,
+    "create": "2019-10-10T09:50:41.157Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 52,
+  "fields": {
+    "summary": "\u043b\u043b\u043b\u043b\u043b",
+    "description": "",
+    "status": 1,
+    "type": 4,
+    "project": 26,
+    "create": "2019-10-10T09:52:32.665Z"
+  }
+},
+{
   "model": "webapp.status",
   "pk": 1,
   "fields": {
@@ -163,19 +223,21 @@
   "pk": 1,
   "fields": {
     "project": "Loans",
-    "specification": "This project for monitoring loans granted, refused and past due.",
+    "specification": "This project for monitoring loans granted, refused and past due. \r\nrefused and past due",
     "date_create": "2019-10-08T03:31:26.695Z",
-    "date_update": "2019-10-08T03:31:26.695Z"
+    "date_update": "2019-10-10T07:00:23.165Z",
+    "status": "active"
   }
 },
 {
   "model": "webapp.project",
   "pk": 2,
   "fields": {
-    "project": "New products.",
+    "project": "New products",
     "specification": "Project for attracting deposits. Development of the concept of working with deposits.",
     "date_create": "2019-10-08T03:33:25.692Z",
-    "date_update": "2019-10-08T03:33:25.692Z"
+    "date_update": "2019-10-10T07:00:34.221Z",
+    "status": "active"
   }
 },
 {
@@ -185,7 +247,8 @@
     "project": "Service for individuals.",
     "specification": "Development of a procedure for conducting operations on safe boxes.",
     "date_create": "2019-10-08T03:35:49.280Z",
-    "date_update": "2019-10-08T03:35:49.280Z"
+    "date_update": "2019-10-10T07:00:44.879Z",
+    "status": "active"
   }
 },
 {
@@ -195,7 +258,8 @@
     "project": "Cost accounting",
     "specification": "Accounting for all administrative expenses.",
     "date_create": "2019-10-08T03:37:50.400Z",
-    "date_update": "2019-10-08T03:37:50.400Z"
+    "date_update": "2019-10-08T03:37:50.400Z",
+    "status": "active"
   }
 },
 {
@@ -205,7 +269,41 @@
     "project": "Legal entities service.",
     "specification": "Development of procedures for servicing legal entities.",
     "date_create": "2019-10-08T03:41:02.943Z",
-    "date_update": "2019-10-08T03:41:02.944Z"
+    "date_update": "2019-10-08T03:41:02.944Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 12,
+  "fields": {
+    "project": "\u0434\u043e\u043c\u0430\u0448\u043a\u0430",
+    "specification": "\u0417\u0430\u043a\u043e\u043d\u0447\u0438\u043b\u0430",
+    "date_create": "2019-10-09T13:51:12.808Z",
+    "date_update": "2019-10-10T09:49:07.939Z",
+    "status": "closed"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 26,
+  "fields": {
+    "project": "\u0420\u041f\u041f\u0423",
+    "specification": "\u0420\u0430\u0441\u0447\u0435\u0442 \u0420\u041f\u041f\u0423, \u0431\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0438\u044f.111",
+    "date_create": "2019-10-10T09:47:11.813Z",
+    "date_update": "2019-10-10T09:52:16.517Z",
+    "status": "closed"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 27,
+  "fields": {
+    "project": "\u041e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0444\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043b\u0438\u0446",
+    "specification": "",
+    "date_create": "2019-10-10T09:50:24.874Z",
+    "date_update": "2019-10-10T09:50:24.874Z",
+    "status": "closed"
   }
 },
 {
