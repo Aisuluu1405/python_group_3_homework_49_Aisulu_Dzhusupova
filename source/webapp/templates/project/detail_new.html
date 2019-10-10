@@ -20,7 +20,7 @@
                     <p>This new project, no issues yet.</p>
                 {%  endfor %}
         {% if project.status == 'active' %}
-            <form class="add" action="{% url 'project_issue_add' project.pk %}" method="POST">
+            <form class="add" action="{% url 'project_issue_add' project.pk %}" method="GET">
                 {% include 'partial/form.html' with button_text='Add issue' %}
             </form>
         {% endif %}
