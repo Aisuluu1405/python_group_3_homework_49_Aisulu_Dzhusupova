@@ -4,6 +4,11 @@
 
 {% block content %}
     <a href="{% url 'project_add' %}" class="btn btn-outline-primary  m-5">Add Project</a>
+    {% include 'partial/simple_search.html' %}
+    {% if is_paginated %}
+            {% include 'partial/pagination.html' %}
+        {% endif %}
+
 
     <div class="type text-left">
         <h1>Projects</h1>

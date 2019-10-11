@@ -27,3 +27,5 @@ class ProjectForm(forms.ModelForm):
         exclude = ['date_create', 'date_update']
 
 
+class SimpleSearchForm(forms.Form):
+    search = forms.CharField(max_length=100, required=False, label='Search')
