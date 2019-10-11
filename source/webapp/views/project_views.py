@@ -14,7 +14,7 @@ class ProjectIndexView(ListView):
 
 
 class ProjectIndexNewView(ListView):
-    template_name = 'project/index_project_new.html'
+    template_name = 'bonus/index_project_new.html'
     context_object_name = 'projects'
     model = Project
     ordering = ('date_create')
@@ -40,7 +40,7 @@ class ProjectView(DetailView):
 
 class ProjectNewView(DetailView):
     model = Project
-    template_name = 'project/detail_new.html'
+    template_name = 'bonus/detail_new.html'
     context_object_name = 'project'
 
     def get_context_data(self, **kwargs):
