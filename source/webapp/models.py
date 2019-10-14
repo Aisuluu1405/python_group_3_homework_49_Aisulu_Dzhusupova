@@ -23,6 +23,8 @@ class Issue(models.Model):
 
     create = models.DateTimeField(auto_now_add=True, verbose_name='Date of create')
 
+    update = models.DateTimeField(auto_now=True, verbose_name='Date of update')
+
 
     def __str__(self):
         return self.summary
