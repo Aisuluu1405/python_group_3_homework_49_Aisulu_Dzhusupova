@@ -3,12 +3,13 @@
   "model": "webapp.issue",
   "pk": 1,
   "fields": {
-    "summary": "\u0421reate a task for the menu \"Loans\"",
-    "description": "\u0421reate a task for the menu \"Loans\". Add a field for calculating limits on new loans.",
+    "summary": "Create a task for the menu \"Loans\"",
+    "description": "Write a task for the menu \"Loans\". Add a field for calculating limits on new loans.",
     "status": 1,
     "type": 4,
     "project": 1,
-    "create": "2019-09-24T00:00:00Z"
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-14T12:28:21.267Z"
   }
 },
 {
@@ -16,11 +17,12 @@
   "pk": 2,
   "fields": {
     "summary": "Correct an error in menu \"Retail\"",
-    "description": "Correct an error in menu \"Retail. Correct the calculation of the commission for translation services.  \u041f\u043e\u043b\u0443\u0447\u0438\u043b\u043e\u0441\u044c update \u0441\u0434\u0435\u043b\u0430\u0442\u044c",
-    "status": 2,
+    "description": "Correct an error in menu \"Retail. Correct the calculation of the commission for translation services.",
+    "status": 3,
     "type": 1,
     "project": 2,
-    "create": "2019-09-24T00:00:00Z"
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-14T12:32:29.478Z"
   }
 },
 {
@@ -32,7 +34,8 @@
     "status": 3,
     "type": 1,
     "project": 3,
-    "create": "2019-09-24T15:30:37.471Z"
+    "create": "2019-09-24T15:30:37.471Z",
+    "update": "2019-10-14T12:52:24.367Z"
   }
 },
 {
@@ -44,7 +47,8 @@
     "status": 1,
     "type": 4,
     "project": 3,
-    "create": "2019-09-24T15:33:23.841Z"
+    "create": "2019-09-24T15:33:23.841Z",
+    "update": "2019-10-14T12:28:21.267Z"
   }
 },
 {
@@ -53,10 +57,11 @@
   "fields": {
     "summary": "Internet banking",
     "description": "Improve Internet banking for payments on loan repayments, crediting funds on the same business day.",
-    "status": 10,
+    "status": 3,
     "type": 3,
     "project": 5,
-    "create": "2019-09-24T00:00:00Z"
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-14T12:32:46.882Z"
   }
 },
 {
@@ -68,31 +73,34 @@
     "status": 1,
     "type": 1,
     "project": 5,
-    "create": "2019-09-25T00:00:00Z"
+    "create": "2019-09-25T00:00:00Z",
+    "update": "2019-10-14T12:28:21.267Z"
   }
 },
 {
   "model": "webapp.issue",
   "pk": 7,
   "fields": {
-    "summary": "\u0417\u0430\u0440\u0430\u0431\u043e\u0442\u043d\u0430\u044f \u043f\u043b\u0430\u0442\u0430",
-    "description": "\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0443 \u043f\u043e \u0440\u0430\u0441\u0447\u0435\u0442\u0443 \u0437\u0430\u0440\u0430\u0431\u043e\u0442\u043d\u043e\u0439 \u043f\u043b\u0430\u0442\u044b, \u0438\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0441\u0442\u0430\u0432\u043a\u0443 \u043f\u043e\u0434\u043e\u0445\u043e\u0434\u043d\u043e\u0433\u043e \u043d\u0430\u043b\u043e\u0433\u0430.",
-    "status": 2,
+    "summary": "Salary",
+    "description": "Change the payroll program, change the income tax rate.",
+    "status": 3,
     "type": 3,
     "project": 4,
-    "create": "2019-09-25T13:44:53.565Z"
+    "create": "2019-09-25T13:44:53.565Z",
+    "update": "2019-10-14T12:52:43.165Z"
   }
 },
 {
   "model": "webapp.issue",
   "pk": 8,
   "fields": {
-    "summary": "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0439 \u0434\u0435\u043d\u044c \u0431\u0430\u043d\u043a\u0430",
-    "description": "\u041f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u043f\u0435\u0440\u0435\u0441\u0447\u0435\u0442 \u0432\u0441\u0435\u0445 \u0434\u0435\u043f\u043e\u0437\u0438\u0442\u043e\u0432 \u0438 \u0440\u0430\u0441\u0445\u043e\u0434\u043e\u0432 \u043f\u043e \u0430\u043c\u043e\u0440\u0442\u0438\u0437\u0430\u0446\u0438\u0438.",
+    "summary": "Bank operational day",
+    "description": "Recalculate all taxes and depreciation expenses.",
     "status": 2,
     "type": 1,
     "project": 4,
-    "create": "2019-09-26T10:51:31.412Z"
+    "create": "2019-09-26T10:51:31.412Z",
+    "update": "2019-10-14T12:28:21.267Z"
   }
 },
 {
@@ -101,10 +109,11 @@
   "fields": {
     "summary": "\u0434\u043e\u043c\u0430\u0448\u043a\u0430 53",
     "description": "\u0421\u0434\u0435\u043b\u0430\u043b\u0430 \u0438 \u0431\u043e\u043d\u0443\u0441 \u0442\u043e\u0436\u0435.",
-    "status": 3,
+    "status": 2,
     "type": 1,
     "project": 12,
-    "create": "2019-10-09T13:51:37.505Z"
+    "create": "2019-10-09T13:51:37.505Z",
+    "update": "2019-10-14T12:31:12.544Z"
   }
 },
 {
@@ -112,35 +121,38 @@
   "pk": 44,
   "fields": {
     "summary": "New loans products.",
-    "description": "New loans.",
+    "description": "Develop interest rates for a new type of loan. Develop a pledge agreement.",
     "status": 2,
-    "type": 1,
+    "type": 4,
     "project": 1,
-    "create": "2019-10-09T14:24:46.511Z"
+    "create": "2019-10-09T14:24:46.511Z",
+    "update": "2019-10-14T12:28:21.267Z"
   }
 },
 {
   "model": "webapp.issue",
   "pk": 50,
   "fields": {
-    "summary": "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c \u0437\u0430 \u0434\u0435\u043a\u0430\u0431\u0440\u044c",
-    "description": "",
+    "summary": "Deposits",
+    "description": "Create new",
     "status": 1,
     "type": 1,
     "project": 26,
-    "create": "2019-10-10T09:47:38.984Z"
+    "create": "2019-10-10T09:47:38.984Z",
+    "update": "2019-10-14T12:28:21.267Z"
   }
 },
 {
   "model": "webapp.issue",
   "pk": 51,
   "fields": {
-    "summary": "deleteview",
-    "description": "",
+    "summary": "Overdraft",
+    "description": "Overdraft for a salary project. Change commission for overdraft issuance.",
     "status": 2,
-    "type": 4,
+    "type": 1,
     "project": 27,
-    "create": "2019-10-10T09:50:41.157Z"
+    "create": "2019-10-10T09:50:41.157Z",
+    "update": "2019-10-14T12:32:10.881Z"
   }
 },
 {
@@ -152,7 +164,8 @@
     "status": 1,
     "type": 4,
     "project": 26,
-    "create": "2019-10-10T09:52:32.665Z"
+    "create": "2019-10-10T09:52:32.665Z",
+    "update": "2019-10-14T12:28:21.267Z"
   }
 },
 {
@@ -270,7 +283,7 @@
     "specification": "Development of procedures for servicing legal entities.",
     "date_create": "2019-10-08T03:41:02.943Z",
     "date_update": "2019-10-08T03:41:02.944Z",
-    "status": "active"
+    "status": "closed"
   }
 },
 {
@@ -288,10 +301,10 @@
   "model": "webapp.project",
   "pk": 26,
   "fields": {
-    "project": "\u0420\u041f\u041f\u0423",
-    "specification": "\u0420\u0430\u0441\u0447\u0435\u0442 \u0420\u041f\u041f\u0423, \u0431\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0438\u044f.111",
+    "project": "Cash Operations",
+    "specification": "Cash Operations Procedures.",
     "date_create": "2019-10-10T09:47:11.813Z",
-    "date_update": "2019-10-10T09:52:16.517Z",
+    "date_update": "2019-10-12T06:42:15.740Z",
     "status": "closed"
   }
 },
@@ -299,11 +312,33 @@
   "model": "webapp.project",
   "pk": 27,
   "fields": {
-    "project": "\u041e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0444\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043b\u0438\u0446",
+    "project": "Individuals.",
     "specification": "",
     "date_create": "2019-10-10T09:50:24.874Z",
-    "date_update": "2019-10-10T09:50:24.874Z",
+    "date_update": "2019-10-13T07:00:43.423Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 29,
+  "fields": {
+    "project": "HR",
+    "specification": "The formation of the staff of the bank",
+    "date_create": "2019-10-11T14:48:32.853Z",
+    "date_update": "2019-10-12T06:39:09.265Z",
     "status": "closed"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 30,
+  "fields": {
+    "project": "Card",
+    "specification": "Development of the business process for card services",
+    "date_create": "2019-10-12T06:30:13.100Z",
+    "date_update": "2019-10-12T06:30:13.100Z",
+    "status": "active"
   }
 },
 {

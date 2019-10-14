@@ -17,6 +17,7 @@
                             <th scope="col">Summary</th>
                             <th scope="col">Description</th>
                             <th scope="col">Date of create</th>
+                            <th scope="col">Date of update</th>
                             <th scope="col">Status</th>
                             <th scope="col">Type</th>
                             <th scope="col">Project</th>
@@ -30,6 +31,7 @@
                                 <td><a href="{% url 'detail' issue.pk %}">{{ issue.summary }}</td>
                                 <td>{{ issue.description }}</td>
                                 <td>{{ issue.create|date:'d.m.Y H:i:s' }}</td>
+                                <td>{{ issue.update|date:'d.m.Y H:i:s' }}</td>
                                 <td>{{ issue.status}}</td>
                                 <td>{{ issue.type}}</td>
                                 <td>{{ issue.project}}</td>
