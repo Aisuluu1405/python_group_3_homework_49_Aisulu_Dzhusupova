@@ -6,6 +6,7 @@ from webapp.forms import ProjectForm, SimpleSearchForm
 from webapp.models import Project, STATUS_OTHER_CHOICE, PROJECT_CLOSED
 from django.utils.http import urlencode
 
+
 class ProjectIndexView(ListView):
     template_name = 'project/index.html'
     context_object_name = 'projects'
@@ -41,7 +42,6 @@ class ProjectIndexView(ListView):
         if self.form.is_valid():
             return self.form.cleaned_data['search']
         return None
-
 
 
 class ProjectIndexNewView(ListView):
