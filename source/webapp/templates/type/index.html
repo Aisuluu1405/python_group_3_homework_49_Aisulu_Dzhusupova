@@ -3,8 +3,9 @@
 {% block title %}Type{% endblock %}
 
 {% block content %}
-    <a href="{% url 'webapp:type_add' %}" class="btn btn-outline-primary  m-5">Add Type</a>
-
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'webapp:type_add' %}" class="btn btn-outline-primary  m-5">Add Type</a>
+    {% endif %}
     <div class="type text-left">
         <h1>Types</h1>
     </div>
@@ -17,8 +18,9 @@
                         <tr class="table-dark text-dark">
                             <th scope="col">id</th>
                             <th scope="col">Type</th>
-
-                            <th scope="col"></th>
+                            {% if request.user.is_authenticated %}
+                                <th scope="col"></th>
+                            {% endif %}
                         </tr>
                         </thead>
                         {% for type in types %}
@@ -26,9 +28,12 @@
                             <tr class="table-secondary">
                                 <td>{{ type.pk }}</td>
                                 <td>{{ type}}</td>
-
-                                <td><p><a href="{% url 'webapp:type_delete' type.pk %}"><i class="fas fa-trash-alt"></i></a>
-                                       <a href="{% url 'webapp:type_edit' type.pk %}"><i class="fas fa-edit"></i></a></p> </td>
+                                {% if request.user.is_authenticated %}
+                                <td>
+                                    <p><a href="{% url 'webapp:type_delete' type.pk %}"><i class="fas fa-trash-alt"></i></a>
+                                       <a href="{% url 'webapp:type_edit' type.pk %}"><i class="fas fa-edit"></i></a></p>
+                                </td>
+                                {% endif %}
                             </tr>
                             </tbody>
                         {% endfor %}

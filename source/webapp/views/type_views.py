@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
@@ -12,7 +13,7 @@ class TypeIndexView(ListView):
     model = Type
 
 
-class TypeCreateView(CreateView):
+class TypeCreateView(LoginRequiredMixin, CreateView):
     template_name = 'type/add.html'
     model = Type
     form_class = TypeForm
@@ -21,7 +22,7 @@ class TypeCreateView(CreateView):
         return reverse('webapp:type_index')
 
 
-class TypeEditView(UpdateView):
+class TypeEditView(LoginRequiredMixin, UpdateView):
     template_name = 'type/edit.html'
     model = Type
     form_class = TypeForm
@@ -31,7 +32,7 @@ class TypeEditView(UpdateView):
         return reverse('webapp:type_index')
 
 
-class TypeDeleteView(DeleteView):
+class TypeDeleteView(LoginRequiredMixin, DeleteView):
     model = Type
     success_url = reverse_lazy('webapp:type_index')
     template = 'type/protected_error.html'
