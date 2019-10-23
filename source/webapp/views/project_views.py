@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import ProtectedError, Q
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.urls import reverse_lazy
@@ -81,7 +82,7 @@ class ProjectNewView(DetailView):
         return context
 
 
-class ProjectCreateView(CreateView):
+class ProjectCreateView(LoginRequiredMixin, CreateView):
     template_name = 'project/add.html'
     model = Project
     form_class = ProjectForm
@@ -90,7 +91,7 @@ class ProjectCreateView(CreateView):
         return reverse('webapp:project_detail', kwargs={'pk': self.object.pk})
 
 
-class ProjectEditView(UpdateView):
+class ProjectEditView(LoginRequiredMixin, UpdateView):
     template_name = 'project/edit.html'
     model = Project
     form_class = ProjectForm
@@ -100,7 +101,7 @@ class ProjectEditView(UpdateView):
         return reverse('webapp:project_detail', kwargs={'pk': self.object.pk})
 
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     model = Project
     success_url = reverse_lazy('webapp:project_index')
     template = 'project/protected_error.html'
@@ -114,7 +115,7 @@ class ProjectDeleteView(DeleteView):
             return render(request, self.template)
 
 
-class ProjectNewDeleteView(UpdateView):
+class ProjectNewDeleteView(LoginRequiredMixin, UpdateView):
     model = Project
     success_url = reverse_lazy('webapp:project_new_index')
 
