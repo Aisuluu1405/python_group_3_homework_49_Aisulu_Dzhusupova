@@ -7,6 +7,9 @@
         {% if is_paginated %}
             {% include 'partial/pagination.html' %}
         {% endif %}
+        {% if request.user.is_authenticated %}
+            <p><a href="{% url 'webapp:issue_add'%}" class="btn btn-outline-dark"> Add Issue</a></p>
+        {% endif %}
            <div class="container_index pt-5 pb-5">
             <div class="row">
                 <div class="col-12">
@@ -21,22 +24,28 @@
                             <th scope="col">Status</th>
                             <th scope="col">Type</th>
                             <th scope="col">Project</th>
+                            {% if request.user.is_authenticated %}
                             <th scope="col"></th>
+                            {% endif %}
                         </tr>
                         </thead>
                         {% for issue in issues %}
                             <tbody>
                             <tr class="table-secondary">
                                 <td>{{ issue.pk }}</td>
-                                <td><a href="{% url 'detail' issue.pk %}">{{ issue.summary }}</td>
+                                <td><a href="{% url 'webapp:detail' issue.pk %}">{{ issue.summary }}</td>
                                 <td>{{ issue.description }}</td>
                                 <td>{{ issue.create|date:'d.m.Y H:i:s' }}</td>
                                 <td>{{ issue.update|date:'d.m.Y H:i:s' }}</td>
                                 <td>{{ issue.status}}</td>
                                 <td>{{ issue.type}}</td>
                                 <td>{{ issue.project}}</td>
-                                <td><p><a href="{% url 'webapp:issue_delete' issue.pk %}"><i class="fas fa-trash-alt"></i></a>
-                                       <a href="{% url 'webapp:issue_edit' issue.pk %}"><i class="fas fa-edit"></i></a></p> </td>
+                                {% if request.user.is_authenticated %}
+                                <td>
+                                    <p><a href="{% url 'webapp:issue_delete' issue.pk %}"><i class="fas fa-trash-alt"></i></a>
+                                       <a href="{% url 'webapp:issue_edit' issue.pk %}"><i class="fas fa-edit"></i></a></p>
+                                </td>
+                                {% endif %}
                             </tr>
                             </tbody>
                         {% endfor %}

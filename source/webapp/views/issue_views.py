@@ -5,6 +5,7 @@ from webapp.forms import IssueForm, SimpleSearchForm
 from webapp.models import Issue, Project
 from django.db.models import Q
 from django.utils.http import urlencode
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class IndexView(ListView):
@@ -51,7 +52,7 @@ class IssueView(DetailView):
     context_object_name = 'issue'
 
 
-class IssueCreateView(CreateView):
+class IssueCreateView(LoginRequiredMixin, CreateView):
     template_name = 'issue/add.html'
     model = Issue
     form_class = IssueForm
@@ -72,7 +73,7 @@ class IssueProjectCreateView(CreateView):
         return redirect('webapp:project_detail', pk=project_pk)
 
 
-class IssueEditView(UpdateView):
+class IssueEditView(LoginRequiredMixin, UpdateView):
     template_name = 'issue/edit.html'
     model = Issue
     form_class = IssueForm
@@ -82,7 +83,7 @@ class IssueEditView(UpdateView):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
-class IssueDeleteView(DeleteView):
+class IssueDeleteView(LoginRequiredMixin, DeleteView):
     model = Issue
     template_name = 'issue/delete.html'
     context_object_name = 'issue'
