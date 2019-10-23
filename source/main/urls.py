@@ -21,6 +21,7 @@ from webapp.views import IndexView, IssueView, IssueCreateView, IssueEditView, I
     TypeIndexView, TypeCreateView, TypeEditView, TypeDeleteView,\
     ProjectIndexView, ProjectView, ProjectCreateView, ProjectEditView, ProjectDeleteView, ProjectIndexNewView,\
     ProjectNewView, ProjectNewDeleteView
+from accounts.views import login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -46,4 +47,6 @@ urlpatterns = [
     path('project_new/', ProjectIndexNewView.as_view(), name='project_new_index'),
     path('project_new/<int:pk>/', ProjectNewView.as_view(), name='project_new_detail'),
     path('project_new/delete/<int:pk>', ProjectNewDeleteView.as_view(), name='project_new_delete'),
+    path('accounts/login/', login_view, name='login'),
+    path('accounts/logout/', logout_view, name='logout')
 ]
