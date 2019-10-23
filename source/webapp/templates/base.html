@@ -15,7 +15,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand font-weight-bold" href="{% url 'index' %}">Issue Tracker</a>
+  <a class="navbar-brand font-weight-bold" href="{% url 'webapp:index' %}">Issue Tracker</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,19 +23,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-5">
       <li class="nav-item ml-5 mr-5">
-        <a class="nav-link font-weight-bolder" href="{% url 'index' %}">Home </a>
+        <a class="nav-link font-weight-bolder" href="{% url 'webapp:index' %}">Home </a>
       </li>
       <li class="nav-item ml-5 mr-5">
-        <a class="nav-link font-weight-bolder" href="{% url 'status_index'%}">Status</a>
+        <a class="nav-link font-weight-bolder" href="{% url 'webapp:status_index'%}">Status</a>
       </li>
       <li class="nav-item ml-5 mr-5">
-        <a class="nav-link font-weight-bolder" href="{% url 'type_index' %}">Type</a>
+        <a class="nav-link font-weight-bolder" href="{% url 'webapp:type_index' %}">Type</a>
       </li>
       <li class="nav-item ml-5 mr-5">
-        <a class="nav-link font-weight-bolder" href="{% url 'project_index'%}">Project</a>
+        <a class="nav-link font-weight-bolder" href="{% url 'webapp:project_index'%}">Project</a>
       </li>
       <li class="nav-item ml-5 mr-5">
-        <a class="nav-link font-weight-bolder" href="{% url 'project_new_index'%}">Project(bonus)</a>
+        <a class="nav-link font-weight-bolder" href="{% url 'webapp:project_new_index'%}">Project(bonus)</a>
       </li>
     </ul>
   </div>

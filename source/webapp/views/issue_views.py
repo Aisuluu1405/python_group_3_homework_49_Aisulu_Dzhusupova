@@ -57,7 +57,7 @@ class IssueCreateView(CreateView):
     form_class = IssueForm
 
     def get_success_url(self):
-        return reverse('detail', kwargs={'pk': self.object.pk})
+        return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
 class IssueProjectCreateView(CreateView):
@@ -69,7 +69,7 @@ class IssueProjectCreateView(CreateView):
         project_pk = self.kwargs.get('pk')
         project = get_object_or_404(Project, pk=project_pk)
         project.issues.create(**form.cleaned_data)
-        return redirect('project_detail', pk=project_pk)
+        return redirect('webapp:project_detail', pk=project_pk)
 
 
 class IssueEditView(UpdateView):
@@ -79,11 +79,11 @@ class IssueEditView(UpdateView):
     context_object_name = 'issue'
 
     def get_success_url(self):
-        return reverse('detail', kwargs={'pk': self.object.pk})
+        return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
 class IssueDeleteView(DeleteView):
     model = Issue
     template_name = 'issue/delete.html'
     context_object_name = 'issue'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('webapp:index')

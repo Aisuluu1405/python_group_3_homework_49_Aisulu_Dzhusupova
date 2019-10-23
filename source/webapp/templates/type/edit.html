@@ -3,7 +3,7 @@
 
 {% block content %}
     <h1>Edit Type</h1>
-    <form method="POST" action="{% url "type_edit" type.pk %}">
+    <form method="POST" action="{% url "webapp:type_edit" type.pk %}">
         {% include 'partial/form.html' with button_text="Edit" %}
     </form>
 {% endblock %}

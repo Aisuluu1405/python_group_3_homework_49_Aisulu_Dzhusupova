@@ -18,7 +18,7 @@ class StatusCreateView(CreateView):
     form_class = StatusForm
 
     def get_success_url(self):
-        return reverse('status_index')
+        return reverse('webapp:status_index')
 
 
 class StatusEditView(UpdateView):
@@ -28,12 +28,12 @@ class StatusEditView(UpdateView):
     context_object_name = 'status'
 
     def get_success_url(self):
-        return reverse('status_index')
+        return reverse('webapp:status_index')
 
 
 class StatusDeleteView(DeleteView):
     model = Status
-    success_url = reverse_lazy('status_index')
+    success_url = reverse_lazy('webapp:status_index')
     template = 'status/protected_error.html'
 
     def get(self, request, *args, **kwargs):

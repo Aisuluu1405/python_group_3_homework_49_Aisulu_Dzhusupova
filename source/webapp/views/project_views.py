@@ -87,7 +87,7 @@ class ProjectCreateView(CreateView):
     form_class = ProjectForm
 
     def get_success_url(self):
-        return reverse('project_detail', kwargs={'pk': self.object.pk})
+        return reverse('webapp:project_detail', kwargs={'pk': self.object.pk})
 
 
 class ProjectEditView(UpdateView):
@@ -97,12 +97,12 @@ class ProjectEditView(UpdateView):
     context_object_name = 'project'
 
     def get_success_url(self):
-        return reverse('project_detail', kwargs={'pk': self.object.pk})
+        return reverse('webapp:project_detail', kwargs={'pk': self.object.pk})
 
 
 class ProjectDeleteView(DeleteView):
     model = Project
-    success_url = reverse_lazy('project_index')
+    success_url = reverse_lazy('webapp:project_index')
     template = 'project/protected_error.html'
 
     def get(self, request, *args, **kwargs):
@@ -116,7 +116,7 @@ class ProjectDeleteView(DeleteView):
 
 class ProjectNewDeleteView(UpdateView):
     model = Project
-    success_url = reverse_lazy('project_new_index')
+    success_url = reverse_lazy('webapp:project_new_index')
 
     def get(self, request, *args, **kwargs):
         object = self.model.objects.filter(pk=kwargs.get('pk'))

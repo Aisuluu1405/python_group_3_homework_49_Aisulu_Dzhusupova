@@ -3,7 +3,7 @@
 {% block title %}Status{% endblock %}
 
 {% block content %}
-    <a href="{% url 'status_add' %}" class="btn btn-outline-primary  m-5">Add Status</a>
+    <a href="{% url 'webapp:status_add' %}" class="btn btn-outline-primary  m-5">Add Status</a>
 
     <div class="status text-left">
         <h1>Statuses</h1>
@@ -27,8 +27,8 @@
                                 <td>{{ status.pk }}</td>
                                 <td>{{ status}}</td>
 
-                                <td><p><a href="{% url 'status_delete' status.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
-                                       <a href="{% url 'status_edit' status.pk %}"><i class="fas fa-edit ml-2"></i></a></p> </td>
+                                <td><p><a href="{% url 'webapp:status_delete' status.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
+                                       <a href="{% url 'webapp:status_edit' status.pk %}"><i class="fas fa-edit ml-2"></i></a></p> </td>
                             </tr>
                             </tbody>
                         {% endfor %}

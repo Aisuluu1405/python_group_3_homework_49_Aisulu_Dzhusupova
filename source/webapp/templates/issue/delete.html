@@ -5,9 +5,9 @@
     <h1 class="question text-center">Are you sure want to delete issue:
         <br>
         <b>{{ issue }}</b>?</h1>
-    <form method="POST" action="{% url "issue_delete" issue.pk %}" class="text-center">
+    <form method="POST" action="{% url "webapp:issue_delete" issue.pk %}" class="text-center">
         {% csrf_token %}
         <p><input type="submit" value="Yes, delete" class="btn btn-outline-dark"></p>
-        <p><a href="{% url 'index' %}" class="btn btn-outline-dark">No, cancel</a></p>
+        <p><a href="{% url 'webapp:index' %}" class="btn btn-outline-dark">No, cancel</a></p>
     </form>
 {% endblock %}

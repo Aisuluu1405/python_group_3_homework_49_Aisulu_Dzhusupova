@@ -3,7 +3,7 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
-    <a href="{% url 'project_add' %}" class="btn btn-outline-primary  m-5">Add Project</a>
+    <a href="{% url 'webapp:project_add' %}" class="btn btn-outline-primary  m-5">Add Project</a>
     {% include 'partial/simple_search.html' %}
     {% if is_paginated %}
             {% include 'partial/pagination.html' %}
@@ -33,13 +33,13 @@
                             <tbody>
                             <tr class="table-secondary">
                                 <td>{{ project.pk }}</td>
-                                <td><a href="{% url 'project_detail' project.pk %}">{{ project.project}}</td>
+                                <td><a href="{% url 'webapp:project_detail' project.pk %}">{{ project.project}}</td>
                                 <td>{{ project.date_create| date:'d.m.Y H:i:s'  }}</td>
                                 <td>{{ project.date_update| date:'d.m.Y H:i:s' }}</td>
                                 <td>{{ project.status}}</td>
 
-                                <td><p><a href="{% url 'project_delete' project.pk %}"><i class="fas fa-trash-alt"></i></a>
-                                       <a href="{% url 'project_edit' project.pk %}"><i class="fas fa-edit"></i></a></p> </td>
+                                <td><p><a href="{% url 'webapp:project_delete' project.pk %}"><i class="fas fa-trash-alt"></i></a>
+                                       <a href="{% url 'webapp:project_edit' project.pk %}"><i class="fas fa-edit"></i></a></p> </td>
                             </tr>
                             </tbody>
                         {% endfor %}

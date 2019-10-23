@@ -18,7 +18,7 @@ class TypeCreateView(CreateView):
     form_class = TypeForm
 
     def get_success_url(self):
-        return reverse('type_index')
+        return reverse('webapp:type_index')
 
 
 class TypeEditView(UpdateView):
@@ -28,12 +28,12 @@ class TypeEditView(UpdateView):
     context_object_name = 'type'
 
     def get_success_url(self):
-        return reverse('type_index')
+        return reverse('webapp:type_index')
 
 
 class TypeDeleteView(DeleteView):
     model = Type
-    success_url = reverse_lazy('type_index')
+    success_url = reverse_lazy('webapp:type_index')
     template = 'type/protected_error.html'
 
     def get(self, request, *args, **kwargs):
