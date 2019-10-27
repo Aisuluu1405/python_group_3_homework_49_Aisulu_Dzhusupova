@@ -27,7 +27,6 @@ def logout_view(request):
     return redirect('webapp:index')
 
 
-
 def register_view(request, *args, **kwargs):
     if request.method == 'POST':
         form = UserCreationForm(data=request.POST)
