@@ -7,16 +7,15 @@ from accounts.forms import UserCreationForm
 
 def login_view(request):
     context = {}
-    path_next = request.GET.get('next')
-    path = request.session.setdefault('path', path_next)
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            if path:
-                return redirect(path)
+            next_url = request.GET.get('next')
+            if next_url:
+                return redirect(next_url)
             return redirect('webapp:index')
         else:
             context['has_error'] = True
