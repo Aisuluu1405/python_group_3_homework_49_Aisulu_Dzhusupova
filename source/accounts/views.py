@@ -27,11 +27,18 @@ def logout_view(request):
     return redirect('webapp:index')
 
 
-def register_view(request, *args, **kwargs):
+def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
-            user = form.save()
+            user = User(
+                username=form.cleaned_data['username'],
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name'],
+                email=form.cleaned_data['email']
+            )
+            user.set_password(form.cleaned_data['password'])
+            user.save()
             login(request, user)
             return redirect('webapp:index')
     else:
