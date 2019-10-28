@@ -12,7 +12,7 @@
         {% endif %}
            <div class="container_index pt-5 pb-5">
             <div class="row">
-                <div class="col-12">
+                <div class="col-15">
                     <table class="table">
                         <thead>
                         <tr class="table-dark text-dark">
@@ -42,8 +42,10 @@
                                 <td>{{ issue.project}}</td>
                                 {% if request.user.is_authenticated %}
                                 <td>
-                                    <p><a href="{% url 'webapp:issue_delete' issue.pk %}"><i class="fas fa-trash-alt"></i></a>
-                                       <a href="{% url 'webapp:issue_edit' issue.pk %}"><i class="fas fa-edit"></i></a></p>
+                                    <p>
+                                        <a href="{% url 'webapp:issue_delete' issue.pk %}"><i class="fas fa-trash-alt"></i></a>
+                                       <a href="{% url 'webapp:issue_edit' issue.pk %}"><i class="fas fa-edit"></i></a>
+                                    </p>
                                 </td>
                                 {% endif %}
                             </tr>

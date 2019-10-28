@@ -13,9 +13,9 @@
     <title>Вход</title>
 </head>
 <body>
-<div class="container">
+<div class="container text-center">
     <h1>Вход</h1>
-    <form action="" method="post" class="text-center">
+    <form action="" method="post" class="text-left">
         {% csrf_token %}
         {% if has_error %}
             <p class="form-error">Неверное имя пользователя или пароль.</p>
@@ -30,7 +30,7 @@
         </div>
         <button type="submit">Войти</button>
     </form>
-    <p class="text-center"><a href="{% url "webapp:index" %}">На главную</a></p>
+    <p class="text-center font-weight-bold"><a href="{% url "webapp:index" %}">На главную</a></p>
 </div>
 
 </body>

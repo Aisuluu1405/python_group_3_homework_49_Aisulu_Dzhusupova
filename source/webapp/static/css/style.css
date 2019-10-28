@@ -2,10 +2,11 @@ body{
     font-family: Arial, sans-serif;
     background-color: rgba(148, 196, 220, 0.83);
     color: #222222;
-    margin-top: 30px;
+    margin-top: 20px;
+
 }
 .container {
-    max-width: 1000px;
+    max-width: 950px;
     width: 90%;
     margin: 0 auto;
 }
@@ -39,34 +40,13 @@ body{
     color: black;
 
 }
-.required{
-    font-weight: bold;
-    color: #bf1f6d;
+.text-center{
+    text-align: center;
 }
-.form-error {
-    color: red;
-    font-size: 18px;
-    margin: 5px 0 0 0
-}
-
-.field-error {
-    border: solid 1px red;
-    box-shadow: red 0 0 3px;
-}
-.form-control {
-    justify-content: center;
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 5px;
-    display: block;
-    width: 80%;
-    border: solid 1px lightgray;
-    box-sizing: border-box;
-    background: white;
-    margin-left: 70px;
-}
-.fields{
+.user_hello{
     font-size: 20px;
+    font-weight: bold;
+    margin-top: 7px;
 }
 h1{
     margin: 40px 0;
@@ -113,4 +93,15 @@ h1{
 .add{
     margin-right: 80%;
     margin-top: 5px;
+}
+.form-group{
+    margin: 20px 0 20px 15px;
+}
+.form-label label{
+    margin-right: 50px;
+
+}
+.form-group input{
+    margin-left: 50px;
+
 }
