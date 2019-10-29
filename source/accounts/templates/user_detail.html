@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}{{ user_obj.username }}{% endblock %}
+
 {% block menu %}
-    {% if user_obj == request.user %}
-{#        <li><a href="{% url "accounts:user_update" user_obj.pk %}">Edit Profile</a></li>#}
-{#        <li><a href="{% url 'accounts:user_change_password' user_obj.pk %}">Change Password</a></li>#}
+{% if user_obj == request.user %}
+        <li class="nav-item ml-3 mr-3"><a class="nav-link font-weight-bolder text-danger" href="{% url "accounts:user_edit" user_obj.pk %}">Edit Profile</a></li>
+{#        <p><a href="{% url 'accounts:user_change_password' user_obj.pk %}">Change Password</a></p>#}
     {% endif %}
 {% endblock %}
+
+
 {% block content %}
     <h1>Profile: {{ user_obj.username }}</h1>
     <p>First Name: <b>{{ user_obj.first_name }}</b></p>
     <p>Last Name: {{ user_obj.last_name }}</p>
     <p>Email: {{ user_obj.email }}</p>
+
 {% endblock %}
