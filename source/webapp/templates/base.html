@@ -38,7 +38,7 @@
         <a class="nav-link font-weight-bolder" href="{% url 'webapp:project_new_index'%}">Project(bonus)</a>
       </li>
             {% if request.user.is_authenticated %}
-                <li class="user_hello">Hello, {{ request.user }}!</li>
+                <li><a href="{% url 'accounts:user_detail' request.user.pk %}">Hello, {{ request.user }}!</a></li>
                 <li class="nav-item ml-5 mr-5"><a class="nav-link font-weight-bolder" href="{% url 'accounts:logout'  %}">Log Out</a></li>
             {% else %}
                 <li class="nav-item ml-5 mr-5"><a class="nav-link font-weight-bolder" href="{% url 'accounts:login'  %}">Log In</a></li>
