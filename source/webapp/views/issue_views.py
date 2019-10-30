@@ -61,7 +61,7 @@ class IssueCreateView(LoginRequiredMixin, CreateView):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
-class IssueProjectCreateView(CreateView):
+class IssueProjectCreateView(LoginRequiredMixin, CreateView):
     template_name = 'issue/add.html'
     model = Issue
     form_class = IssueForm
