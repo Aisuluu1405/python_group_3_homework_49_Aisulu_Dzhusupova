@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+<div class="type text-left">
+        <h1>All Users</h1>
+    </div>
+
+<div class="container_index pt-5">
+            <div class="row ml-5">
+                <div class="col-8">
+                    <table class="table">
+                        <thead>
+                        <tr class="table-dark text-dark">
+                            <th scope="col">id</th>
+                            <th scope="col">User</th>
+                            <th scope="col">User`s Profile</th>
+                        </tr>
+                        </thead>
+                        {% for user_obj in user_obj %}
+                            <tbody>
+                            <tr class="table-secondary">
+                                <td>{{ user_obj.pk }}</td>
+                                <td>{{ user_obj.username}}</td>
+                                <td><a href="{% url 'accounts:user_detail' user_obj.pk %}">Profile</a></td>
+                            </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+{% endblock %}
