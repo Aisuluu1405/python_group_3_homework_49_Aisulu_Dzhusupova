@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.urls import reverse
 from django.views.generic import DetailView, UpdateView, ListView
 
-from accounts.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
+from accounts.forms import UserCreationForm, UserChangeForm, PasswordChangeForm, ProfileForm
 
 
 def register_view(request):
@@ -46,6 +46,7 @@ class UserInfoChangeView(UserPassesTestMixin, UpdateView):
         return reverse('accounts:user_detail', kwargs={'pk':self.object.pk})
 
 
+
 class UserPasswordChangeView(UpdateView):
     model = User
     template_name = 'user_password_change.html'
@@ -59,5 +60,5 @@ class UserPasswordChangeView(UpdateView):
 class UsersIndexView(ListView):
     model = User
     template_name = 'users_index.html'
-    context_object_name = 'user_obj'
+    context_object_name = 'users'
 
