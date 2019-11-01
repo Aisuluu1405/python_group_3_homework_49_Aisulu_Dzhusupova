@@ -132,4 +132,6 @@ LOGOUT_REDIRECT_URL = 'webapp:index'
 
 HOST_NAME = 'localhost:8000'
 
+
+
 from .settings_local import *
