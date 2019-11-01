@@ -129,3 +129,7 @@ LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'webapp:index'
 
 LOGOUT_REDIRECT_URL = 'webapp:index'
+
+HOST_NAME = 'localhost:8000'
+
+from .settings_local import *
