@@ -80,6 +80,11 @@ class UserChangeForm(forms.ModelForm):
         user_profile_fields = ['about', 'avatar', 'github_profile']
         labels = {'first_name': 'First name', 'last_name': 'Last name', 'email': 'Email', 'about': 'About me', 'avatar': 'User pic', 'github_profile': 'GitHub Profile'}
 
+    def clean_github_profile(self):
+        data = self.cleaned_data['github_profile']
+        if "https://github.com" not in data:
+            raise forms.ValidationError("*Enter your profile on the site 'GitHub'!")
+        return data
 
 
 class PasswordChangeForm(forms.ModelForm):
