@@ -132,6 +132,8 @@ LOGOUT_REDIRECT_URL = 'webapp:index'
 
 HOST_NAME = 'localhost:8000'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
+MEDIA_URL = '/media/'
 
 from .settings_local import *
