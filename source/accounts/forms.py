@@ -1,8 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-
-# from accounts.models import  UserProfile
+from django.forms import widgets
+from accounts.models import UserProfile
 
 
 class UserCreationForm(forms.ModelForm):
@@ -49,16 +49,37 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
+    about = forms.CharField(max_length=400, required=False, label='Text',
+                          widget=widgets.Textarea)
+    avatar = forms.ImageField(label='User pic', required=False)
+    github_profile = forms.URLField(label='GitHub Profile', required=False)
+
+    def get_initial_for_field(self, field, field_name):
+        if field_name in self.Meta.user_profile_fields:
+            return getattr(self.instance.user_profiles, field_name)
+        return super().get_initial_for_field(field, field_name)
+
+    def save(self, commit=True):
+        user = super().save(commit=commit)
+        user.user_profiles = self.save_profile(commit)
+        return user
+
+    def save_profile(self, commit=True):
+        user_profiles, _ = UserProfile.objects.get_or_create(user=self.instance)
+        for field in self.Meta.user_profile_fields:
+            setattr(user_profiles, field, self.cleaned_data.get(field))
+        if not user_profiles.avatar:
+            user_profiles.avatar = None
+        if commit:
+            user_profiles.save()
+        return user_profiles
+
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email']
-        labels = {'first_name': 'First name', 'last_name': 'Last name', 'email': 'Email'}
+        fields = ['first_name', 'last_name', 'email', 'about', 'avatar', 'github_profile']
+        user_profile_fields = ['about', 'avatar', 'github_profile']
+        labels = {'first_name': 'First name', 'last_name': 'Last name', 'email': 'Email', 'about': 'About me', 'avatar': 'User pic', 'github_profile': 'GitHub Profile'}
 
-#
-# class ProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = UserProfile
-#         fields = ['github_profile']
 
 
 class PasswordChangeForm(forms.ModelForm):

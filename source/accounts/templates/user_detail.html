@@ -10,6 +10,11 @@
 
 {% block content %}
     <h1>Profile: {{ user_obj.username }}</h1>
+    {% if user_obj.user_profiles.avatar %}
+        <img class="avatar" src="{{ user_obj.user_profiles.avatar.url }}" alt="user picture">
+    {% else %}
+        {% load static %} <img class="avatar" src="{% static "default-avatar.jpg" %}" alt="No avatar!" />
+    {% endif %}
     <p>First Name: <b>{{ user_obj.first_name }}</b></p>
     <p>Last Name: {{ user_obj.last_name }}</p>
     <p>Email: {{ user_obj.email }}</p>
