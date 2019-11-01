@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
-from accounts.models import UserProfile
+# from accounts.models import  UserProfile
 
 
 class UserCreationForm(forms.ModelForm):
@@ -50,15 +50,15 @@ class UserCreationForm(forms.ModelForm):
 
 class UserChangeForm(forms.ModelForm):
     class Meta:
-        models = User, UserProfile
+        model = User
         fields = ['first_name', 'last_name', 'email']
         labels = {'first_name': 'First name', 'last_name': 'Last name', 'email': 'Email'}
 
-
-class ProfileForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = ['github_profile']
+#
+# class ProfileForm(forms.ModelForm):
+#     class Meta:
+#         model = UserProfile
+#         fields = ['github_profile']
 
 
 class PasswordChangeForm(forms.ModelForm):

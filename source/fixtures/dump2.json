@@ -1,0 +1,1582 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "webapp",
+    "model": "issue"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "webapp",
+    "model": "type"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "webapp",
+    "model": "status"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "webapp",
+    "model": "project"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "accounts",
+    "model": "token"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "accounts",
+    "model": "userprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "accounts",
+    "model": "userprofileblock"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "webapp",
+    "model": "token"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "91ying85xbnwguiy14y8nsv1y8lz0ety",
+  "fields": {
+    "session_data": "ZDY5YTYxNDBlNDRiNWFjNjA3NGZhODRlMWU3ZWMxODI3MGNiNDRkNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2MTc3OWJlNmU1MWY0OGM3OGY1ODRhNTA2MjU2ZmVkZDI3YzQwNTViIn0=",
+    "expire_date": "2019-11-10T04:22:17.441Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "b33vq54j7pybsdhkgru2806n5pl823yp",
+  "fields": {
+    "session_data": "ZDY5YTYxNDBlNDRiNWFjNjA3NGZhODRlMWU3ZWMxODI3MGNiNDRkNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2MTc3OWJlNmU1MWY0OGM3OGY1ODRhNTA2MjU2ZmVkZDI3YzQwNTViIn0=",
+    "expire_date": "2019-11-14T05:31:46.435Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "h5ihlymew6505uoo0qvethtj4inttivc",
+  "fields": {
+    "session_data": "NWM1YzMxN2E5YjFhYTQ2NGRmNDI3ZmUwOTc2NjE5ZTk1ZTEyNjEwZTp7InBhdGgiOiIvdHlwZS80L2VkaXQvIiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6IjYxNzc5YmU2ZTUxZjQ4Yzc4ZjU4NGE1MDYyNTZmZWRkMjdjNDA1NWIifQ==",
+    "expire_date": "2019-11-07T06:32:58.935Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "h67vajk8g9cavn7pta9q3mrtccn32z9q",
+  "fields": {
+    "session_data": "ZDY5YTYxNDBlNDRiNWFjNjA3NGZhODRlMWU3ZWMxODI3MGNiNDRkNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2MTc3OWJlNmU1MWY0OGM3OGY1ODRhNTA2MjU2ZmVkZDI3YzQwNTViIn0=",
+    "expire_date": "2019-10-22T03:26:36.056Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "hw3uh7f2fa7lnh4ebm1r05o31boqvyxi",
+  "fields": {
+    "session_data": "ZDY5YTYxNDBlNDRiNWFjNjA3NGZhODRlMWU3ZWMxODI3MGNiNDRkNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2MTc3OWJlNmU1MWY0OGM3OGY1ODRhNTA2MjU2ZmVkZDI3YzQwNTViIn0=",
+    "expire_date": "2019-10-08T15:16:51.309Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mfczlkkij58wvwg0fgzvjbfxo9687sos",
+  "fields": {
+    "session_data": "ZWNjMzRlOTE5NmQ0ODg2ZWNiODY5MDU5ZDRmNWY0ZGM1YTFkMzQ2ODp7fQ==",
+    "expire_date": "2019-11-06T17:48:22.098Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ndpe8hoypg9n1vw90kh6b7sl9qol8bgg",
+  "fields": {
+    "session_data": "ZWNjMzRlOTE5NmQ0ODg2ZWNiODY5MDU5ZDRmNWY0ZGM1YTFkMzQ2ODp7fQ==",
+    "expire_date": "2019-11-06T18:35:29.338Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ojqvn9au2bl57fazq0x0n308jmsdq5yp",
+  "fields": {
+    "session_data": "ZWNjMzRlOTE5NmQ0ODg2ZWNiODY5MDU5ZDRmNWY0ZGM1YTFkMzQ2ODp7fQ==",
+    "expire_date": "2019-11-06T18:12:35.083Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "p34heuebzsbx1feox2aagxthulbnldl2",
+  "fields": {
+    "session_data": "ZWNjMzRlOTE5NmQ0ODg2ZWNiODY5MDU5ZDRmNWY0ZGM1YTFkMzQ2ODp7fQ==",
+    "expire_date": "2019-11-06T18:36:13.798Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "v924psd22vm1felriwec401j8vot2htt",
+  "fields": {
+    "session_data": "ZWNjMzRlOTE5NmQ0ODg2ZWNiODY5MDU5ZDRmNWY0ZGM1YTFkMzQ2ODp7fQ==",
+    "expire_date": "2019-11-06T17:49:12.298Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 1,
+  "fields": {
+    "summary": "Create a task for the menu \"Loans\"",
+    "description": "Write a task for the menu \"Loans\". Add a field for calculating limits on new loans.",
+    "status": 1,
+    "type": 4,
+    "project": 1,
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-23T17:51:43.056Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 2,
+  "fields": {
+    "summary": "Correct an error in menu \"Retail\"",
+    "description": "Correct an error in menu \"Retail. Correct the calculation of the commission for translation services.",
+    "status": 3,
+    "type": 1,
+    "project": 2,
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-14T12:32:29.478Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 3,
+  "fields": {
+    "summary": "Menu \"Deposits\"",
+    "description": "Change effective interest rate on term deposits.",
+    "status": 3,
+    "type": 1,
+    "project": 3,
+    "create": "2019-09-24T15:30:37.471Z",
+    "update": "2019-10-14T12:52:24.367Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 4,
+  "fields": {
+    "summary": "Safe Box Operations",
+    "description": "Create models of agreements for the use of safe boxes in connection with the implementation of this service.",
+    "status": 1,
+    "type": 4,
+    "project": 3,
+    "create": "2019-09-24T15:33:23.841Z",
+    "update": "2019-10-14T12:28:21.267Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 5,
+  "fields": {
+    "summary": "Internet banking",
+    "description": "Improve Internet banking for payments on loan repayments, crediting funds on the same business day.",
+    "status": 3,
+    "type": 3,
+    "project": 5,
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-14T12:32:46.882Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 6,
+  "fields": {
+    "summary": "Internet banking test, menu acounting.",
+    "description": "",
+    "status": 1,
+    "type": 1,
+    "project": 5,
+    "create": "2019-09-25T00:00:00Z",
+    "update": "2019-10-14T12:28:21.267Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 7,
+  "fields": {
+    "summary": "Salary",
+    "description": "Change the payroll program, change the income tax rate.",
+    "status": 3,
+    "type": 3,
+    "project": 4,
+    "create": "2019-09-25T13:44:53.565Z",
+    "update": "2019-10-14T12:52:43.165Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 8,
+  "fields": {
+    "summary": "Bank operational day",
+    "description": "Recalculate all taxes and depreciation expenses.",
+    "status": 2,
+    "type": 1,
+    "project": 4,
+    "create": "2019-09-26T10:51:31.412Z",
+    "update": "2019-10-14T12:28:21.267Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 43,
+  "fields": {
+    "summary": "\u0434\u043e\u043c\u0430\u0448\u043a\u0430 53",
+    "description": "\u0421\u0434\u0435\u043b\u0430\u043b\u0430 \u0438 \u0431\u043e\u043d\u0443\u0441 \u0442\u043e\u0436\u0435.",
+    "status": 2,
+    "type": 1,
+    "project": 12,
+    "create": "2019-10-09T13:51:37.505Z",
+    "update": "2019-10-14T12:31:12.544Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 44,
+  "fields": {
+    "summary": "New loans products.",
+    "description": "Develop interest rates for a new type of loan. Develop a pledge agreement.",
+    "status": 2,
+    "type": 4,
+    "project": 1,
+    "create": "2019-10-09T14:24:46.511Z",
+    "update": "2019-10-14T12:28:21.267Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 50,
+  "fields": {
+    "summary": "Deposits",
+    "description": "Create new",
+    "status": 1,
+    "type": 1,
+    "project": 26,
+    "create": "2019-10-10T09:47:38.984Z",
+    "update": "2019-10-14T12:28:21.267Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 51,
+  "fields": {
+    "summary": "Overdraft",
+    "description": "Overdraft for a salary project. Change commission for overdraft issuance.",
+    "status": 2,
+    "type": 1,
+    "project": 27,
+    "create": "2019-10-10T09:50:41.157Z",
+    "update": "2019-10-14T12:32:10.881Z"
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 52,
+  "fields": {
+    "summary": "\u043b\u043b\u043b\u043b\u043b",
+    "description": "",
+    "status": 1,
+    "type": 4,
+    "project": 26,
+    "create": "2019-10-10T09:52:32.665Z",
+    "update": "2019-10-14T12:28:21.267Z"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "status": "New"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "status": "In process"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "status": "Done"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 10,
+  "fields": {
+    "status": "Cool"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "type": "Task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "type": "Enhancement"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 4,
+  "fields": {
+    "type": "Research"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 7,
+  "fields": {
+    "type": "Old"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 15,
+  "fields": {
+    "type": "Bug"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 1,
+  "fields": {
+    "project": "Loans",
+    "specification": "This project for monitoring loans granted, refused and past due. \r\nrefused and past due",
+    "date_create": "2019-10-08T03:31:26.695Z",
+    "date_update": "2019-10-10T07:00:23.165Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 2,
+  "fields": {
+    "project": "New products",
+    "specification": "Project for attracting deposits. Development of the concept of working with deposits.",
+    "date_create": "2019-10-08T03:33:25.692Z",
+    "date_update": "2019-10-10T07:00:34.221Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 3,
+  "fields": {
+    "project": "Service for individuals.",
+    "specification": "Development of a procedure for conducting operations on safe boxes.",
+    "date_create": "2019-10-08T03:35:49.280Z",
+    "date_update": "2019-10-10T07:00:44.879Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 4,
+  "fields": {
+    "project": "Cost accounting",
+    "specification": "Accounting for all administrative expenses.",
+    "date_create": "2019-10-08T03:37:50.400Z",
+    "date_update": "2019-10-08T03:37:50.400Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 5,
+  "fields": {
+    "project": "Legal entities service.",
+    "specification": "Development of procedures for servicing legal entities.",
+    "date_create": "2019-10-08T03:41:02.943Z",
+    "date_update": "2019-10-08T03:41:02.944Z",
+    "status": "closed"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 12,
+  "fields": {
+    "project": "\u0434\u043e\u043c\u0430\u0448\u043a\u0430",
+    "specification": "\u0417\u0430\u043a\u043e\u043d\u0447\u0438\u043b\u0430",
+    "date_create": "2019-10-09T13:51:12.808Z",
+    "date_update": "2019-10-10T09:49:07.939Z",
+    "status": "closed"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 26,
+  "fields": {
+    "project": "Cash Operations",
+    "specification": "Cash Operations Procedures.",
+    "date_create": "2019-10-10T09:47:11.813Z",
+    "date_update": "2019-10-12T06:42:15.740Z",
+    "status": "closed"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 27,
+  "fields": {
+    "project": "Individuals.",
+    "specification": "",
+    "date_create": "2019-10-10T09:50:24.874Z",
+    "date_update": "2019-10-13T07:00:43.423Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 29,
+  "fields": {
+    "project": "HR",
+    "specification": "The formation of the staff of the bank",
+    "date_create": "2019-10-11T14:48:32.853Z",
+    "date_update": "2019-10-12T06:39:09.265Z",
+    "status": "closed"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 30,
+  "fields": {
+    "project": "Card",
+    "specification": "Development of the business process for card services",
+    "date_create": "2019-10-12T06:30:13.100Z",
+    "date_update": "2019-10-12T06:30:13.100Z",
+    "status": "active"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add issue",
+    "content_type": 7,
+    "codename": "add_issue"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change issue",
+    "content_type": 7,
+    "codename": "change_issue"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete issue",
+    "content_type": 7,
+    "codename": "delete_issue"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view issue",
+    "content_type": 7,
+    "codename": "view_issue"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add type",
+    "content_type": 8,
+    "codename": "add_type"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change type",
+    "content_type": 8,
+    "codename": "change_type"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete type",
+    "content_type": 8,
+    "codename": "delete_type"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view type",
+    "content_type": 8,
+    "codename": "view_type"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add status",
+    "content_type": 9,
+    "codename": "add_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change status",
+    "content_type": 9,
+    "codename": "change_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete status",
+    "content_type": 9,
+    "codename": "delete_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view status",
+    "content_type": 9,
+    "codename": "view_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add project",
+    "content_type": 10,
+    "codename": "add_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change project",
+    "content_type": 10,
+    "codename": "change_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete project",
+    "content_type": 10,
+    "codename": "delete_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view project",
+    "content_type": 10,
+    "codename": "view_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add token",
+    "content_type": 11,
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change token",
+    "content_type": 11,
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete token",
+    "content_type": 11,
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view token",
+    "content_type": 11,
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add user profile",
+    "content_type": 12,
+    "codename": "add_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change user profile",
+    "content_type": 12,
+    "codename": "change_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete user profile",
+    "content_type": 12,
+    "codename": "delete_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view user profile",
+    "content_type": 12,
+    "codename": "view_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add user profile block",
+    "content_type": 13,
+    "codename": "add_userprofileblock"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change user profile block",
+    "content_type": 13,
+    "codename": "change_userprofileblock"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete user profile block",
+    "content_type": 13,
+    "codename": "delete_userprofileblock"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view user profile block",
+    "content_type": 13,
+    "codename": "view_userprofileblock"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add token",
+    "content_type": 14,
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change token",
+    "content_type": 14,
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete token",
+    "content_type": 14,
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view token",
+    "content_type": 14,
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$EvCMtW1lQD01$RZMVLWl3DyejlKgYKjno8/rbO/gRDRv/OqZ5Dv268IU=",
+    "last_login": "2019-10-31T05:31:46.261Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-24T11:17:19.070Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$FRvabu4uob8c$sIcSTxIiJS8szrkgpjB2XImo1AXN8K6X7HqmLhuqz5Q=",
+    "last_login": "2019-10-26T16:23:36.961Z",
+    "is_superuser": false,
+    "username": "Aisl",
+    "first_name": "Aisulu",
+    "last_name": "Djusupova",
+    "email": "aisl@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-26T16:23:36.262Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$mYtpWKjonpgZ$+NdFmA+zxjbCi4T0K/IhGd26XcWwGXOA/SMH9oRr3R0=",
+    "last_login": "2019-10-27T16:53:20.243Z",
+    "is_superuser": false,
+    "username": "mama",
+    "first_name": "gulya",
+    "last_name": "",
+    "email": "test2903@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-27T16:53:19.498Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 19,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$MbmMtTLDho4f$Un3tGg5VoviJABkdb8m4Gm7NIXXuVXk1aREr0BumRuA=",
+    "last_login": "2019-10-27T16:56:17.542Z",
+    "is_superuser": false,
+    "username": "Sanjar",
+    "first_name": "Sanjar",
+    "last_name": "",
+    "email": "san20@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-27T16:56:16.744Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$WV69KekTpV6y$TAW325nOoD8aP6YpqCJsc3llMkyHE5zTMOioCo9AzYg=",
+    "last_login": "2019-10-28T09:59:41.237Z",
+    "is_superuser": false,
+    "username": "Aisl_14",
+    "first_name": "Aisulu",
+    "last_name": "",
+    "email": "aisuluueco2009@yandex.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-28T09:19:18.693Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 21,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$LRFTojEpAI4o$YNC7QHtD33v2S5H/LwD+RbeZu9haJsD1BNKMhgyznLA=",
+    "last_login": "2019-10-30T14:29:04.533Z",
+    "is_superuser": false,
+    "username": "Aisl_1405",
+    "first_name": "Aisuluu",
+    "last_name": "Djusupova",
+    "email": "aisuluueco2009@yandex.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-29T16:53:07.537Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$cObSnVZdDa1h$GN3xqBZVws1nEzUYgib0asGCJwtBQrHpqacowjBEwII=",
+    "last_login": "2019-10-30T05:35:49.122Z",
+    "is_superuser": false,
+    "username": "Aidin",
+    "first_name": "Aidin",
+    "last_name": "",
+    "email": "aidin09@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-10-30T05:35:48.558Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2019-09-24T15:19:33.962Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "new",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2019-09-24T15:19:50.919Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "In process",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2019-09-24T15:20:04.376Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Done",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2019-09-24T15:20:45.002Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Task",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2019-09-24T15:20:52.609Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Bug",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2019-09-24T15:21:09.061Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Enhancement",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2019-09-24T15:21:25.791Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Research",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2019-09-24T15:24:25.913Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "\u0421reate a task for the menu \"Loans\"",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2019-09-24T15:25:08.468Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "New",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2019-09-24T15:25:15.435Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "New",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2019-09-24T15:28:09.941Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Correct an error in menu \"Retail\"",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2019-09-24T15:30:37.472Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Menu \"Deposits\"",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2019-09-24T15:33:23.843Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Safe Box Operations",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2019-09-24T15:35:31.394Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Internet banking",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2019-09-25T11:02:45.357Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Old",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2019-09-25T11:03:01.764Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Old",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2019-09-25T11:04:43.417Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "\u0411\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0438\u044f",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2019-09-25T11:04:56.275Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "\u0411\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0438\u044f",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2019-10-08T03:31:26.696Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Loans",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2019-10-08T03:33:25.694Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "New products.",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2019-10-08T03:35:49.281Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Service for individuals.",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2019-10-08T03:36:28.748Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Safe Box Operations",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"project\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2019-10-08T03:37:50.401Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Cost accounting",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2019-10-08T03:38:10.404Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0439 \u0434\u0435\u043d\u044c \u0431\u0430\u043d\u043a\u0430",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"project\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2019-10-08T03:38:18.643Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "\u0417\u0430\u0440\u0430\u0431\u043e\u0442\u043d\u0430\u044f \u043f\u043b\u0430\u0442\u0430",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"project\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2019-10-08T03:38:38.541Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Menu \"Deposits\"",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"project\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2019-10-08T03:38:59.265Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Correct an error in menu \"Retail\"",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"project\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2019-10-08T03:39:08.891Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "\u0421reate a task for the menu \"Loans\"",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"project\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2019-10-08T03:41:02.946Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Legal entities service.",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2019-10-08T03:41:18.848Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Internet banking test, menu acounting.",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"project\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2019-10-08T03:41:32.095Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Internet banking",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"project\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2019-10-08T03:41:44.660Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "23",
+    "object_repr": "UpdateView",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]

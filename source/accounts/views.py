@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.urls import reverse
 from django.views.generic import DetailView, UpdateView, ListView
 
-from accounts.forms import UserCreationForm, UserChangeForm, PasswordChangeForm, ProfileForm
+from accounts.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 
 
 def register_view(request):
@@ -44,7 +44,6 @@ class UserInfoChangeView(UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('accounts:user_detail', kwargs={'pk':self.object.pk})
-
 
 
 class UserPasswordChangeView(UpdateView):
