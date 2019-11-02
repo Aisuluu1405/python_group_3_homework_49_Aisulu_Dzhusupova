@@ -49,7 +49,7 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    about = forms.CharField(max_length=400, required=False, label='Text',
+    about = forms.CharField(max_length=400, required=False, label='About Me',
                           widget=widgets.Textarea)
     avatar = forms.ImageField(label='User pic', required=False)
     github_profile = forms.URLField(label='GitHub Profile', required=False)
@@ -81,10 +81,10 @@ class UserChangeForm(forms.ModelForm):
         labels = {'first_name': 'First name', 'last_name': 'Last name', 'email': 'Email', 'about': 'About me', 'avatar': 'User pic', 'github_profile': 'GitHub Profile'}
 
     def clean_github_profile(self):
-        data = self.cleaned_data['github_profile']
-        if "https://github.com" not in data:
+        github_profile = self.cleaned_data.get('github_profile')
+        if github_profile and "https://github.com" not in github_profile:
             raise forms.ValidationError("*Enter your profile on the site 'GitHub'!")
-        return data
+        return github_profile
 
 
 class PasswordChangeForm(forms.ModelForm):

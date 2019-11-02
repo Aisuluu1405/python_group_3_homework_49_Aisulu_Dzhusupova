@@ -16,7 +16,8 @@
         {% load static %} <img class="avatar" src="{% static "default-avatar.jpg" %}" alt="No avatar!" />
     {% endif %}
     <p>First Name: <b>{{ user_obj.first_name }}</b></p>
-    <p>Last Name: {{ user_obj.last_name }}</p>
-    <p>Email: {{ user_obj.email }}</p>
-    <p>GitHub Profile: {{ user_obj.user_profiles.github_profile }}</p>
+    <p>Last Name: <b>{{ user_obj.last_name }}</b></p>
+    <p>About Me: {{ user_obj.user_profiles.about }}</p>
+    <p>Email: <b>{{ user_obj.email }}</b></p>
+    <p>GitHub Profile: <b>{{ user_obj.user_profiles.github_profile }}</b></p>
 {% endblock %}
