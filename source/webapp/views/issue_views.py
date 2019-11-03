@@ -5,7 +5,7 @@ from webapp.forms import IssueForm, SimpleSearchForm
 from webapp.models import Issue, Project
 from django.db.models import Q
 from django.utils.http import urlencode
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 class IndexView(ListView):
@@ -66,6 +66,7 @@ class IssueProjectCreateView(LoginRequiredMixin, CreateView):
     model = Issue
     form_class = IssueForm
 
+
     def form_valid(self, form):
         project_pk = self.kwargs.get('pk')
         project = get_object_or_404(Project, pk=project_pk)
@@ -73,11 +74,18 @@ class IssueProjectCreateView(LoginRequiredMixin, CreateView):
         return redirect('webapp:project_detail', pk=project_pk)
 
 
-class IssueEditView(LoginRequiredMixin, UpdateView):
+class IssueEditView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
     template_name = 'issue/edit.html'
     model = Issue
     form_class = IssueForm
     context_object_name = 'issue'
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.project_team == self.request.user
+
+    # def test_func(self):
+    #     return self.request.project_team.user.pk == self.kwargs['pk']
 
     def get_success_url(self):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})

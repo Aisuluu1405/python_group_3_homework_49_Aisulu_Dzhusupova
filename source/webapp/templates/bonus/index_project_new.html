@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Projects{% endblock %}
 {% block content %}
-    <a href="{% url 'project_add' %}" class="btn btn-outline-primary  m-5">Add Project</a>
+    <a href="{% url 'webapp:project_add' %}" class="btn btn-outline-primary  m-5">Add Project</a>
     <div class="type text-left">
         <h1>Projects(bonus)</h1>
     </div>
@@ -11,11 +11,11 @@
         <h2>Active</h2>
         {% for item in project_active %}
                 <li class="table-bordered p-4">
-                    <a href="{% url 'project_new_detail' item.pk %}"><b>{{ item.project}}</b> </a> (Status: {{ item.status }}) <br>
+                    <a href="{% url 'webapp:project_new_detail' item.pk %}"><b>{{ item.project}}</b> </a> (Status: {{ item.status }}) <br>
                     <div class="links">
                         <p>(Create date:{{ item.date_create| date:'d.m.Y H:i:s' }})
-                        <a href="{% url 'project_new_delete' item.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
-                            <a href="{% url 'project_edit' item.pk %}"><i class="fas fa-edit ml-5"></i></a></p>
+                        <a href="{% url 'webapp:project_delete' item.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
+                            <a href="{% url 'webapp:project_edit' item.pk %}"><i class="fas fa-edit ml-5"></i></a></p>
                     </div>
         {% endfor %}
         </ul>
@@ -23,7 +23,7 @@
         <h2>Closed</h2>
         {% for item in project_closed %}
                 <li class="table-bordered p-4 word-spacing">
-                    <a href="{% url 'project_new_detail' item.pk %}"><b>{{ item.project}}</b> </a> (Status: {{ item.status }})
+                    <a href="{% url 'webapp:project_new_detail' item.pk %}"><b>{{ item.project}}</b> </a> (Status: {{ item.status }})
                     <p>(Create date:{{ item.date_create| date:'d.m.Y H:i:s' }})
                 </li>
        {% endfor %}

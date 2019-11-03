@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 STATUS_OTHER_CHOICE = 'active'
@@ -57,5 +58,16 @@ class Project(models.Model):
         return self.project
 
 
+class Team(models.Model):
+    user = models.ForeignKey(User, related_name='user_team', on_delete=models.PROTECT, verbose_name='User')
+    project = models.ForeignKey('webapp.Project', related_name='project_team', on_delete=models.PROTECT, verbose_name='Project')
+    start = models.DateField(null=True, blank=True, verbose_name='Start work')
+    finish = models.DateField(null=True, blank=True, verbose_name='Finish work')
 
 
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        verbose_name = 'Team'
+        verbose_name_plural = 'Teams'

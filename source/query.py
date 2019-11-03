@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from webapp.models import Issue, Type, Project
+from webapp.models import Issue, Type, Project, Team
 from django.db.models import Q
 
 # Задание №2 запрос 1
@@ -16,3 +16,8 @@ Project.objects.filter(issues__description__icontains='create')
 
 #Задание №2 бонус
 Project.objects.filter(issues__status__status__contains='Done').values('project')
+
+q_1=Project.objects.filter(project_team__user__username='Aidin')
+q_2=Project.objects.filter(user)
+q_1 = Team.objects.filter(user__user_profiles='2')
+T
