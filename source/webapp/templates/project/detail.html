@@ -8,6 +8,7 @@
         <p class="lead">Status: {{ project.status }}</p>
         <p class="pre">{{ project.specification }}</p>
         <p class="lead">Create date: {{ project.date_create| date:'d.m.Y H:i:s'}}</p>
+
         <p><a href="{% url 'webapp:project_edit' project.pk %}" class="btn btn-outline-dark" >Edit</a>
             <a href="{% url 'webapp:project_delete' project.pk %}" class="btn btn-outline-dark" >Delete</a></p>
         <hr class="my-4">
@@ -20,10 +21,13 @@
             {% empty %}
                 <p>This new project, no issues yet.</p>
             {%  endfor %}
-
-        <form class="add" action="{% url 'webapp:project_issue_add' project.pk %}" method="GET">
-            {% include 'partial/form.html' with button_text='Add issue' %}
-        </form>
+        {% for users_in_project in project.project_team.all %}
+            {% if user.pk == users_in_project.pk %}
+                <form class="add" action="{% url 'webapp:project_issue_add' project.pk %}" method="GET">
+                    {% include 'partial/form.html' with button_text='Add issue' %}
+                </form>
+            {% endif %}
+        {% endfor %}
     </div>
 {% endblock %}
 

@@ -2,7 +2,7 @@ from django.shortcuts import reverse, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from webapp.forms import IssueForm, SimpleSearchForm
-from webapp.models import Issue, Project
+from webapp.models import Issue, Project, Team
 from django.db.models import Q
 from django.utils.http import urlencode
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -74,25 +74,30 @@ class IssueProjectCreateView(LoginRequiredMixin, CreateView):
         return redirect('webapp:project_detail', pk=project_pk)
 
 
-class IssueEditView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
+class IssueEditView(UserPassesTestMixin, UpdateView):
     template_name = 'issue/edit.html'
     model = Issue
     form_class = IssueForm
     context_object_name = 'issue'
 
     def test_func(self):
-        obj = self.get_object()
-        return obj.project_team == self.request.user
-
-    # def test_func(self):
-    #     return self.request.project_team.user.pk == self.kwargs['pk']
+        issue_project = self.get_object().project
+        user_project = Project.objects.filter(project_team__user=self.request.user, project_team__finish=None)
+        print(user_project)
+        return issue_project in user_project
 
     def get_success_url(self):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
-class IssueDeleteView(LoginRequiredMixin, DeleteView):
+class IssueDeleteView(UserPassesTestMixin, DeleteView):
     model = Issue
     template_name = 'issue/delete.html'
     context_object_name = 'issue'
     success_url = reverse_lazy('webapp:index')
+
+    def test_func(self):
+        issue_project = self.get_object().project
+        user_project = Project.objects.filter(project_team__user=self.request.user, project_team__finish=None)
+        print(user_project)
+        return issue_project in user_project
