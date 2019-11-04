@@ -346,7 +346,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$EvCMtW1lQD01$RZMVLWl3DyejlKgYKjno8/rbO/gRDRv/OqZ5Dv268IU=",
-    "last_login": "2019-11-04T12:16:17.964Z",
+    "last_login": "2019-11-04T13:06:43.626Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -364,7 +364,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$150000$pOjg9PsUy8g1$2CqA+vWhAc689AkSkKrKzaStSXUW5uXSvseFqnhyEM0=",
-    "last_login": "2019-11-04T12:24:06.864Z",
+    "last_login": "2019-11-04T12:37:25.668Z",
     "is_superuser": false,
     "username": "Aidin",
     "first_name": "Aidin",
@@ -418,7 +418,7 @@
   "pk": 5,
   "fields": {
     "password": "pbkdf2_sha256$150000$5PQsLN0BPrX0$+uFq32BgmA3eBDsB6+7kUjAZjwojeV1Z4fiP5zLe6H0=",
-    "last_login": "2019-11-04T12:27:53.067Z",
+    "last_login": "2019-11-04T13:05:51.308Z",
     "is_superuser": false,
     "username": "Chinese",
     "first_name": "Sanjar",
@@ -469,6 +469,26 @@
     "project": 1,
     "start": "2019-11-04",
     "finish": "2019-11-04"
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 5,
+  "fields": {
+    "user": 5,
+    "project": 5,
+    "start": "2019-10-01",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 6,
+  "fields": {
+    "user": 3,
+    "project": 26,
+    "start": "2019-08-20",
+    "finish": null
   }
 }
 ]
