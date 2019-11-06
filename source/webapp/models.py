@@ -26,6 +26,11 @@ class Issue(models.Model):
 
     update = models.DateTimeField(auto_now=True, verbose_name='Date of update')
 
+    created_by = models.ForeignKey(User, related_name='issues_author', on_delete=models.PROTECT,
+                                   default=None, null=True, blank=True, verbose_name='Issue author')
+
+    assigned_to = models.ForeignKey(User, related_name='issues_perfomer', on_delete=models.PROTECT,
+                                    default=None, null=True, blank=True, verbose_name='Issue perfomer')
 
     def __str__(self):
         return self.summary
