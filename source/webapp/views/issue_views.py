@@ -62,24 +62,23 @@ class IssueCreateView(LoginRequiredMixin, CreateView):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
-class IssueProjectCreateView(CreateView):
-    template_name = 'issue/add.html'
+class IssueProjectCreateView(UserPassesTestMixin, CreateView):
+    template_name = 'bonus/issue_add.html'
     model = Issue
     form_class = IssueForm
 
     def test_func(self):
         issue_project = self.get_object().project
         user_project = Project.objects.filter(project_team__user=self.request.user, project_team__finish=None)
-        print(issue_project)
-        print(user_project)
+        # print(issue_project)
+        # print(user_project)
         return issue_project in user_project
-
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         project_pk = self.kwargs.get('pk')
         users_project = Project.objects.filter(pk=project_pk,
-                                               status__icontains=STATUS_OTHER_CHOICE).values('pk').distinct()
+                                               status__icontains=STATUS_OTHER_CHOICE).values('pk')
         kwargs['current_project'] = users_project
         return kwargs
 
@@ -89,7 +88,7 @@ class IssueProjectCreateView(CreateView):
         self.object = project.issues.create(**form.cleaned_data)
         self.object.created_by = self.request.user
         self.object.save()
-        return redirect('webapp:project_detail', pk=project_pk)
+        return redirect('webapp:project_new_index')
 
     def get_success_url(self):
         return reverse('webapp:project_new_index')
@@ -101,14 +100,19 @@ class IssueEditView(UserPassesTestMixin, UpdateView):
     form_class = IssueForm
     context_object_name = 'issue'
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['current_project'] = Project.objects.filter(issues=self.object)
+        return kwargs
+
+
     def test_func(self):
         issue_project = self.get_object().project
         user_project = Project.objects.filter(project_team__user=self.request.user, project_team__finish=None)
-        print(user_project)
         return issue_project in user_project
 
     def get_success_url(self):
-        return reverse('webapp:detail', kwargs={'pk': self.object.pk})
+        return reverse('webapp:project_new_index')
 
 
 class IssueDeleteView(UserPassesTestMixin, DeleteView):

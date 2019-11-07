@@ -8,7 +8,7 @@ class IssueForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.user_projects = kwargs.pop('current_project')
         super().__init__(*args, **kwargs)
-        self.fields['assigned_to'].queryset = User.objects.filter(user_team__project__in=self.user_projects)
+        self.fields['assigned_to'].queryset = User.objects.filter(user_team__project__in=self.user_projects).distinct()
 
     class Meta:
         model = Issue
