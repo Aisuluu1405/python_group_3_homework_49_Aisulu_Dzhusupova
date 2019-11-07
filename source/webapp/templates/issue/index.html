@@ -7,9 +7,6 @@
         {% if is_paginated %}
             {% include 'partial/pagination.html' %}
         {% endif %}
-        {% if request.user.is_authenticated %}
-            <p><a href="{% url 'webapp:issue_add'%}" class="btn btn-outline-dark"> Add Issue</a></p>
-        {% endif %}
            <div class="container_index pt-5 pb-5">
             <div class="row">
                 <div class="col-15">
@@ -21,6 +18,7 @@
                             <th scope="col">Description</th>
                             <th scope="col">Date of create</th>
                             <th scope="col">Date of update</th>
+                            <th scope="col">Issue author</th>
                             <th scope="col">Status</th>
                             <th scope="col">Type</th>
                             <th scope="col">Project</th>
@@ -37,6 +35,8 @@
                                 <td>{{ issue.description }}</td>
                                 <td>{{ issue.create|date:'d.m.Y H:i:s' }}</td>
                                 <td>{{ issue.update|date:'d.m.Y H:i:s' }}</td>
+                                <td>{{ issue.created_by}}</td>
+
                                 <td>{{ issue.status}}</td>
                                 <td>{{ issue.type}}</td>
                                 <td>{{ issue.project}}</td>

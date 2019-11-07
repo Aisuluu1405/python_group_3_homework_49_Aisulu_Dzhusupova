@@ -1,8 +1,9 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import reverse, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from webapp.forms import IssueForm, SimpleSearchForm
-from webapp.models import Issue, Project, Team
+from webapp.models import Issue, Project, Team, STATUS_OTHER_CHOICE
 from django.db.models import Q
 from django.utils.http import urlencode
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -61,17 +62,35 @@ class IssueCreateView(LoginRequiredMixin, CreateView):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
-class IssueProjectCreateView(LoginRequiredMixin, CreateView):
+class IssueProjectCreateView(UserPassesTestMixin, CreateView):
     template_name = 'issue/add.html'
     model = Issue
     form_class = IssueForm
 
+    def test_func(self):
+        issue_project = self.get_object().project
+        user_project = Project.objects.filter(project_team__user=self.request.user, project_team__finish=None)
+        print(issue_project)
+        print(user_project)
+        return issue_project in user_project
+
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        project_pk = self.kwargs.get('pk')
+        users_project = Project.objects.filter(pk=project_pk,
+                                               status__icontains=STATUS_OTHER_CHOICE).values('pk').distinct()
+        kwargs['current_project'] = users_project
+        return kwargs
 
     def form_valid(self, form):
         project_pk = self.kwargs.get('pk')
         project = get_object_or_404(Project, pk=project_pk)
         project.issues.create(**form.cleaned_data)
         return redirect('webapp:project_detail', pk=project_pk)
+
+    def get_success_url(self):
+        return reverse('webapp:project_new_index')
 
 
 class IssueEditView(UserPassesTestMixin, UpdateView):
@@ -94,7 +113,7 @@ class IssueDeleteView(UserPassesTestMixin, DeleteView):
     model = Issue
     template_name = 'issue/delete.html'
     context_object_name = 'issue'
-    success_url = reverse_lazy('webapp:index')
+    success_url = reverse_lazy('webapp:project_new_index')
 
     def test_func(self):
         issue_project = self.get_object().project
