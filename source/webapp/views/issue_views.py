@@ -62,7 +62,7 @@ class IssueCreateView(LoginRequiredMixin, CreateView):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
-class IssueProjectCreateView(UserPassesTestMixin, CreateView):
+class IssueProjectCreateView(CreateView):
     template_name = 'issue/add.html'
     model = Issue
     form_class = IssueForm
@@ -86,7 +86,9 @@ class IssueProjectCreateView(UserPassesTestMixin, CreateView):
     def form_valid(self, form):
         project_pk = self.kwargs.get('pk')
         project = get_object_or_404(Project, pk=project_pk)
-        project.issues.create(**form.cleaned_data)
+        self.object = project.issues.create(**form.cleaned_data)
+        self.object.created_by = self.request.user
+        self.object.save()
         return redirect('webapp:project_detail', pk=project_pk)
 
     def get_success_url(self):
