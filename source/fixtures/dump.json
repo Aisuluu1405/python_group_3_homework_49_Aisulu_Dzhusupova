@@ -1,174 +1,5 @@
 [
 {
-  "model": "webapp.issue",
-  "pk": 1,
-  "fields": {
-    "summary": "Create a task for the menu \"Loans\"",
-    "description": "Write a task for the menu \"Loans\". Add a field for calculating limits on new loans.",
-    "status": 1,
-    "type": 4,
-    "project": 1,
-    "create": "2019-09-24T00:00:00Z",
-    "update": "2019-10-14T12:28:21.267Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 2,
-  "fields": {
-    "summary": "Correct an error in menu \"Retail\"",
-    "description": "Correct an error in menu \"Retail. Correct the calculation of the commission for translation services.",
-    "status": 3,
-    "type": 1,
-    "project": 2,
-    "create": "2019-09-24T00:00:00Z",
-    "update": "2019-10-14T12:32:29.478Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 3,
-  "fields": {
-    "summary": "Menu \"Deposits\"",
-    "description": "Change effective interest rate on term deposits.",
-    "status": 3,
-    "type": 1,
-    "project": 3,
-    "create": "2019-09-24T15:30:37.471Z",
-    "update": "2019-10-14T12:52:24.367Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 4,
-  "fields": {
-    "summary": "Safe Box Operations",
-    "description": "Create models of agreements for the use of safe boxes in connection with the implementation of this service.",
-    "status": 1,
-    "type": 4,
-    "project": 3,
-    "create": "2019-09-24T15:33:23.841Z",
-    "update": "2019-10-14T12:28:21.267Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 5,
-  "fields": {
-    "summary": "Internet banking",
-    "description": "Improve Internet banking for payments on loan repayments, crediting funds on the same business day.",
-    "status": 3,
-    "type": 3,
-    "project": 5,
-    "create": "2019-09-24T00:00:00Z",
-    "update": "2019-10-14T12:32:46.882Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 6,
-  "fields": {
-    "summary": "Internet banking test, menu acounting.",
-    "description": "",
-    "status": 1,
-    "type": 1,
-    "project": 5,
-    "create": "2019-09-25T00:00:00Z",
-    "update": "2019-10-14T12:28:21.267Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 7,
-  "fields": {
-    "summary": "Salary",
-    "description": "Change the payroll program, change the income tax rate.",
-    "status": 3,
-    "type": 3,
-    "project": 4,
-    "create": "2019-09-25T13:44:53.565Z",
-    "update": "2019-10-14T12:52:43.165Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 8,
-  "fields": {
-    "summary": "Bank operational day",
-    "description": "Recalculate all taxes and depreciation expenses.",
-    "status": 2,
-    "type": 1,
-    "project": 4,
-    "create": "2019-09-26T10:51:31.412Z",
-    "update": "2019-10-14T12:28:21.267Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 43,
-  "fields": {
-    "summary": "\u0434\u043e\u043c\u0430\u0448\u043a\u0430 53",
-    "description": "\u0421\u0434\u0435\u043b\u0430\u043b\u0430 \u0438 \u0431\u043e\u043d\u0443\u0441 \u0442\u043e\u0436\u0435.",
-    "status": 2,
-    "type": 1,
-    "project": 12,
-    "create": "2019-10-09T13:51:37.505Z",
-    "update": "2019-10-14T12:31:12.544Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 44,
-  "fields": {
-    "summary": "New loans products.",
-    "description": "Develop interest rates for a new type of loan. Develop a pledge agreement.",
-    "status": 2,
-    "type": 4,
-    "project": 1,
-    "create": "2019-10-09T14:24:46.511Z",
-    "update": "2019-10-14T12:28:21.267Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 50,
-  "fields": {
-    "summary": "Deposits",
-    "description": "Create new",
-    "status": 1,
-    "type": 1,
-    "project": 26,
-    "create": "2019-10-10T09:47:38.984Z",
-    "update": "2019-10-14T12:28:21.267Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 51,
-  "fields": {
-    "summary": "Overdraft",
-    "description": "Overdraft for a salary project. Change commission for overdraft issuance.",
-    "status": 2,
-    "type": 1,
-    "project": 27,
-    "create": "2019-10-10T09:50:41.157Z",
-    "update": "2019-10-14T12:32:10.881Z"
-  }
-},
-{
-  "model": "webapp.issue",
-  "pk": 52,
-  "fields": {
-    "summary": "\u043b\u043b\u043b\u043b\u043b",
-    "description": "",
-    "status": 1,
-    "type": 4,
-    "project": 26,
-    "create": "2019-10-10T09:52:32.665Z",
-    "update": "2019-10-14T12:28:21.267Z"
-  }
-},
-{
   "model": "webapp.status",
   "pk": 1,
   "fields": {
@@ -304,7 +135,7 @@
     "project": "Cash Operations",
     "specification": "Cash Operations Procedures.",
     "date_create": "2019-10-10T09:47:11.813Z",
-    "date_update": "2019-10-12T06:42:15.740Z",
+    "date_update": "2019-11-07T10:42:29.311Z",
     "status": "closed"
   }
 },
@@ -346,7 +177,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$EvCMtW1lQD01$RZMVLWl3DyejlKgYKjno8/rbO/gRDRv/OqZ5Dv268IU=",
-    "last_login": "2019-11-04T13:06:43.626Z",
+    "last_login": "2019-11-07T12:06:29.308Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -364,7 +195,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$150000$pOjg9PsUy8g1$2CqA+vWhAc689AkSkKrKzaStSXUW5uXSvseFqnhyEM0=",
-    "last_login": "2019-11-04T12:37:25.668Z",
+    "last_login": "2019-11-07T11:34:41.679Z",
     "is_superuser": false,
     "username": "Aidin",
     "first_name": "Aidin",
@@ -382,7 +213,7 @@
   "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$150000$7BHa6hfMVEv1$WDQeJK4v7XBRI5C84TsdWLFS+JtjficYQH4kh/YUzsQ=",
-    "last_login": "2019-11-04T12:25:13.513Z",
+    "last_login": "2019-11-07T11:18:10.468Z",
     "is_superuser": false,
     "username": "Nadina",
     "first_name": "Nadina",
@@ -400,7 +231,7 @@
   "pk": 4,
   "fields": {
     "password": "pbkdf2_sha256$150000$oOnIrdAX80Rf$T3jEPGjaNa9yYUgKSG9AK3jDpYmONzYU4g7DjxiCnDY=",
-    "last_login": "2019-11-04T12:26:01.925Z",
+    "last_login": "2019-11-07T11:32:47.515Z",
     "is_superuser": false,
     "username": "Nursik",
     "first_name": "Nursultan",
@@ -418,7 +249,7 @@
   "pk": 5,
   "fields": {
     "password": "pbkdf2_sha256$150000$5PQsLN0BPrX0$+uFq32BgmA3eBDsB6+7kUjAZjwojeV1Z4fiP5zLe6H0=",
-    "last_login": "2019-11-04T13:05:51.308Z",
+    "last_login": "2019-11-07T11:48:10.523Z",
     "is_superuser": false,
     "username": "Chinese",
     "first_name": "Sanjar",
@@ -438,7 +269,7 @@
     "user": 2,
     "project": 1,
     "start": "2019-10-01",
-    "finish": "2019-01-31"
+    "finish": null
   }
 },
 {
@@ -456,8 +287,8 @@
   "pk": 3,
   "fields": {
     "user": 4,
-    "project": 26,
-    "start": null,
+    "project": 2,
+    "start": "2019-10-01",
     "finish": null
   }
 },
@@ -468,7 +299,7 @@
     "user": 1,
     "project": 1,
     "start": "2019-11-04",
-    "finish": "2019-11-04"
+    "finish": null
   }
 },
 {
@@ -489,6 +320,501 @@
     "project": 26,
     "start": "2019-08-20",
     "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 7,
+  "fields": {
+    "user": 4,
+    "project": 27,
+    "start": "2019-08-20",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 8,
+  "fields": {
+    "user": 5,
+    "project": 1,
+    "start": "2019-08-20",
+    "finish": "2019-11-01"
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 9,
+  "fields": {
+    "user": 3,
+    "project": 4,
+    "start": "2019-10-01",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 10,
+  "fields": {
+    "user": 3,
+    "project": 2,
+    "start": "2019-11-07",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 11,
+  "fields": {
+    "user": 4,
+    "project": 3,
+    "start": null,
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 12,
+  "fields": {
+    "user": 2,
+    "project": 27,
+    "start": "2019-11-01",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 13,
+  "fields": {
+    "user": 5,
+    "project": 4,
+    "start": "2019-11-04",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 14,
+  "fields": {
+    "user": 2,
+    "project": 3,
+    "start": "2019-08-20",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 15,
+  "fields": {
+    "user": 5,
+    "project": 27,
+    "start": "2019-06-15",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 16,
+  "fields": {
+    "user": 4,
+    "project": 27,
+    "start": "2019-07-16",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 17,
+  "fields": {
+    "user": 1,
+    "project": 30,
+    "start": "2019-10-20",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.team",
+  "pk": 18,
+  "fields": {
+    "user": 5,
+    "project": 30,
+    "start": "2019-09-20",
+    "finish": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 1,
+  "fields": {
+    "summary": "Create a task for the menu \"Loans\"",
+    "description": "Write a task for the menu \"Loans\". Add a field for calculating limits on new loans.",
+    "status": 1,
+    "type": 4,
+    "project": 1,
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-14T12:28:21.267Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 2,
+  "fields": {
+    "summary": "Correct an error in menu \"Retail\"",
+    "description": "Correct an error in menu \"Retail. Correct the calculation of the commission for translation services.",
+    "status": 3,
+    "type": 1,
+    "project": 2,
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-14T12:32:29.478Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 3,
+  "fields": {
+    "summary": "Menu \"Deposits\"",
+    "description": "Change effective interest rate on term deposits.",
+    "status": 3,
+    "type": 1,
+    "project": 3,
+    "create": "2019-09-24T15:30:37.471Z",
+    "update": "2019-10-14T12:52:24.367Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 4,
+  "fields": {
+    "summary": "Safe Box Operations",
+    "description": "Create models of agreements for the use of safe boxes in connection with the implementation of this service.",
+    "status": 1,
+    "type": 4,
+    "project": 3,
+    "create": "2019-09-24T15:33:23.841Z",
+    "update": "2019-10-14T12:28:21.267Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 5,
+  "fields": {
+    "summary": "Internet banking",
+    "description": "Improve Internet banking for payments on loan repayments, crediting funds on the same business day.",
+    "status": 3,
+    "type": 3,
+    "project": 5,
+    "create": "2019-09-24T00:00:00Z",
+    "update": "2019-10-14T12:32:46.882Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 6,
+  "fields": {
+    "summary": "Internet banking test, menu acounting.",
+    "description": "",
+    "status": 1,
+    "type": 1,
+    "project": 5,
+    "create": "2019-09-25T00:00:00Z",
+    "update": "2019-10-14T12:28:21.267Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 7,
+  "fields": {
+    "summary": "Salary",
+    "description": "Change the payroll program, change the income tax rate.",
+    "status": 3,
+    "type": 3,
+    "project": 4,
+    "create": "2019-09-25T13:44:53.565Z",
+    "update": "2019-11-07T11:18:42.570Z",
+    "created_by": null,
+    "assigned_to": 5
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 8,
+  "fields": {
+    "summary": "Bank operational day",
+    "description": "Recalculate all taxes and depreciation expenses.",
+    "status": 2,
+    "type": 1,
+    "project": 4,
+    "create": "2019-09-26T10:51:31.412Z",
+    "update": "2019-11-07T11:10:11.681Z",
+    "created_by": null,
+    "assigned_to": 3
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 43,
+  "fields": {
+    "summary": "\u0434\u043e\u043c\u0430\u0448\u043a\u0430 53",
+    "description": "\u0421\u0434\u0435\u043b\u0430\u043b\u0430 \u0438 \u0431\u043e\u043d\u0443\u0441 \u0442\u043e\u0436\u0435.",
+    "status": 2,
+    "type": 1,
+    "project": 12,
+    "create": "2019-10-09T13:51:37.505Z",
+    "update": "2019-10-14T12:31:12.544Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 44,
+  "fields": {
+    "summary": "New loans products.",
+    "description": "Develop interest rates for a new type of loan. Develop a pledge agreement.",
+    "status": 2,
+    "type": 4,
+    "project": 1,
+    "create": "2019-10-09T14:24:46.511Z",
+    "update": "2019-10-14T12:28:21.267Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 50,
+  "fields": {
+    "summary": "Deposits",
+    "description": "Create new",
+    "status": 1,
+    "type": 1,
+    "project": 26,
+    "create": "2019-10-10T09:47:38.984Z",
+    "update": "2019-10-14T12:28:21.267Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 51,
+  "fields": {
+    "summary": "Overdraft",
+    "description": "Overdraft for a salary project. Change commission for overdraft issuance.",
+    "status": 2,
+    "type": 1,
+    "project": 27,
+    "create": "2019-10-10T09:50:41.157Z",
+    "update": "2019-10-14T12:32:10.881Z",
+    "created_by": null,
+    "assigned_to": null
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 89,
+  "fields": {
+    "summary": "\u041d\u043e\u0432\u044b\u0439 \u0432\u0438\u0434 \u0434\u0435\u043f\u043e\u0437\u0438\u0442\u0430.",
+    "description": "\u0420\u0430\u0437\u0430\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443 \u043f\u043e \u043d\u043e\u0432\u043e\u043c\u0443 \u0432\u0438\u0434\u0443 \u0434\u0435\u043f\u043e\u0437\u0438\u0442\u0430.",
+    "status": 1,
+    "type": 3,
+    "project": 26,
+    "create": "2019-11-07T09:36:53.864Z",
+    "update": "2019-11-07T09:36:54.479Z",
+    "created_by": 3,
+    "assigned_to": 4
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 90,
+  "fields": {
+    "summary": "\u041d\u043e\u0432\u0430\u044f \u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u0434\u0435\u043d\u0435\u0436\u043d\u044b\u0445 \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u043e\u0432.",
+    "description": "\u041f\u0440\u043e\u0432\u0435\u0441\u0442\u0438 \u043c\u0430\u0440\u043a\u0435\u0442\u0438\u043d\u0433\u043e\u0432\u044b\u0435 \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f.",
+    "status": 1,
+    "type": 3,
+    "project": 2,
+    "create": "2019-11-07T10:53:06.840Z",
+    "update": "2019-11-07T10:53:07.433Z",
+    "created_by": 3,
+    "assigned_to": 3
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 92,
+  "fields": {
+    "summary": "\u041d\u043e\u0432\u044b\u0439 \u0432\u0438\u0434 \u043e\u0432\u0435\u0440\u0434\u0440\u0430\u0444\u0442\u0430",
+    "description": "",
+    "status": 2,
+    "type": 4,
+    "project": 2,
+    "create": "2019-11-07T11:05:13.183Z",
+    "update": "2019-11-07T11:05:35.766Z",
+    "created_by": 3,
+    "assigned_to": 4
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 93,
+  "fields": {
+    "summary": "\u041e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0430",
+    "description": "",
+    "status": 2,
+    "type": 4,
+    "project": 4,
+    "create": "2019-11-07T11:11:46.318Z",
+    "update": "2019-11-07T11:11:46.823Z",
+    "created_by": 3,
+    "assigned_to": 3
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 94,
+  "fields": {
+    "summary": "\u041e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0444\u0438\u0437 \u043b\u0438\u0446",
+    "description": "",
+    "status": 2,
+    "type": 3,
+    "project": 4,
+    "create": "2019-11-07T11:17:09.140Z",
+    "update": "2019-11-07T11:18:23.698Z",
+    "created_by": 3,
+    "assigned_to": 5
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 95,
+  "fields": {
+    "summary": "\u041e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0444\u0438\u0437 \u043b\u0438\u0446 \u043f\u043e \u0432\u043a\u043b\u0430\u0434\u0430\u043c",
+    "description": "",
+    "status": 2,
+    "type": 4,
+    "project": 3,
+    "create": "2019-11-07T11:31:48.815Z",
+    "update": "2019-11-07T11:33:06.562Z",
+    "created_by": 4,
+    "assigned_to": 2
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 96,
+  "fields": {
+    "summary": "\u0412\u043a\u043b\u0430\u0434\u044b \u0441\u0440\u043e\u0447\u043d\u044b\u0435",
+    "description": "",
+    "status": 10,
+    "type": 4,
+    "project": 3,
+    "create": "2019-11-07T11:33:46.629Z",
+    "update": "2019-11-07T11:33:47.126Z",
+    "created_by": 4,
+    "assigned_to": 4
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 97,
+  "fields": {
+    "summary": "\u041a\u0440\u0435\u0434\u0438\u0442\u044b \u041c\u0421\u0411555",
+    "description": "",
+    "status": 2,
+    "type": 1,
+    "project": 1,
+    "create": "2019-11-07T11:35:16.965Z",
+    "update": "2019-11-07T11:44:26.116Z",
+    "created_by": 2,
+    "assigned_to": 5
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 98,
+  "fields": {
+    "summary": "\u0410\u043a\u043a\u0440\u0435\u0434\u0438\u0442\u0438\u0432",
+    "description": "\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443 \u043f\u043e \u0430\u043a\u043a\u0440\u0435\u0434\u0438\u0442\u0438\u0432\u0430\u043c. \u0420\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0443\u0441\u043b\u043e\u0432\u0438\u044f \u0434\u043b\u044f \u043f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a\u043e\u0432.",
+    "status": 2,
+    "type": 1,
+    "project": 27,
+    "create": "2019-11-07T11:49:18.960Z",
+    "update": "2019-11-07T11:52:36.287Z",
+    "created_by": 5,
+    "assigned_to": 4
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 99,
+  "fields": {
+    "summary": "\u0426\u0435\u043d\u043d\u044b\u0435 \u0431\u0443\u043c\u0430\u0433\u0438",
+    "description": "",
+    "status": 2,
+    "type": 4,
+    "project": 27,
+    "create": "2019-11-07T11:49:43.922Z",
+    "update": "2019-11-07T11:49:44.576Z",
+    "created_by": 5,
+    "assigned_to": 2
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 100,
+  "fields": {
+    "summary": "\u041a\u0430\u0440\u0442\u043e\u0447\u043d\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442.",
+    "description": "\u0417\u0430\u0440\u043f\u043b\u0430\u0442\u043d\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442, \u043d\u0430\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u043e\u0432 \u043d\u0430 \u0441\u0440\u0435\u0434\u043d\u0435\u0434\u043d\u0435\u0432\u043d\u044b\u0435 \u043e\u0441\u0442\u0430\u0442\u043a\u0438, \u043a\u0430\u043f\u0438\u0442\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u043e\u0432 \u043a\u0430\u0436\u0434\u044b\u0439 \u043c\u0435\u0441\u044f\u0446.",
+    "status": 2,
+    "type": 4,
+    "project": 30,
+    "create": "2019-11-07T11:50:59.517Z",
+    "update": "2019-11-07T11:51:34.583Z",
+    "created_by": 5,
+    "assigned_to": 1
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 101,
+  "fields": {
+    "summary": "\u041a\u043e\u043d\u0432\u0435\u0440\u0442\u0430\u0446\u0438\u044f.",
+    "description": "\u041f\u0435\u0440\u0435\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f \u0438\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u044b\u0445 \u043a\u0443\u0440\u0441\u043e\u0432 \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u043f\u0440\u043e\u0434\u0430\u0436\u0438 \u0432\u0430\u043b\u044e\u0442\u044b \u0434\u043b\u044f \u0412\u0418\u041f \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432.",
+    "status": 1,
+    "type": 1,
+    "project": 27,
+    "create": "2019-11-07T11:54:03.032Z",
+    "update": "2019-11-07T11:54:03.623Z",
+    "created_by": 5,
+    "assigned_to": 5
+  }
+},
+{
+  "model": "webapp.issue",
+  "pk": 102,
+  "fields": {
+    "summary": "\u041f\u0435\u043d\u0441\u0438\u043e\u043d\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u044b",
+    "description": "\u0420\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u043d\u0430\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u044f \u0441\u0443\u043c\u043c\u044b \u043d\u0430 \u043a\u0430\u0440\u0442\u043e\u0447\u043d\u044b\u0435 \u0441\u0447\u0435\u0442\u0430 \u043f\u0435\u043d\u0441\u0438\u043e\u043d\u0435\u0440\u043e\u0432 \u043a\u043e \u0434\u043d\u044e \u043f\u043e\u0436\u0438\u043b\u044b\u0445 \u043b\u044e\u0434\u0435\u0439.",
+    "status": 10,
+    "type": 4,
+    "project": 30,
+    "create": "2019-11-07T11:55:50.896Z",
+    "update": "2019-11-07T11:55:51.490Z",
+    "created_by": 5,
+    "assigned_to": 1
   }
 }
 ]
