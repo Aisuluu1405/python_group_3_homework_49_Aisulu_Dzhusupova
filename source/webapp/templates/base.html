@@ -31,9 +31,13 @@
       <li class="nav-item ml-3 mr-3">
         <a class="nav-link font-weight-bolder" href="{% url 'webapp:type_index' %}">Type</a>
       </li>
-{#      <li class="nav-item ml-3 mr-3">#}
-{#        <a class="nav-link font-weight-bolder" href="{% url 'webapp:project_index'%}">Project</a>#}
-{#      </li>#}
+      <li class="nav-item ml-3 mr-3">
+          <a href="#" class="nav-link font-weight-bolder" data-toggle="modal" data-target="#Modalstatic">
+            Statistic
+          </a>
+{#          {{ request.session.index }}#}
+{#        <a class="nav-link font-weight-bolder" href="{% url 'webapp:statistic'%}">Statistic</a>#}
+      </li>
       <li class="nav-item ml-3 mr-3">
         <a class="nav-link font-weight-bolder" href="{% url 'accounts:users_index'%}">All Users</a>
       </li>
@@ -48,18 +52,47 @@
             <li class="nav-item ml-5 mr-3"><a class="nav-link font-weight-bolder text-danger" href="{% url 'accounts:login' %}">Log In</a></li>
             <li class="nav-item ml-5 mr-3"><a class="nav-link font-weight-bolder text-danger" href="{% url 'accounts:register' %}">Sign Up</a></li>
         {% endif %}
+
+
     </ul>
   </div>
 </nav>
 
+
+
 <div class="container">
     {% block content %}{% endblock %}
 </div>
+<div class="modal" id="Modalstatic" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title">Statistic</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Your visits: {{ request.session.index }}</p>
+                      </div>
+                      <div class="modal-footer">
+{#                          <button type="button" class="btn btn-primary">Save changes</button>#}
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
-<script src="{% static 'js/popper.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
+ {% block scripts %}
+    <script>
+       $('#Modalstatic').on('shown.bs.modal', function () {
+       $('#myInput').trigger('focus')
+       })
+    </script>
+    <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-{% block scripts %}{% endblock %}
+{% endblock %}
 </body>
 </html>

@@ -8,8 +8,10 @@ from django.db.models import Q
 from django.utils.http import urlencode
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
+from webapp.views.base_view import SessionUserMixin
 
-class IndexView(ListView):
+
+class IndexView(SessionUserMixin, ListView):
     template_name = 'issue/index.html'
     context_object_name = 'issues'
     model = Issue
@@ -21,6 +23,9 @@ class IndexView(ListView):
     def get(self, request, *args, **kwargs):
         self.form = self.get_search_form()
         self.search_value = self.get_search_value()
+        self.count(self.request, 'index')
+
+        print(request.session.items())
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -46,14 +51,14 @@ class IndexView(ListView):
         return None
 
 
-class IssueView(DetailView):
+class IssueView(SessionUserMixin, DetailView):
     model = Issue
     template_name = 'issue/detail.html'
     pk_url_kwarg = 'pk'
     context_object_name = 'issue'
 
 
-class IssueCreateView(LoginRequiredMixin, CreateView):
+class IssueCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
     template_name = 'issue/add.html'
     model = Issue
     form_class = IssueForm
@@ -62,7 +67,7 @@ class IssueCreateView(LoginRequiredMixin, CreateView):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
-class IssueProjectCreateView(UserPassesTestMixin, CreateView):
+class IssueProjectCreateView(UserPassesTestMixin, SessionUserMixin, CreateView):
     template_name = 'bonus/issue_add.html'
     model = Issue
     form_class = IssueForm

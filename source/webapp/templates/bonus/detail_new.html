@@ -21,8 +21,8 @@
                 {% empty %}
                     <p>This new project, no issues yet.</p>
                 {%  endfor %}
-{#        {% if project.status == 'active' %}#}
+        {% if project.status == 'active' %}
             <a href="{% url "webapp:project_issue_add" project.pk %}" class="add btn btn-outline-dark">Add issue</a>
-{#        {% endif %}#}
+        {% endif %}
     </div>
 {% endblock %}
