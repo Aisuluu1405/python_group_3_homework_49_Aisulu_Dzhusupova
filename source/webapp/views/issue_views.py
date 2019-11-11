@@ -8,10 +8,10 @@ from django.db.models import Q
 from django.utils.http import urlencode
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
-from webapp.views.base_view import SessionUserMixin
 
 
-class IndexView(SessionUserMixin, ListView):
+
+class IndexView(ListView):
     template_name = 'issue/index.html'
     context_object_name = 'issues'
     model = Issue
@@ -19,13 +19,9 @@ class IndexView(SessionUserMixin, ListView):
     paginate_by = 5
     paginate_orphans = 1
 
-
     def get(self, request, *args, **kwargs):
         self.form = self.get_search_form()
         self.search_value = self.get_search_value()
-        self.count(self.request, 'index')
-
-        print(request.session.items())
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -51,14 +47,15 @@ class IndexView(SessionUserMixin, ListView):
         return None
 
 
-class IssueView(SessionUserMixin, DetailView):
+class IssueView(DetailView):
     model = Issue
     template_name = 'issue/detail.html'
     pk_url_kwarg = 'pk'
     context_object_name = 'issue'
 
 
-class IssueCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
+
+class IssueCreateView(LoginRequiredMixin, CreateView):
     template_name = 'issue/add.html'
     model = Issue
     form_class = IssueForm

@@ -73,7 +73,10 @@
                           </button>
                       </div>
                       <div class="modal-body">
-                          <p>Your visits: {{ request.session.index }}</p>
+{#                          <p>Your visits: {{ request.session.index }}</p>#}
+                          {% for page, times in on_page.items %}
+                            <p>{{ page }} {{ times }}</p>
+                          {% endfor %}
                       </div>
                       <div class="modal-footer">
 {#                          <button type="button" class="btn btn-primary">Save changes</button>#}

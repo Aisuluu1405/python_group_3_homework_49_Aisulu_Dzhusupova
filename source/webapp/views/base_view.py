@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from collections import deque
 from django.db.models import ProtectedError
 from django.shortcuts import get_object_or_404, render, redirect
 
@@ -124,11 +124,4 @@ class DeleteView(View):
 
     def get_redirect_url(self):
         return self.redirect_url
-
-
-class SessionUserMixin():
-
-    def count(self, request, name):
-        count = request.session.get(name, 0)
-        request.session[name] = count + 1
 
