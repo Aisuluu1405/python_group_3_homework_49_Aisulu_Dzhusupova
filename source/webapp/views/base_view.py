@@ -159,13 +159,13 @@ class SessionUserMixin:
     def set_request(self, request):
         self.request = request
 
-    def get_total_time(self):
+    def get_total_time(self):    #общее время нахождения на страницах
         total_times = self.request.session['page_time_visits']
         for key, values in total_times.items():
             self.all_time += values
         print(self.all_time)
 
-    def total_time(self):  # общее время
+    def total_time(self):  # время нахождения на странице
         f_date, s_date = self.date_buffer
         diff = list(s_date.values()).pop() - list(f_date.values()).pop()
         f_date_key = list(f_date.keys()).pop()
@@ -177,7 +177,7 @@ class SessionUserMixin:
         # print(self.page_duration_visits)
 
 
-    def page_visit_count(self):                    #счетчик страниц, определение страниц
+    def page_visit_count(self):                    #счетчик страниц, определение страниц по path
         count = 1
         if self.request.path in self.page_times_visits.keys():
             self.page_times_visits[self.request.path] += 1

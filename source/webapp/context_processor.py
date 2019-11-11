@@ -5,5 +5,4 @@ def context(request):
         'total': request.session.get('total')['total'],
         'all_time': request.session.get('all_time'),
         'page_time': request.session.get('page_time_visits')
-
             }

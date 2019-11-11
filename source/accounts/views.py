@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.urls import reverse
 from django.views.generic import DetailView, UpdateView, ListView
-
+from webapp.views.base_view import SessionUserMixin
 from accounts.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from accounts.models import UserProfile
 
@@ -32,17 +32,27 @@ def register_view(request):
     return render(request, 'user_create.html', context={'form': form})
 
 
-class UserDetailView(DetailView):
+class UserDetailView(SessionUserMixin, DetailView):
     model = User
     template_name = 'user_detail.html'
     context_object_name = 'user_obj'
 
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)
 
-class UserInfoChangeView(UserPassesTestMixin, UpdateView):
+
+class UserInfoChangeView(UserPassesTestMixin, SessionUserMixin, UpdateView):
     model = User
     template_name = 'user_info_change.html'
     form_class = UserChangeForm
     context_object_name = 'user_obj'
+
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)
 
     def test_func(self):
         return self.get_object() == self.request.user
@@ -51,18 +61,29 @@ class UserInfoChangeView(UserPassesTestMixin, UpdateView):
         return reverse('accounts:user_detail', kwargs={'pk':self.object.pk})
 
 
-class UserPasswordChangeView(UpdateView):
+class UserPasswordChangeView(SessionUserMixin, UpdateView):
     model = User
     template_name = 'user_password_change.html'
     form_class = PasswordChangeForm
     context_object_name = 'user_obj'
 
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)
+
     def get_success_url(self):
         return reverse('accounts:login')
 
 
-class UsersIndexView(ListView):
+class UsersIndexView(SessionUserMixin, ListView):
     model = User
     template_name = 'users_index.html'
     context_object_name = 'users'
+
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)
+
 
