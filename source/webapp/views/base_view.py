@@ -127,23 +127,54 @@ class DeleteView(View):
 
 
 class SessionUserMixin:
-    page_times_visits = {
+    page_times_visits = {}
+    total_count = {
         'total': 0
     }
+    all_time = 0
     page_duration_visits = {}
+    date_buffer = deque()
 
 
     def save_in_session(self):                            #сохранили в сессию
         self.request.session['total_page_visits'] = self.page_times_visits
+        self.request.session['total'] = self.total_count
+        # print(self.page_times_visits)
         self.request.session['page_time_visits'] = self.page_duration_visits
+        self.request.session['all_time'] = self.all_time
+        print(self.request.session['all_time'])
+
 
     def page_login(self):                   #как зашли на страницу пошел отсчет
-        self.page_times_visits['total'] += 1
+        self.total_count['total'] += 1
         self.page_visit_count()
+        self.get_total_time()
         self.save_in_session()
+        date = datetime.now()
+        self.date_buffer.append({self.request.path: date})
+
+        if len(self.date_buffer) > 1:
+            self.total_time()
 
     def set_request(self, request):
         self.request = request
+
+    def get_total_time(self):
+        total_times = self.request.session['page_time_visits']
+        for key, values in total_times.items():
+            self.all_time += values
+        print(self.all_time)
+
+    def total_time(self):  # общее время
+        f_date, s_date = self.date_buffer
+        diff = list(s_date.values()).pop() - list(f_date.values()).pop()
+        f_date_key = list(f_date.keys()).pop()
+        if f_date_key in self.page_duration_visits.keys():
+            self.page_duration_visits[f_date_key] += float(diff.total_seconds())
+        elif f_date_key not in self.page_duration_visits.keys():
+            self.page_duration_visits[f_date_key] = float(diff.total_seconds())
+        self.date_buffer.popleft()
+        # print(self.page_duration_visits)
 
 
     def page_visit_count(self):                    #счетчик страниц, определение страниц
@@ -152,6 +183,6 @@ class SessionUserMixin:
             self.page_times_visits[self.request.path] += 1
         elif self.request.path not in self.page_times_visits.keys():
             self.page_times_visits[self.request.path] = count
-        print(self.page_times_visits)
+        # print(self.page_times_visits)
 
 

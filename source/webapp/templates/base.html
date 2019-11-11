@@ -73,13 +73,22 @@
                           </button>
                       </div>
                       <div class="modal-body">
-{#                          <p>Your visits: {{ request.session.index }}</p>#}
-                          {% for page, times in on_page.items %}
-                            <p>{{ page }} {{ times }}</p>
+                      <div class="page-count">
+                      <p>Total : {{ total }}</p>
+                      <p>Total time: {{ all_time }}</p>
+                        <p>Page:  Count:</p>
+                          {% for page, count in on_page.items %}
+                              <p>{{ page }} {{ count }}</p>
+                            {% endfor %}
+                      </div>
+                      <div class="page-time">
+                            <p>Time:</p>
+                          {% for time in page_time.values %}
+                              <p>{{ time }}</p>
                           {% endfor %}
                       </div>
+                      </div>
                       <div class="modal-footer">
-{#                          <button type="button" class="btn btn-primary">Save changes</button>#}
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                       </div>
                   </div>

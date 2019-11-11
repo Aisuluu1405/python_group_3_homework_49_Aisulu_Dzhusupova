@@ -28,6 +28,15 @@ body{
     font-size: 25px;
 }
 
+.page-count {
+    display: inline-block;
+}
+
+.page-time {
+    display: inline-block;
+    margin-left: 15px;
+}
+
 .date{
     font-size: 20px;
 }
