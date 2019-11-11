@@ -8,10 +8,10 @@ from django.db.models import Q
 from django.utils.http import urlencode
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
+from webapp.views.base_view import SessionUserMixin
 
 
-
-class IndexView(ListView):
+class IndexView(SessionUserMixin, ListView):
     template_name = 'issue/index.html'
     context_object_name = 'issues'
     model = Issue
@@ -22,6 +22,8 @@ class IndexView(ListView):
     def get(self, request, *args, **kwargs):
         self.form = self.get_search_form()
         self.search_value = self.get_search_value()
+        self.set_request(request)
+        self.page_login()
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -47,18 +49,28 @@ class IndexView(ListView):
         return None
 
 
-class IssueView(DetailView):
+class IssueView(SessionUserMixin, DetailView):
     model = Issue
     template_name = 'issue/detail.html'
     pk_url_kwarg = 'pk'
     context_object_name = 'issue'
 
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)
 
 
-class IssueCreateView(LoginRequiredMixin, CreateView):
+class IssueCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
     template_name = 'issue/add.html'
     model = Issue
     form_class = IssueForm
+
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)
+
 
     def get_success_url(self):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
@@ -95,8 +107,14 @@ class IssueProjectCreateView(UserPassesTestMixin, SessionUserMixin, CreateView):
     def get_success_url(self):
         return reverse('webapp:project_new_index')
 
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)
 
-class IssueEditView(UserPassesTestMixin, UpdateView):
+
+
+class IssueEditView(UserPassesTestMixin, SessionUserMixin, UpdateView):
     template_name = 'issue/edit.html'
     model = Issue
     form_class = IssueForm
@@ -113,11 +131,16 @@ class IssueEditView(UserPassesTestMixin, UpdateView):
         user_project = Project.objects.filter(project_team__user=self.request.user, project_team__finish=None)
         return issue_project in user_project
 
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)
+
     def get_success_url(self):
         return reverse('webapp:project_new_index')
 
 
-class IssueDeleteView(UserPassesTestMixin, DeleteView):
+class IssueDeleteView(UserPassesTestMixin, SessionUserMixin, DeleteView):
     model = Issue
     template_name = 'issue/delete.html'
     context_object_name = 'issue'
@@ -128,3 +151,8 @@ class IssueDeleteView(UserPassesTestMixin, DeleteView):
         user_project = Project.objects.filter(project_team__user=self.request.user, project_team__finish=None)
         print(user_project)
         return issue_project in user_project
+
+    def get(self, request, *args, **kwargs):
+        self.set_request(request)
+        self.page_login()
+        return super().get(request, *args, **kwargs)

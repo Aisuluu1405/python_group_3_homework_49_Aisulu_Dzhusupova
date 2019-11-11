@@ -125,3 +125,33 @@ class DeleteView(View):
     def get_redirect_url(self):
         return self.redirect_url
 
+
+class SessionUserMixin:
+    page_times_visits = {
+        'total': 0
+    }
+    page_duration_visits = {}
+
+
+    def save_in_session(self):                            #сохранили в сессию
+        self.request.session['total_page_visits'] = self.page_times_visits
+        self.request.session['page_time_visits'] = self.page_duration_visits
+
+    def page_login(self):                   #как зашли на страницу пошел отсчет
+        self.page_times_visits['total'] += 1
+        self.page_visit_count()
+        self.save_in_session()
+
+    def set_request(self, request):
+        self.request = request
+
+
+    def page_visit_count(self):                    #счетчик страниц, определение страниц
+        count = 1
+        if self.request.path in self.page_times_visits.keys():
+            self.page_times_visits[self.request.path] += 1
+        elif self.request.path not in self.page_times_visits.keys():
+            self.page_times_visits[self.request.path] = count
+        print(self.page_times_visits)
+
+
