@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Projects{% endblock %}
 {% block content %}
-    <a href="{% url 'webapp:project_add' %}" class="btn btn-outline-primary  m-5">Add Project</a>
+    {% if perms.webapp.add_project %}
+        <a href="{% url 'webapp:project_add' %}" class="btn btn-outline-primary  m-5">Add Project</a>
+    {% endif %}
     <div class="type text-left">
         <h1>Projects(bonus)</h1>
     </div>
@@ -14,8 +16,11 @@
                     <a href="{% url 'webapp:project_new_detail' item.pk %}"><b>{{ item.project}}</b> </a> (Status: {{ item.status }}) <br>
                     <div class="links">
                         <p>(Create date:{{ item.date_create| date:'d.m.Y H:i:s' }})
-                        <a href="{% url 'webapp:project_delete' item.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
+                        {% if perms.webapp.delete_project %}
+                            <a href="{% url 'webapp:project_delete' item.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
+                        {% elif perms.webapp.change_project %}
                             <a href="{% url 'webapp:project_edit' item.pk %}"><i class="fas fa-edit ml-5"></i></a></p>
+                        {% endif %}
                     </div>
         {% endfor %}
         </ul>

@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User
-from django.shortcuts import redirect, reverse
+from django.shortcuts import redirect, reverse, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from webapp.forms import ProjectForm
@@ -45,10 +45,12 @@ class ProjectNewView(SessionUserMixin, DetailView):
         return super().get(request, *args, **kwargs)
 
 
-class ProjectCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
+class ProjectCreateView(PermissionRequiredMixin, SessionUserMixin, CreateView):
     template_name = 'project/add.html'
     model = Project
     form_class = ProjectForm
+    permission_required = 'webapp.add_project'
+    permission_denied_message = 'Access is denied!'
 
     def form_valid(self, form):
         users = form.cleaned_data.pop('user_project')
@@ -57,7 +59,8 @@ class ProjectCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
         users_list.append(user_project)
         self.object = form.save()
         for user in users_list:
-            Team.objects.create(user=user, project=self.object, start=datetime.now())
+            Team.objects.create(user=user, project=self.object, finish=None)
+                                # start=datetime.now())
         return redirect(self.get_success_url())
 
     def get(self, request, *args, **kwargs):
@@ -69,11 +72,14 @@ class ProjectCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
         return reverse('webapp:project_new_index')
 
 
-class ProjectEditView(LoginRequiredMixin, SessionUserMixin, UpdateView):
+class ProjectEditView(PermissionRequiredMixin, SessionUserMixin, UpdateView):
     template_name = 'project/edit.html'
     model = Project
     form_class = ProjectForm
     context_object_name = 'project'
+    permission_required = 'webapp.change_project'
+    permission_denied_message = 'Access is denied!'
+
 
     def get(self, request, *args, **kwargs):
         self.set_request(request)
@@ -84,9 +90,11 @@ class ProjectEditView(LoginRequiredMixin, SessionUserMixin, UpdateView):
         return reverse('webapp:project_detail', kwargs={'pk': self.object.pk})
 
 
-class ProjectNewDeleteView(LoginRequiredMixin, SessionUserMixin, UpdateView):
+class ProjectNewDeleteView(PermissionRequiredMixin, SessionUserMixin, UpdateView):
     model = Project
     success_url = reverse_lazy('webapp:project_new_index')
+    permission_required = 'webapp.change_project'
+    permission_denied_message = 'Access is denied!'
 
     def get(self, request, *args, **kwargs):
         object = self.model.objects.filter(pk=kwargs.get('pk'))

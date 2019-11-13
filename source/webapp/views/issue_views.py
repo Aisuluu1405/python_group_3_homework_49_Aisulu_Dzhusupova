@@ -6,7 +6,7 @@ from webapp.forms import IssueForm, SimpleSearchForm
 from webapp.models import Issue, Project, Team, STATUS_OTHER_CHOICE
 from django.db.models import Q
 from django.utils.http import urlencode
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 
 from webapp.views.base_view import SessionUserMixin
 
@@ -61,10 +61,12 @@ class IssueView(SessionUserMixin, DetailView):
         return super().get(request, *args, **kwargs)
 
 
-class IssueCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
+class IssueCreateView(PermissionRequiredMixin, SessionUserMixin, CreateView):
     template_name = 'issue/add.html'
     model = Issue
     form_class = IssueForm
+    permission_required = 'webapp.add_issue'
+    permission_denied_message = 'Access is denied!'
 
     def get(self, request, *args, **kwargs):
         self.set_request(request)
@@ -76,10 +78,12 @@ class IssueCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
         return reverse('webapp:detail', kwargs={'pk': self.object.pk})
 
 
-class IssueProjectCreateView(UserPassesTestMixin, SessionUserMixin, CreateView):
+class IssueProjectCreateView(PermissionRequiredMixin, SessionUserMixin, CreateView):
     template_name = 'bonus/issue_add.html'
     model = Issue
     form_class = IssueForm
+    permission_required = 'webapp.add_issue'
+    permission_denied_message = 'Access is denied!'
 
     def test_func(self):
         project = self.get_project()
@@ -117,18 +121,18 @@ class IssueProjectCreateView(UserPassesTestMixin, SessionUserMixin, CreateView):
         return super().get(request, *args, **kwargs)
 
 
-
-class IssueEditView(UserPassesTestMixin, SessionUserMixin, UpdateView):
+class IssueEditView(PermissionRequiredMixin, SessionUserMixin, UpdateView):
     template_name = 'issue/edit.html'
     model = Issue
     form_class = IssueForm
     context_object_name = 'issue'
+    permission_required = 'webapp.change_issue'
+    permission_denied_message = 'Access is denied!'
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['current_project'] = Project.objects.filter(issues=self.object)
         return kwargs
-
 
     def test_func(self):
         issue_project = self.get_object().project
@@ -144,11 +148,13 @@ class IssueEditView(UserPassesTestMixin, SessionUserMixin, UpdateView):
         return reverse('webapp:project_new_index')
 
 
-class IssueDeleteView(UserPassesTestMixin, SessionUserMixin, DeleteView):
+class IssueDeleteView(PermissionRequiredMixin, SessionUserMixin, DeleteView):
     model = Issue
     template_name = 'issue/delete.html'
     context_object_name = 'issue'
     success_url = reverse_lazy('webapp:project_new_index')
+    permission_required = 'webapp.delete_issue'
+    permission_denied_message = 'Access is denied!'
 
     def test_func(self):
         issue_project = self.get_object().project

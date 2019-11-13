@@ -9,12 +9,12 @@
             <p class="lead">Status: {{ project.status }}</p>
             <p class="pre">{{ project.specification }}</p>
             <p class="lead">Create date: {{ project.date_create| date:'d.m.Y H:i:s'}}</p>
-            <p class="users">Users:
+
                 {% for team in project.project_team.all %}
-                    {{ team.user.username }}
+                    <p> User: <b>{{ team.user.username }}</b>  Date of start: <b>{{ team.start| date:'d.m.Y' }}</b></p>
                 {% endfor %}
-            </p>
-            <a href="{% url "webapp:project_user_edit" user.pk %}" class="add btn btn-outline-dark">Edit user</a>
+
+            <a href="" class="add btn btn-outline-dark">Add user</a>
             <a href="" class="add btn btn-outline-dark">Delete user</a>
 
             <hr class="my-4">
@@ -30,7 +30,9 @@
                     <p>This new project, no issues yet.</p>
                 {%  endfor %}
         {% if project.status == 'active' %}
-            <a href="{% url "webapp:project_issue_add" project.pk %}" class="add btn btn-outline-dark">Add issue</a>
+            {% if perms.webapp.add_issue %}
+                <a href="{% url "webapp:project_issue_add" project.pk %}" class="add btn btn-outline-dark">Add issue</a>
+            {%  endif %}
         {% endif %}
     </div>
 {% endblock %}
