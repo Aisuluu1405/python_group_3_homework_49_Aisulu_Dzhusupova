@@ -30,4 +30,5 @@ urlpatterns = [
     path('project_new/', ProjectIndexNewView.as_view(), name='project_new_index'),
     path('project_new/<int:pk>/', ProjectNewView.as_view(), name='project_new_detail'),
     path('project_new/delete/<int:pk>', ProjectNewDeleteView.as_view(), name='project_new_delete'),
+
 ]

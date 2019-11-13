@@ -9,6 +9,14 @@
             <p class="lead">Status: {{ project.status }}</p>
             <p class="pre">{{ project.specification }}</p>
             <p class="lead">Create date: {{ project.date_create| date:'d.m.Y H:i:s'}}</p>
+            <p class="users">Users:
+                {% for team in project.project_team.all %}
+                    {{ team.user.username }}
+                {% endfor %}
+            </p>
+            <a href="{% url "webapp:project_user_edit" user.pk %}" class="add btn btn-outline-dark">Edit user</a>
+            <a href="" class="add btn btn-outline-dark">Delete user</a>
+
             <hr class="my-4">
 
         <h2><b>Issues for this project: </b></h2>

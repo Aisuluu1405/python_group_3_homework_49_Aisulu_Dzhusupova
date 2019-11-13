@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from webapp.models import Issue, Status, Type, Project
+from webapp.models import Issue, Status, Type, Project, Team
 
 
 class IssueForm(forms.ModelForm):
@@ -28,6 +28,8 @@ class TypeForm(forms.ModelForm):
 
 
 class ProjectForm(forms.ModelForm):
+    user_project = forms.ModelMultipleChoiceField(queryset=User.objects.all(), required=False, label='Project`s user')
+
     class Meta:
         model = Project
         exclude = ['date_create', 'date_update']
@@ -35,3 +37,4 @@ class ProjectForm(forms.ModelForm):
 
 class SimpleSearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label='Search')
+

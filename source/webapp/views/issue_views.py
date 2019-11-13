@@ -93,7 +93,6 @@ class IssueProjectCreateView(UserPassesTestMixin, SessionUserMixin, CreateView):
         return get_object_or_404(Project, pk=project_pk)
 
     def get_form_kwargs(self):
-        print('yes')
         kwargs = super().get_form_kwargs()
         project_pk = self.kwargs.get('pk')
         users_project = Project.objects.filter(pk=project_pk,
@@ -103,7 +102,6 @@ class IssueProjectCreateView(UserPassesTestMixin, SessionUserMixin, CreateView):
 
     def form_valid(self, form):
         project_pk = self.kwargs.get('pk')
-        print('yes')
         project = get_object_or_404(Project, pk=project_pk)
         self.object = project.issues.create(**form.cleaned_data)
         self.object.created_by = self.request.user

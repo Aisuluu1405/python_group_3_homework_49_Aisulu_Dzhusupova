@@ -47,24 +47,24 @@ class ProjectIndexView(SessionUserMixin, ListView):
             return self.form.cleaned_data['search']
         return None
 
-
-class ProjectIndexNewView(SessionUserMixin, ListView):
-    template_name = 'bonus/index_project_new.html'
-    context_object_name = 'projects'
-    model = Project
-    ordering = ('date_create')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['project_closed'] = Project.objects.all().filter(status=PROJECT_CLOSED)
-        context['project_active'] = Project.objects.all().filter(status=STATUS_OTHER_CHOICE)
-        return context
-
-    def get(self, request, *args, **kwargs):
-        self.set_request(request)
-        self.page_login()
-        return super().get(request, *args, **kwargs)
-
+#
+# class ProjectIndexNewView(SessionUserMixin, ListView):
+#     template_name = 'bonus/index_project_new.html'
+#     context_object_name = 'projects'
+#     model = Project
+#     ordering = ('date_create')
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['project_closed'] = Project.objects.all().filter(status=PROJECT_CLOSED)
+#         context['project_active'] = Project.objects.all().filter(status=STATUS_OTHER_CHOICE)
+#         return context
+#
+#     def get(self, request, *args, **kwargs):
+#         self.set_request(request)
+#         self.page_login()
+#         return super().get(request, *args, **kwargs)
+#
 
 class ProjectView(SessionUserMixin, DetailView):
     model = Project
@@ -82,23 +82,23 @@ class ProjectView(SessionUserMixin, DetailView):
         self.page_login()
         return super().get(request, *args, **kwargs)
 
-
-class ProjectNewView(SessionUserMixin, DetailView):
-    model = Project
-    template_name = 'bonus/detail_new.html'
-    context_object_name = 'project'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        issues = context['project'].issues.order_by('-create')
-        context['issues'] = issues
-        return context
-
-    def get(self, request, *args, **kwargs):
-        self.set_request(request)
-        self.page_login()
-        return super().get(request, *args, **kwargs)
-
+#
+# class ProjectNewView(SessionUserMixin, DetailView):
+#     model = Project
+#     template_name = 'bonus/detail_new.html'
+#     context_object_name = 'project'
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         issues = context['project'].issues.order_by('-create')
+#         context['issues'] = issues
+#         return context
+#
+#     def get(self, request, *args, **kwargs):
+#         self.set_request(request)
+#         self.page_login()
+#         return super().get(request, *args, **kwargs)
+#
 
 class ProjectCreateView(LoginRequiredMixin, SessionUserMixin, CreateView):
     template_name = 'project/add.html'
@@ -145,15 +145,15 @@ class ProjectDeleteView(LoginRequiredMixin, SessionUserMixin, DeleteView):
         except ProtectedError:
             return render(request, self.template)
 
-
-class ProjectNewDeleteView(LoginRequiredMixin, SessionUserMixin, UpdateView):
-    model = Project
-    success_url = reverse_lazy('webapp:project_new_index')
-
-    def get(self, request, *args, **kwargs):
-        object = self.model.objects.filter(pk=kwargs.get('pk'))
-        object.update(status='closed')
-        self.set_request(request)
-        self.page_login()
-
-        return redirect(self.success_url)
+#
+# class ProjectNewDeleteView(LoginRequiredMixin, SessionUserMixin, UpdateView):
+#     model = Project
+#     success_url = reverse_lazy('webapp:project_new_index')
+#
+#     def get(self, request, *args, **kwargs):
+#         object = self.model.objects.filter(pk=kwargs.get('pk'))
+#         object.update(status='closed')
+#         self.set_request(request)
+#         self.page_login()
+#
+#         return redirect(self.success_url)

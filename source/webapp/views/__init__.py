@@ -4,6 +4,6 @@ from .status_views import StatusIndexView, StatusCreateView, StatusEditView, Sta
 
 from .type_views import TypeIndexView, TypeCreateView, TypeEditView, TypeDeleteView
 
-from .project_views import ProjectIndexView, ProjectView, ProjectCreateView, ProjectEditView, ProjectDeleteView,\
-    ProjectIndexNewView, ProjectNewView, ProjectNewDeleteView
+from .project_views import ProjectIndexView, ProjectView, ProjectCreateView, ProjectEditView, ProjectDeleteView
 
+from .bonus_project_views import ProjectIndexNewView, ProjectNewView, ProjectCreateView, ProjectEditView, ProjectNewDeleteView

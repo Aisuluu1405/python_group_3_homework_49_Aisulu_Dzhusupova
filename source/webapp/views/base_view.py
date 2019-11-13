@@ -139,10 +139,10 @@ class SessionUserMixin:
     def save_in_session(self):                            #сохранили в сессию
         self.request.session['total_page_visits'] = self.page_times_visits
         self.request.session['total'] = self.total_count
-        print(self.page_times_visits)
+        # print(self.page_times_visits)
         self.request.session['page_time_visits'] = self.page_duration_visits
         self.request.session['all_time'] = self.all_time
-        print(self.request.session['all_time'])
+        # print(self.request.session['all_time'])
 
 
     def page_login(self):                   #как зашли на страницу пошел отсчет
