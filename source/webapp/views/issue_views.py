@@ -82,13 +82,18 @@ class IssueProjectCreateView(UserPassesTestMixin, SessionUserMixin, CreateView):
     form_class = IssueForm
 
     def test_func(self):
-        issue_project = self.get_object().project
+        project = self.get_project()
         user_project = Project.objects.filter(project_team__user=self.request.user, project_team__finish=None)
         # print(issue_project)
         # print(user_project)
-        return issue_project in user_project
+        return project in user_project
+
+    def get_project(self):
+        project_pk = self.kwargs['pk']
+        return get_object_or_404(Project, pk=project_pk)
 
     def get_form_kwargs(self):
+        print('yes')
         kwargs = super().get_form_kwargs()
         project_pk = self.kwargs.get('pk')
         users_project = Project.objects.filter(pk=project_pk,
@@ -98,6 +103,7 @@ class IssueProjectCreateView(UserPassesTestMixin, SessionUserMixin, CreateView):
 
     def form_valid(self, form):
         project_pk = self.kwargs.get('pk')
+        print('yes')
         project = get_object_or_404(Project, pk=project_pk)
         self.object = project.issues.create(**form.cleaned_data)
         self.object.created_by = self.request.user

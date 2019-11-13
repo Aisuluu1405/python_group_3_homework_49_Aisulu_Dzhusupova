@@ -139,7 +139,7 @@ class SessionUserMixin:
     def save_in_session(self):                            #сохранили в сессию
         self.request.session['total_page_visits'] = self.page_times_visits
         self.request.session['total'] = self.total_count
-        # print(self.page_times_visits)
+        print(self.page_times_visits)
         self.request.session['page_time_visits'] = self.page_duration_visits
         self.request.session['all_time'] = self.all_time
         print(self.request.session['all_time'])
@@ -148,8 +148,8 @@ class SessionUserMixin:
     def page_login(self):                   #как зашли на страницу пошел отсчет
         self.total_count['total'] += 1
         self.page_visit_count()
-        self.get_total_time()
         self.save_in_session()
+        self.get_total_time()
         date = datetime.now()
         self.date_buffer.append({self.request.path: date})
 
@@ -163,7 +163,7 @@ class SessionUserMixin:
         total_times = self.request.session['page_time_visits']
         for key, values in total_times.items():
             self.all_time += values
-        print(self.all_time)
+        # print(self.all_time)
 
     def total_time(self):  # время нахождения на странице
         f_date, s_date = self.date_buffer
