@@ -131,25 +131,25 @@ class SessionUserMixin:
     total_count = {
         'total': 0
     }
-    all_time = 0
     page_duration_visits = {}
     date_buffer = deque()
 
 
     def save_in_session(self):                            #сохранили в сессию
         self.request.session['total_page_visits'] = self.page_times_visits
-        self.request.session['total'] = self.total_count
-        # print(self.page_times_visits)
-        self.request.session['page_time_visits'] = self.page_duration_visits
-        self.request.session['all_time'] = self.all_time
+        self.request.session['total'] = self.total_count['total']
+
+        if len(self.page_duration_visits) > 0:
+            self.request.session['page_time_visits'] = self.page_duration_visits
+            self.request.session['all_time'] = self.get_total_time()
         # print(self.request.session['all_time'])
 
 
     def page_login(self):                   #как зашли на страницу пошел отсчет
         self.total_count['total'] += 1
         self.page_visit_count()
-        self.save_in_session()
         self.get_total_time()
+        self.save_in_session()
         date = datetime.now()
         self.date_buffer.append({self.request.path: date})
 
@@ -160,9 +160,10 @@ class SessionUserMixin:
         self.request = request
 
     def get_total_time(self):    #общее время нахождения на страницах
-        total_times = self.request.session['page_time_visits']
-        for key, values in total_times.items():
-            self.all_time += values
+        total_times = 0
+        for key, values in self.page_duration_visits.items():
+            total_times += values
+        return total_times
         # print(self.all_time)
 
     def total_time(self):  # время нахождения на странице

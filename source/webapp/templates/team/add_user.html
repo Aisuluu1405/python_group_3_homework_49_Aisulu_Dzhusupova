@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Team{% endblock %}
+
+{% block content %}
+    <h1>Update Team</h1>
+    {% if perms.webapp.add_team %}
+
+        <form method="POST" action="">
+            {% include 'partial/form.html' with button_text='Update' %}
+        </form>
+    {% endif %}
+{% endblock %}

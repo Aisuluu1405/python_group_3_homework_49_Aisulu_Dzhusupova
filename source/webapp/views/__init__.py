@@ -7,3 +7,5 @@ from .type_views import TypeIndexView, TypeCreateView, TypeEditView, TypeDeleteV
 from .project_views import ProjectIndexView, ProjectView, ProjectCreateView, ProjectEditView, ProjectDeleteView
 
 from .bonus_project_views import ProjectIndexNewView, ProjectNewView, ProjectCreateView, ProjectEditView, ProjectNewDeleteView
+
+from .team_views import TeamUpdateView

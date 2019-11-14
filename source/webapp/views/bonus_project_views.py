@@ -37,6 +37,7 @@ class ProjectNewView(SessionUserMixin, DetailView):
         context = super().get_context_data(**kwargs)
         issues = context['project'].issues.order_by('-create')
         context['issues'] = issues
+        context['user_team'] = Team.objects.filter(project=self.object, finish=None)
         return context
 
     def get(self, request, *args, **kwargs):
@@ -49,7 +50,7 @@ class ProjectCreateView(PermissionRequiredMixin, SessionUserMixin, CreateView):
     template_name = 'project/add.html'
     model = Project
     form_class = ProjectForm
-    permission_required = 'webapp.add_project'
+    permission_required = 'webapp.add_project', 'webapp.add_team'
     permission_denied_message = 'Access is denied!'
 
     def form_valid(self, form):
@@ -60,7 +61,7 @@ class ProjectCreateView(PermissionRequiredMixin, SessionUserMixin, CreateView):
         self.object = form.save()
         for user in users_list:
             Team.objects.create(user=user, project=self.object, finish=None)
-                                # start=datetime.now())
+
         return redirect(self.get_success_url())
 
     def get(self, request, *args, **kwargs):
@@ -79,7 +80,6 @@ class ProjectEditView(PermissionRequiredMixin, SessionUserMixin, UpdateView):
     context_object_name = 'project'
     permission_required = 'webapp.change_project'
     permission_denied_message = 'Access is denied!'
-
 
     def get(self, request, *args, **kwargs):
         self.set_request(request)

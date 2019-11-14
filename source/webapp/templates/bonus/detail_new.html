@@ -9,16 +9,14 @@
             <p class="lead">Status: {{ project.status }}</p>
             <p class="pre">{{ project.specification }}</p>
             <p class="lead">Create date: {{ project.date_create| date:'d.m.Y H:i:s'}}</p>
-
-                {% for team in project.project_team.all %}
+            <h4><b>Team of project: </b></h4>
+                {% for team in user_team%}
                     <p> User: <b>{{ team.user.username }}</b>  Date of start: <b>{{ team.start| date:'d.m.Y' }}</b></p>
                 {% endfor %}
-
-            <a href="" class="add btn btn-outline-dark">Add user</a>
-            <a href="" class="add btn btn-outline-dark">Delete user</a>
-
-            <hr class="my-4">
-
+                {% if perms.webapp.add_team %}
+                     <a href="{% url 'webapp:update_team'  project.pk %}" class="add btn btn-outline-dark">Update Team</a>
+                {% endif %}
+                <hr class="my-4">
         <h2><b>Issues for this project: </b></h2>
             <p class="container_index pt-1 pb-2">
                 {% for issue in issues %}

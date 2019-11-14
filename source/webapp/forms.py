@@ -17,7 +17,7 @@ class IssueForm(forms.ModelForm):
 
 class StatusForm(forms.ModelForm):
     class Meta:
-        model= Status
+        model=Status
         fields = ['status']
 
 
@@ -38,3 +38,10 @@ class ProjectForm(forms.ModelForm):
 class SimpleSearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label='Search')
 
+
+class UserProjectForm(forms.Form):
+    project_user = forms.ModelMultipleChoiceField(queryset=User.objects.all(), required=False, label='Project`s user')
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.fields['project_user'].initial = self.initial.get('project_user')

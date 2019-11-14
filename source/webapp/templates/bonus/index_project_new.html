@@ -18,7 +18,8 @@
                         <p>(Create date:{{ item.date_create| date:'d.m.Y H:i:s' }})
                         {% if perms.webapp.delete_project %}
                             <a href="{% url 'webapp:project_delete' item.pk %}"><i class="fas fa-trash-alt ml-5"></i></a>
-                        {% elif perms.webapp.change_project %}
+                        {% endif %}
+                        {% if perms.webapp.change_project %}
                             <a href="{% url 'webapp:project_edit' item.pk %}"><i class="fas fa-edit ml-5"></i></a></p>
                         {% endif %}
                     </div>
