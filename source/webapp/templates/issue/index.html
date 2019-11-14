@@ -45,7 +45,8 @@
                                    <p>
                                        {% if perms.webapp.delete_issue %}
                                             <a href="{% url 'webapp:issue_delete' issue.pk %}"><i class="fas fa-trash-alt"></i></a>
-                                       {% elif perms.webapp.change_issue %}
+                                       {% endif %}
+                                       {% if perms.webapp.change_issue %}
                                             <a href="{% url 'webapp:issue_edit' issue.pk %}"><i class="fas fa-edit"></i></a>
                                        {% endif %}
                                    </p>
