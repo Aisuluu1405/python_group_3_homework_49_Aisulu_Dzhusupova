@@ -1,9 +1,10 @@
 from django.urls import include, path
 from rest_framework import routers
-from api.views import ProjectViewSet
+from api.views import ProjectViewSet, IssueViewSet
 
 router = routers.DefaultRouter()
 router.register(r'projects', ProjectViewSet)
+router.register(r'issues', IssueViewSet)
 
 app_name = 'api'
 
