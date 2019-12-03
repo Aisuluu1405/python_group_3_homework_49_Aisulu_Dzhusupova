@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'rest_framework',
     'accounts',
-    'webapp'
+    'webapp',
+    'api',
 ]
 
 MIDDLEWARE = [
