@@ -55,7 +55,7 @@ function addIssue() {
 }
 function deleteIssue() {
     $.ajax({
-    url: 'http://localhost:8000/api/issues/105',
+    url: 'http://localhost:8000/api/issues/96/',
     method: 'delete',
     headers: {'Authorization': 'Token ' + localStorage.getItem('apiToken')},
     dataType: 'json',
@@ -69,7 +69,7 @@ if(localStorage.getItem('apiToken')){
     projectsList();
     issuesList();
     issueProject();
-    addIssue();
-    deleteIssue();
+    // addIssue();
+    // deleteIssue();
 }
-else{console.log('Токена нет!')}
+else{console.log('Токена нет!')};
