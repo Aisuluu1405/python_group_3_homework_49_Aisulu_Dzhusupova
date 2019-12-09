@@ -96,14 +96,15 @@
           </div>
 
  {% block scripts %}
-    <script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/task_70_2.js' %}"></script>
+     <script>
        $('#Modalstatic').on('shown.bs.modal', function () {
        $('#myInput').trigger('focus')
        })
     </script>
-    <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 {% endblock %}
 </body>
